@@ -1,0 +1,495 @@
+.root {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*border-bottom: 1px solid gray;*/
+    margin: auto;
+    z-index: 4;  /* 2 */
+    position: fixed;
+    transition: .1s ease-in;
+    top: 0;
+    border-bottom: 2px solid gray;
+}
+
+.displayNoneMob{
+    display: none;
+}
+
+.displayNoneComp{
+    display: block;
+}
+
+.header-bg{
+    background-color: #1D2025;
+}
+
+.mobTelDiv{
+    width: 140px;
+    height: 35px;
+    border-radius: 18px;
+    background: #DF4242 0% 0% no-repeat padding-box;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 60px;
+    margin-left: 45px;
+}
+
+.mobTelDiv:hover{
+    background-color: #42de4c;
+}
+
+.textNom{
+    text-align: left;
+    font: normal normal 300 12px/20px Gilroy Light;
+    letter-spacing: 0;
+    color: #FFFFFF;
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*margin: 0 10px 0 0;    // tyt*/
+}
+
+.logo {
+    /*left: 60px;*/
+    width: 155px;
+    height: 47px;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    opacity: 1;
+    position: relative;
+}
+
+.divLineManu{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nomer{
+    top: 40px;
+    left: 159px;
+    width: 124px;
+    height: 19px;
+    text-align: left;
+    font: normal normal normal 14px/20px Averta Demo PE;
+    font-family: Averta;
+    letter-spacing: 0;
+    color: #B2B1B7;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.manu{
+    display: flex;
+    align-items: center;
+    margin-right: 45px;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.humManu{
+    z-index: 1;
+    width: 20%;
+    margin-right: 30px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    top: 100px;
+    right: -1px;
+    width: 0;
+    height: 100%;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    background-color: black;
+    box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+    transition: all .09s ease-out;
+}
+
+.menu__item {
+    display: flex;
+    padding: 12px 24px;
+    color: white;
+    font-family: Gilroy Light, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    height: 70px;
+    align-items: center;
+}
+
+.border{
+    border-bottom: 1px solid whitesmoke;
+}
+
+.menu__item2 {
+    display: flex;
+    padding: 12px 24px;
+    text-decoration: none;
+    height: 111px;
+    align-items: center;
+    font: normal normal normal 14px/20px Gilroy Light, sans-serif;
+    letter-spacing: 1.12px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.menu__item2:hover {
+    color: #42de4c;
+    border-bottom: 2px solid #42de4c;
+    transition: all .5s ease-out;
+}
+
+.close{
+    background-image: url("../../svg/icons8-close.svg");
+    width: 30px;
+    position: fixed;
+    top: 35px;
+    right: 30px;
+    height: 30px;
+    background-size: cover;
+    visibility: hidden;
+}
+
+.divContainer{
+    position: absolute;
+    width: 0;
+    height: 200vh;
+    visibility: visible;
+    z-index: 3;
+   /*backdrop-filter: blur(3px);*/
+}
+
+.divManu{
+    background-color: black;
+    position: fixed;
+    height: 100%;
+    width: 0%;
+    right: -1px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: visible;
+    transition: all .09s ease-out;
+}
+
+.divBox{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    visibility: hidden;
+}
+
+.spanX{
+    z-index: 1;
+    position: fixed;
+    top: 40px;
+    font-size: 25px;
+    right: 139px;
+    visibility: hidden;
+}
+
+.spanX > span::after {
+    visibility: visible;
+}
+
+.napis{
+    margin-left: 95px;
+    width: 49px;
+    height: 47px;
+    text-align: left;
+    font: normal normal bold 12px/11px Gilroy Light;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.logoDiv{
+    display: flex;
+    height: 100%;
+    width: 300px;
+    padding-top: 30px;
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+/* mob */
+
+.telDiv {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #B2B1B7;
+    padding-top: 4px;
+    left: -15px;
+    position: relative;
+}
+
+.manDiv{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.man2Div{
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+}
+
+.divManuLang{
+    width: 52px;
+    text-align: start;
+    height: 32%;
+}
+
+.imgClass{
+    width: 23px;
+    height: 23px;
+}
+
+/* language */
+
+.trBut{
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    font: normal normal 600 14px/20px Gilroy Light, sans-serif;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    position: absolute;
+    outline: none;
+    border: none;
+}
+
+.displayNoneMob{
+    display: none;
+}
+
+.displayNoneComp{
+    display: block;
+}
+
+.displayNoneCompFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.trBut2{
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    font: normal normal 600 14px/20px Gilroy Light, sans-serif;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    position: absolute;
+    outline: none;
+    border: none;
+    top: 18px;
+}
+
+.translateDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pLang{
+    margin: 10px 0 10px 1px;
+    color: black;
+    font: normal normal 600 15px/17px Gilroy Light, sans-serif;
+}
+
+.pLangSpan{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 8px;
+}
+
+.hover {
+    height: 90px;
+    border-radius: 20px;
+}
+
+.trBut:hover{
+    height: 100px;
+    border-radius: 20px;
+}
+
+.trBut:hover .hovP{
+    display: block;
+}
+
+.trBut:hover .hovP2{
+    display: none;
+}
+
+.pHov{
+    margin-top: 30px;
+}
+
+.hovP{
+    display: none;
+}
+
+.hovP2{
+    display: block;
+}
+
+/* language end */
+
+
+
+
+@media screen and (max-width: 1550px) {
+    .mobTelDiv {
+        width: 120px;
+        height: 35px;
+        margin-right: 15px;
+        margin-left: 25px;
+    }
+    .manu {
+        margin-right: 0;
+    }
+    .menu__item2 {
+        display: flex;
+        padding: 12px 15px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .menu__item2 {
+        padding: 0 15px;
+        font: normal normal normal 12px/20px Gilroy Light;
+    }
+    .root {
+        height: 90px;
+    }
+    hr {
+        top: 93px;
+    }
+    .menu__item2{
+        height: 92px;
+    }
+    .logoDiv{
+        padding-top: 25px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .menu__item2 {
+        height: 71px;
+        padding: 0 7px;
+        font: normal normal normal 10px/20px Gilroy Light;
+    }
+    .root {
+        height: 70px;
+    }
+    .logo {
+        width: 100px;
+    }
+    .logoDiv {
+        padding-top: 15px;
+    }
+    .mobTelDiv {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .manu {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .menu__item2 {
+        padding: 0 6px;
+        font: normal normal normal 9px/20px Gilroy Light;
+    }
+    .logo {
+        width: 87px;
+    }
+    .napis {
+        margin-left: 85px;
+    }
+    .mobTelDiv {
+        width: 120px;
+    }
+    .textNom {
+        text-align: left;
+        font: normal normal 300 10px/20px Gilroy Light;
+    }
+    .logoDiv {
+        padding-top: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .displayNoneMob{
+        display: block;
+    }
+    .displayNoneComp{
+        display: none;
+    }
+    .menu__item {
+        border: none;
+        border-top: 1px solid white;
+    }
+    .root{
+        border: none;
+    }
+    .border{
+        border-bottom: 1px solid whitesmoke;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .root{
+        width: 100%;
+        margin: auto;
+        justify-content: space-between;
+        border: none;
+        padding-left: 20px;
+    }
+    .menu__item {
+        border-top: 1px solid white;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .root{
+        width: 100%;
+        margin: auto;
+        justify-content: space-between;
+        height: 70px;
+        border: none;
+        padding-left: 0;
+    }
+    .menu__item {
+        border-top: 1px solid white;
+    }
+    .logo {
+        left: 30px;
+        width: 78px;
+        height: 27px;
+    }
+}

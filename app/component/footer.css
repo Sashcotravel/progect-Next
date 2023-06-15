@@ -1,0 +1,148 @@
+.socP{
+    margin: 20px 0;
+    color: white;
+    font: normal normal bold 35px/48px Gilroy bold, sans-serif;
+}
+
+.imgLogo {
+    border-radius: 10px;
+    height: 100px;
+    margin: 30px 20px;
+    object-fit: contain;
+    width: 55px;
+}
+
+.spanImage{
+    position: relative;
+    top: 5px;
+}
+
+.socA{
+    cursor: pointer; color: #d9d9d9; height: 48px; margin: 0 20px;
+}
+
+.footerUnHiden{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes up-right {
+    0% { opacity: 0 }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+.circle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    opacity: .25;
+    margin: 40px 10px 0 0;
+}
+.red {
+    background-color: lawngreen;
+    -webkit-animation: up-right 2s infinite;
+    -moz-animation: up-right 2s infinite;
+    -o-animation: up-right 2s infinite;
+    animation: up-right 2s infinite;
+}
+
+.footerSpan{
+    margin-bottom: 20px;
+    color: white;
+    font: normal normal bold 50px/48px Gilroy bold, sans-serif;
+}
+.footerDiv3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    top: 50px;
+    position: relative;
+    margin-bottom: 100px;
+}
+.footerHiden{
+    display: none;
+}
+
+.footerDiv{
+    min-height: 430px;
+    background-color: #1e2227;
+    display: flex;
+    flex-direction: column;
+}
+
+.divBoxImage {
+    background-color: #192426;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: -110px;
+    padding: 0;
+    width: 100%;
+}
+
+.fontQ{
+    font-size: 25px;
+}
+
+.imgClase{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.soshM{
+    width: 20px;
+    height: 20px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .socP{
+        margin: 0 0 20px 0;
+        color: white;
+        font: normal normal bold 22px/48px Gilroy bold, sans-serif;
+    }
+    .footerDiv{
+        min-height: 430px;
+        background-color: #1e2227;
+        display: flex;
+        flex-direction: column;
+    }
+    .socA{
+        cursor: pointer; color: #d9d9d9; height: 48px; margin: 0 20px;
+    }
+    .footerSoc{
+        cursor: pointer; color: #575758; height: 48px; margin: 0 20px;
+    }
+    .socDiv{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .footerHiden{
+        display: flex;
+        margin-bottom: 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerUnHiden{
+        display: none;
+    }
+    .mobCircle{
+        margin-top: 19px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .div2Soc{
+        display: flex;
+        flex-direction: column;
+    }
+    .footerHiden{
+        display: block;
+    }
+}
