@@ -1,8 +1,12 @@
+'use client'
 
 import facabook from "../../svg/facebook.png";
 import instagram from "../../svg/instagram.png";
 import youtube from "../../svg/youtube.png";
 import tiktok from "../../svg/tik-tok.png";
+import whatsapp from "../../logo/webp/whatsapp.webp";
+import telegram from "../../logo/webp/telegram.webp";
+import viber from "../../logo/webp/viber.webp";
 import Image from 'next/image';
 import './footer.css'
 import {useLocale, useTranslations} from "next-intl";
@@ -39,11 +43,11 @@ const TheFooter = () => {
                 </div>
                 <div style={{display: 'flex', justifyContent: 'center'}}>
                     <a href="viber://chat?number=%2B380505923772" target='_blank'>
-                        <Image src={require("../../logo/webp/viber.webp")} alt="viber" className='imgClase' /></a>
+                        <Image src={viber} alt="viber" className='imgClase' width={30} height={30} /></a>
                     <a href="https://t.me/dstevark" target='_blank'>
-                        <Image src={require("../../logo/webp/telegram.webp")} alt="telegram" className='imgClase' /></a>
+                        <Image src={telegram} alt="telegram" className='imgClase' width={30} height={30} /></a>
                     <a href="https://wa.me/+380505923772" target='_blank'>
-                        <Image src={require("../../logo/webp/whatsapp.webp")} alt="whats up" className='imgClase' /></a>
+                        <Image src={whatsapp} alt="whats up" className='imgClase' width={30} height={30} /></a>
                 </div>
             </div>
         </div>

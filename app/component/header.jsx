@@ -14,8 +14,12 @@ const TheHeader = () => {
 
     const t = useTranslations();
     const locale = useLocale();
-    const router = useRouter();
     const [color, setColor] = useState(false)
+    const [currentUrl, setCurrentUrl] = useState('/')
+    const [windows2, setWindows2] = useState({
+        listWash: false, main: false, obl: false, cover: false,
+        calc: false, poroh: false, blog: false, cont: false
+    })
     let screen
 
     const changeColor = () => {
@@ -24,6 +28,48 @@ const TheHeader = () => {
     }
 
     useEffect(() => {
+        window.addEventListener('click', function () {
+            if(window.location.pathname === '/'){
+                setWindows2((actual) => { return { ...actual, main: true,
+                    listWash: false, obl: false, cover: false,
+                    calc: false, poroh: false, blog: false, cont: false} })
+            }
+            if(window.location.pathname === '/all-car-wash'){
+                setWindows2((actual) => { return { ...actual, listWash: true,
+                    main: false, obl: false, cover: false,
+                    calc: false, poroh: false, blog: false, cont: false} })
+            }
+            if(window.location.pathname === '/equipment'){
+                setWindows2((actual) => { return { ...actual, obl: true,
+                    listWash: false, main: false, cover: false,
+                    calc: false, poroh: false, blog: false, cont: false } })
+            }
+            if(window.location.pathname === '/cover'){
+                setWindows2((actual) => { return { ...actual, cover: true,
+                    listWash: false, main: false, obl: false, calc: false,
+                    poroh: false, blog: false, cont: false } })
+            }
+            if(window.location.pathname === '/obladnannya'){
+                setWindows2((actual) => { return { ...actual, calc: true,
+                    listWash: false, main: false, obl: false, cover: false,
+                    poroh: false, blog: false, cont: false } })
+            }
+            if(window.location.pathname === '/porohotyag'){
+                setWindows2((actual) => { return { ...actual, poroh: true,
+                    listWash: false, main: false, obl: false, cover: false,
+                    calc: false, blog: false, cont: false } })
+            }
+            if(window.location.pathname === '/blog'){
+                setWindows2((actual) => { return { ...actual, blog: true,
+                    listWash: false, main: false, obl: false, cover: false,
+                    calc: false, poroh: false, cont: false } })
+            }
+            if(window.location.pathname === '/contacts'){
+                setWindows2((actual) => { return { ...actual, cont: true,
+                    listWash: false, main: false, obl: false, cover: false,
+                    calc: false, poroh: false, blog: false } })
+            }
+        });
         window.addEventListener('scroll', changeColor)
         screen = window.screen.width < 900
     }, [])
@@ -113,6 +159,7 @@ const TheHeader = () => {
     }
 
 
+
     return <>
         <header className='displayNoneComp'>
             <div className={color ? "root header-bg" : "root"} style={screen < 900 ? bot : undefined}>
@@ -139,10 +186,10 @@ const TheHeader = () => {
                             <button className='trBut displayNoneComp'>
                             <span className='pLang pLangSpan'>{locale.toUpperCase()}</span>
                                 {locale === 'ua' ? '' :
-                                    <Link href='/' locale="ua" className='pLang hovP pHov'>UA</Link> }
+                                    <Link href={`/${currentUrl}`} locale="ua" className='pLang hovP pHov'>UA</Link> }
                                 {locale === 'en' ? '' :
-                                    <Link href='/' locale="en" className={`pLang hovP ${locale === 'ru' ? '' : 'pHov'}`}>EN</Link> }
-                                {locale === 'ru' ? '' : <Link href='/' locale="ru" className='pLang hovP'>RU</Link> }
+                                    <Link href={`/${currentUrl}`} locale="en" className={`pLang hovP ${locale === 'ru' ? '' : 'pHov'}`}>EN</Link> }
+                                {locale === 'ru' ? '' : <Link href={`/${currentUrl}`} locale="ru" className='pLang hovP'>RU</Link> }
                             </button>
                         </div>
                     </div>
@@ -176,28 +223,28 @@ const TheHeader = () => {
                             <ul className="menu__box" id="menu__box">
                                 <p className='close' id='close' onClick={twoClick}></p>
                                 <li><Link onClick={threeClick}
-                                          className={window.location.pathname === '/' ? activeStyle : undefined}
+                                          style={windows2.main ? activeStyle : undefined} className="menu__item"
                                           href={"/"}>{t("mainPage")}</Link></li>
                                 <li><Link onClick={threeClick}
-                                          style={window.location.pathname === '/all-car-wash' ? activeStyle : undefined} className="menu__item"
+                                          style={windows2.listWash ? activeStyle : undefined} className="menu__item"
                                           href={"/all-car-wash"}>{t("autoWash")}</Link></li>
                                 <li><Link onClick={threeClick}
-                                          style={window.location.pathname === '/equipment' ? activeStyle : undefined} className="menu__item"
+                                          style={windows2.obl ? activeStyle : undefined} className="menu__item"
                                           href={"/equipment"}>{t("equipment")}</Link></li>
                                 <li><Link onClick={threeClick}
-                                          style={window.location.pathname === '/cover' ? activeStyle : undefined} className="menu__item"
+                                          style={windows2.cover ? activeStyle : undefined} className="menu__item"
                                           href={"/cover"}>{t("cover")}</Link></li>
                                 <li><Link onClick={threeClick}
-                                          style={window.location.pathname === '/obladnannya' ? activeStyle : undefined} className="menu__item"
+                                          style={windows2.calc ? activeStyle : undefined} className="menu__item"
                                           href={"/obladnannya"}>{t("equipment2")}</Link></li>
                                 <li><Link onClick={threeClick}
-                                          style={window.location.pathname === '/porohotyag' ? activeStyle : undefined} className="menu__item"
+                                          style={windows2.poroh === '/porohotyag' ? activeStyle : undefined} className="menu__item"
                                           href={"/porohotyag"}>{t("porohotyag")}</Link></li>
                                 <li><Link onClick={threeClick}
-                                          style={window.location.pathname === '/blog' ? activeStyle : undefined} className="menu__item"
+                                          style={windows2.blog ? activeStyle : undefined} className="menu__item"
                                           href="/blog">{t("blog")}</Link></li>
                                 <li><Link onClick={threeClick}
-                                          style={window.location.pathname === '/contacts' ? activeStyle2 : undefined}
+                                          style={windows2.cont ? activeStyle2 : undefined}
                                           className="menu__item border" href={"/contacts"}>{t("contacts")}</Link></li>
                             </ul>
                         </div>

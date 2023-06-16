@@ -73,13 +73,13 @@
 }
 
 .nomer{
-    top: 40px;
-    left: 159px;
+    /*top: 0;*/
+    left: 4px;
     width: 124px;
     height: 19px;
+    position: relative;
     text-align: left;
-    font: normal normal normal 14px/20px Averta Demo PE;
-    font-family: Averta;
+    font: normal normal normal 14px/20px Gilroy Light, sans-serif;
     letter-spacing: 0;
     color: #B2B1B7;
     opacity: 1;
