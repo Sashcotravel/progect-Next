@@ -1,26 +1,17 @@
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { createWrapper } from "next-redux-wrapper";
+import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import { postsReducer } from "./order-reduser";
+import thanksSlice from './thanks-reduser'
 
 // initial states here
-const initalState = {};
+const store = configureStore({
+    reducer: {
+        post: postsReducer,
+        thanks: thanksSlice,
+    }
+})
 
-// middleware
-const middleware = [thunk];
 
-// creating store
-export const store = createStore(
-    postsReducer,
-    initalState,
-    composeWithDevTools(applyMiddleware(...middleware))
-);
-
-// assigning store to next wrapper
-const makeStore = () => store;
-
-export const wrapper = createWrapper(makeStore);
+export default store
 
 // import { configureStore } from '@reduxjs/toolkit'
 // import { postsReducer } from "./order-reduser";

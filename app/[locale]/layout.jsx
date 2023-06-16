@@ -5,7 +5,8 @@ import {NextIntlClientProvider} from 'next-intl';
 import {TheFooter} from "../component/footer";
 import {TheHeader} from "../component/header";
 import {Provider} from "react-redux";
-import { wrapper, store } from "../../store/store"
+import store from "../../store/store"
+import emailjs from "@emailjs/browser";
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -26,9 +27,12 @@ export default async function RootLayout(props) {
 
   }
 
+    setTimeout(() => { emailjs.init("938710462a5c1bb2ad85688812ab3da4") }, 8000)
+
 
   return (
     <html lang={props?.params.locale}>
+    {/*<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>*/}
     <NextIntlClientProvider locale={props?.params.locale} messages={messages}>
       <Provider store={store}>
       <body>

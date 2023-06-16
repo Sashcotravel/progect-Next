@@ -8,7 +8,6 @@ import Image from 'next/image';
 import image5 from "../../svg/samwash_logo_vector-01.svg";
 import image1 from "../../svg/BurgerMenuIcon.svg";
 import image2 from "../../svg/icons8-phone-50.png";
-import {useRouter} from "next/navigation";
 
 const TheHeader = () => {
 
@@ -255,6 +254,7 @@ const TheHeader = () => {
             </div>
             <div className="divContainer" id="hidden" onClick={fourClick}></div>
         </header>
+        <div style={{marginBottom: '100px'}}></div>
     </>
 }
 

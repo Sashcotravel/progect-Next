@@ -1,0 +1,319 @@
+@import url(../../../fonts/stylesheet.css);
+
+.divBlock{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px 120px 100px;
+}
+
+.imageThanks{
+    position: absolute;
+    opacity: 0.01;
+    z-index: 1;
+    width: 84%;
+}
+
+.divMain{
+    z-index: 2;
+}
+
+.breadcrumbs{
+    font-size: 14px;
+    z-index: 2;
+    margin: 40px 0 60px 0;
+}
+
+.breads{
+    cursor: pointer;
+    color: rgb(125, 125, 128);
+}
+
+.breads2{
+    color: white;
+}
+
+.thanksTitle2{
+    width: 525px;
+    height: 126px;
+    text-align: left;
+    font: normal normal 300 72px/82px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #FFFFFF;
+}
+
+.div2Box{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.displayNoneMob{
+    display: none;
+}
+
+.displayNoneComp{
+    display: block;
+}
+
+.displayNoneCompFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.div1Cont{
+    width: 30%;
+    text-align: left;
+}
+
+.h2_1{
+    width: 380px;
+    height: 120px;
+    text-align: left;
+    font: normal normal 300 52px/70px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #B2B1B7;
+}
+
+.p_1_2{
+    margin-bottom: 72px;
+}
+
+.p_1{
+    font: normal normal 300 33px/44px Gilroy Medium, sans-serif;
+    letter-spacing: 0;
+    color: #FFFFFF;
+}
+
+@keyframes up-right {
+    0% { opacity: 0 }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.circle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    opacity: .25;
+    margin: 40px 10px 0 0;
+}
+
+.red {
+    background-color: lawngreen;
+    -webkit-animation: up-right 2s infinite;
+    -moz-animation: up-right 2s infinite;
+    -o-animation: up-right 2s infinite;
+    animation: up-right 2s infinite;
+}
+
+.fontCont{
+    margin: 20px 0;
+    color: white;
+    font: normal normal bold 25px/48px Gilroy bold, sans-serif;
+}
+
+.p_1City{
+    font: normal normal 300 20px/44px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    width: 400px;
+}
+
+.p_1_3{
+    margin-bottom: 55px;
+}
+
+.inputUser{
+    margin: 10px 0;
+    padding: 5px;
+    width: 90%;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    border-bottom: 1px solid #A7A5A5;
+    background-color: #1D2025;
+    color: #A7A5A5;
+    outline: none;
+    font-family: Gilroy Medium, sans-serif;
+}
+
+.input1{
+    width: 380px;
+    background-color: transparent;
+}
+
+.lineThanks{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.textArea{
+    padding: 5px;
+    width: 90%;
+    height: 169px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid #A7A5A5;
+    background-color: transparent;
+    color: #A7A5A5;
+    outline: none;
+    font-family: Gilroy Medium, sans-serif;
+}
+
+.h2_2{
+    width: 379px;
+    height: 129px;
+    text-align: left;
+    font: normal normal 300 22px/33px Gilroy Medium, sans-serif;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin-bottom: 62px;
+}
+
+.greenButSend{
+    display: flex;
+    width: 380px;
+    height: 60px;
+    background: #42DF4C 0 0 no-repeat padding-box;
+    border-radius: 30px;
+    font: normal normal normal 18px/19px Gilroy Light, sans-serif;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    margin: 60px auto 0;
+}
+
+
+@media screen and (max-width: 1600px) {
+    .w200 {
+        width: 280px;
+        color: #B2B1B7;
+    }
+}
+
+@media screen and (max-width: 1270px) {
+    .displayNoneCompFlex {
+        flex-direction: column;
+    }
+    .divBlock {
+        flex-wrap: nowrap;
+    }
+    .greenButSend {
+        margin: 100px auto 100px;
+    }
+    .input2 {
+        width: 400px;
+    }
+    .h2_2 {
+        width: 635px;
+        margin-bottom: 20px;
+    }
+    .div1Cont2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .divInput1 {
+        width: 305px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .fontCont {
+        margin: 20px 0;
+        color: white;
+        font: normal normal 300 22px/48px Gilroy Light, sans-serif;
+    }
+    .p_1City {
+        margin-bottom: 0;
+    }
+    .divBlock {
+        margin-top: -50px;
+        background-color: #1E2227;
+        padding: 30px 20px 100px;
+    }
+    .displayNoneMob {
+        display: block;
+    }
+    .displayNoneComp {
+        display: none;
+    }
+    .divMain {
+        background-color: #1E2227;
+        padding: 0 20px;
+    }
+    .imageThanks{
+        display: none;
+    }
+    .thanksTitle2{
+        width: 200px;
+        height: 93px;
+        text-align: left;
+        font: normal normal 300 36px/82px Gilroy Light, sans-serif;
+        letter-spacing: 0;
+        color: #FFFFFF;
+    }
+    .h2_1{
+        width: 330px;
+        height: 40px;
+        text-align: left;
+        font: normal normal 300 22px/70px Gilroy Light, sans-serif;
+    }
+    .h2_2{
+        width: 335px;
+        height: 80px;
+        margin-bottom: 20px;
+        font: normal normal 300 18px/22px Gilroy Light, sans-serif;
+    }
+    .p_1{
+        font: normal normal 300 30px/44px Gilroy Light, sans-serif;
+    }
+    .p_1_2{
+        margin-bottom: 30px;
+    }
+    .greenButSend{
+        font: normal normal normal 14px/19px Gilroy Light, sans-serif;
+        margin: 0 auto 80px;
+        width: 335px;
+        height: 60px;
+    }
+    .textArea{
+        width: 335px;
+        height: 120px;
+        font-size: 15px;
+    }
+    .circle {
+        margin: 38px 10px 0 0;
+    }
+    .p_1City{
+        margin-bottom: 0;
+    }
+    .div1Cont{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+    .inputUser {
+        height: 35px;
+        font-size: 15px;
+    }
+    .input1{
+        width: 335px;
+        background-color: #1E2227;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .p_1City {
+        width: 271px;
+    }
+}
