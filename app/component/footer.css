@@ -70,6 +70,7 @@
     background-color: #1e2227;
     display: flex;
     flex-direction: column;
+    font-family: Gilroy Medium, sans-serif;
 }
 
 .divBoxImage {

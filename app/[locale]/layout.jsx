@@ -35,6 +35,12 @@ export default async function RootLayout(props) {
     {/*<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>*/}
     <NextIntlClientProvider locale={props?.params.locale} messages={messages}>
       <Provider store={store}>
+        <head>
+          <title>Автомийка самообслуговування SamWash</title>
+          <meta name="description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>
+          <meta property="og:title" content='Автомийка самообслуговування SamWash'/>
+          <meta property="og:description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>
+        </head>
       <body>
       <TheHeader />
       <main>

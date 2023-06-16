@@ -3,19 +3,19 @@
 
 
 @font-face {
-    font-family: Gilroy Medium;
+    font-family: 'Gilroy Medium';
     src: url('gilroy-medium-webfont.woff2') format('woff2'),
          url('gilroy-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Gilroy Light;;
-    src: url('gilroy-light-webfont.woff2') format('woff2'),
-    url('gilroy-light-webfont.woff') format('woff');
+    font-family: 'Gilroy Light';
+    src: url('Gilroy-Light.woff') format('woff2'),
+    url('Gilroy-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }

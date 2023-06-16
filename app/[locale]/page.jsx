@@ -11,7 +11,7 @@ export default function Home() {
     const meneger = useSelector((state) => state.thanks.meneger)
     const checked = useSelector((state) => state.thanks.checked)
 
-    console.log(meneger, checked)
+    // console.log(meneger, checked)
 
   return (
     <div>

@@ -1,0 +1,183 @@
+@import url('../../../fonts/stylesheet.css');
+
+.divBlock{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding-top: 100px;
+}
+
+.imageThanks{
+    position: absolute;
+    opacity: 0.01;
+    z-index: -1;
+    width: 84%;
+}
+
+.breadcrumbs{
+    font-size: 14px;
+    font-family: Gilroy Medium, sans-serif;
+    z-index: 2;
+    margin: -40px 130px 60px 130px;
+}
+
+.divP{
+    margin-left: 140px;
+}
+
+.breads{
+    cursor: pointer;
+    color: rgb(125, 125, 128);
+}
+
+.breads2{
+    color: white;
+}
+
+.boxDiv{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 130px 90px 130px;
+    z-index: 2;
+    position: relative;
+    top: 50px;
+}
+
+.divTit{
+    width: 525px;
+    height: 173px;
+}
+
+.thanksTitle{
+    width: 591px;
+    height: 173px;
+    text-align: left;
+    font: normal normal 300 72px/82px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #FFFFFF;
+}
+
+.thanksP{
+    width: 445px;
+    height: 100px;
+    text-align: left;
+    font: normal normal 300 18px/28px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #B2B1B7;
+}
+
+.butThanks{
+    width: 283px;
+    height: 60px;
+    background: #42DF4C 0 0 no-repeat padding-box;
+    border-radius: 30px;
+    font: normal normal normal 20px/19px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 120px 0 0 130px;
+    color: white;
+}
+
+
+
+@media screen and (max-width: 1400px) {
+    .boxDiv {
+        margin: 0 80px 90px 100px;
+    }
+    .divP{
+        margin-left: 100px;
+    }
+    .butThanks{
+        margin: 120px 0 0 100px;
+    }
+    .breadcrumbs{
+        margin: -40px 130px 20px 100px;
+    }
+}
+
+@media screen and (max-width: 1270px) {
+    .boxDiv {
+        margin: 0 100px 70px 100px;
+    }
+    .divBlock{
+        flex-wrap: nowrap;
+    }
+    .divTit {
+        width: 420px;
+    }
+    .thanksTitle {
+        width: 525px;
+        font: normal normal 300 60px/82px Gilroy Light, sans-serif;
+    }
+    .divP{
+        margin-left: 50px;
+        margin-top: 15px;
+    }
+    .thanksP {
+        width: 350px;
+        height: 70px;
+        font: normal normal 300 16px/20px Gilroy Light, sans-serif;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .boxDiv {
+        flex-direction: column;
+        margin: 0 100px 70px 100px;
+    }
+    .divP{
+        margin-left: 0;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .divBlock {
+        padding-top: 0;
+        margin-top: -50px;
+        background-color: #1E2227;
+    }
+    .breadcrumbs{
+        margin: 70px 130px 20px 100px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .breadcrumbs{
+        margin: 0 130px 20px 20px;
+    }
+    .boxDiv {
+        margin: 0 0 70px 20px;
+    }
+    .divBlock{
+        padding-top: 60px;
+        margin-top: -30px;
+    }
+    .breadcrumbs2{
+        margin: 40px 0 30px 0;
+    }
+    .divTit {
+        width: 365px;
+    }
+    .thanksTitle {
+        width: 365px;
+        font: normal normal 300 45px/55px Gilroy Light, sans-serif;
+    }
+    .divP{
+        margin: 0;
+    }
+    .thanksP {
+        width: 320px;
+        height: 70px;
+        font: normal normal 300 16px/20px Gilroy Light, sans-serif;
+    }
+    .butThanks{
+        margin: 100px 0 0 20px;
+        width: 255px;
+        height: 50px;
+        font: normal normal normal 18px/19px Gilroy Light, sans-serif;
+    }
+}

@@ -2,11 +2,10 @@
 
 import {useLocale, useTranslations} from "next-intl";
 import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {fetchUserZam} from "../../../API/mail";
 import emailjs from "@emailjs/browser";
 import {addChecked, addMeneger} from "../../../store/thanks-reduser";
-import {onBlur, onBlur2} from "../../../common/verification";
 import Link from "next/link";
 import s from "./contacts.module.css"
 import Image from 'next/image';
@@ -198,7 +197,7 @@ export default function Contacts() {
             {/*    </Helmet>*/}
             {/*</HelmetProvider>*/}
 
-            {!screen && <Image src={background} className={s.imageThanks} alt="lable" />}
+            <Image src={background} className={s.imageThanks} alt="lable" />
             <div className={s.divMain}>
                 <div className={s.breadcrumbs}>
                     <Link className={s.breads} href="/">{t(`home`)}</Link>
@@ -273,7 +272,7 @@ export default function Contacts() {
                                         <p className={`${s.circle} ${s.red}`}></p>
                                         <span className={s.fontCont} style={{ color: '#B2B1B7'}}>{t("question")}</span>
                                     </div>
-                                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                                    <div style={{display: 'flex', justifyContent: 'center', width: '330px'}}>
                                         <a href="viber://chat?number=%2B380505923772" target='_blank'>
                                             <Image src={viber} alt="viber" width={30} height={30} style={{margin: '0 20px 20px'}} /></a>
                                         <a href="https://t.me/dstevark" target='_blank'>
