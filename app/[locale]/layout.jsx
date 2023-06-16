@@ -4,6 +4,8 @@ import './globals.css'
 import {NextIntlClientProvider} from 'next-intl';
 import {TheFooter} from "../component/footer";
 import {TheHeader} from "../component/header";
+import {Provider} from "react-redux";
+import { wrapper, store } from "../../store/store"
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -28,6 +30,7 @@ export default async function RootLayout(props) {
   return (
     <html lang={props?.params.locale}>
     <NextIntlClientProvider locale={props?.params.locale} messages={messages}>
+      <Provider store={store}>
       <body>
       <TheHeader />
       <main>
@@ -35,6 +38,7 @@ export default async function RootLayout(props) {
       </main>
       <TheFooter />
       </body>
+      </Provider>
     </NextIntlClientProvider>
     </html>
   )
