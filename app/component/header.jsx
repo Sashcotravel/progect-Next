@@ -16,11 +16,11 @@ const TheHeader = () => {
     const locale = useLocale();
     const [color, setColor] = useState(false)
     const [currentUrl, setCurrentUrl] = useState('/')
+    const [screen, setScreen] = useState(false)
     const [windows2, setWindows2] = useState({
         listWash: false, main: false, obl: false, cover: false,
         calc: false, poroh: false, blog: false, cont: false
     })
-    let screen
 
     const changeColor = () => {
         if(window.scrollY >= 30) {setColor(true)}
@@ -71,7 +71,9 @@ const TheHeader = () => {
             }
         });
         window.addEventListener('scroll', changeColor)
-        screen = window.screen.width < 900
+        if(window.screen.width < 900){
+            setScreen(true)
+        } else { setScreen(false) }
     }, [])
 
     const scroll = () => {window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
@@ -162,7 +164,7 @@ const TheHeader = () => {
 
     return <>
         <header className='displayNoneComp'>
-            <div className={color ? "root header-bg" : "root"} style={screen < 900 ? bot : undefined}>
+            <div className={color ? "root header-bg" : "root"} style={screen ? bot : undefined}>
                 <div className='logoDiv' onClick={() => scroll()}>
                     <Link href="/" style={{position: 'relative', left: '60px'}}>
                         <Image priority className="logo" src={image5} alt='logo' />
