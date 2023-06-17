@@ -1,3 +1,5 @@
+@import url('../../fonts/stylesheet.css');
+
 .socP{
     margin: 20px 0;
     color: white;
@@ -52,6 +54,7 @@
     color: white;
     font: normal normal bold 50px/48px Gilroy bold, sans-serif;
 }
+
 .footerDiv3{
     display: flex;
     flex-wrap: wrap;
@@ -61,6 +64,7 @@
     position: relative;
     margin-bottom: 100px;
 }
+
 .footerHiden{
     display: none;
 }
@@ -100,6 +104,12 @@
 }
 
 
+@media screen and (max-width: 1305px) {
+    .footerSpan {
+        font: normal normal bold 35px/48px Gilroy bold, sans-serif;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .socP{
         margin: 0 0 20px 0;
@@ -135,6 +145,23 @@
     .mobCircle{
         margin-top: 19px;
     }
+    .footerDiv3 {
+        top: 0;
+        min-height: 310px;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .footerSpan {
+        font-size: 36px;
+    }
+    .circle {
+        margin: 38px 10px 0 0;
+    }
+    .mobCircle{
+        margin-top: 19px;
+    }
 }
 
 
@@ -143,7 +170,29 @@
         display: flex;
         flex-direction: column;
     }
-    .footerHiden{
-        display: block;
+    /*.footerHiden{*/
+    /*    display: block;*/
+    /*}*/
+    .footerDiv {
+        position: relative;
+        top: 35px;
+        padding-top: 0;
+    }
+    .footerDiv3 {
+        top: 0;
+        min-height: 310px;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .footerSpan {
+        font: normal normal bold 26px/26px Gilroy Light, sans-seriа;
+    }
+    .mobCircle{
+        margin-top: 19px;
+    }
+    .fontQ{
+        font-size: 22px;
     }
 }

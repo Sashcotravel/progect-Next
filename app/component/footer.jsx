@@ -9,12 +9,11 @@ import telegram from "../../logo/webp/telegram.webp";
 import viber from "../../logo/webp/viber.webp";
 import Image from 'next/image';
 import './footer.css'
-import {useLocale, useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
 
 const TheFooter = () => {
 
     const t = useTranslations();
-    const locale = useLocale();
 
     return <footer className='footerDiv'>
         <div className='footerUnHiden'>

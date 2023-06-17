@@ -8,13 +8,14 @@ import Image from 'next/image';
 import image5 from "../../svg/samwash_logo_vector-01.svg";
 import image1 from "../../svg/BurgerMenuIcon.svg";
 import image2 from "../../svg/icons8-phone-50.png";
+import { usePathname } from 'next/navigation'
 
 const TheHeader = () => {
 
     const t = useTranslations();
     const locale = useLocale();
+    const router = usePathname()
     const [color, setColor] = useState(false)
-    const [currentUrl, setCurrentUrl] = useState('/')
     const [screen, setScreen] = useState(false)
     const [windows2, setWindows2] = useState({
         listWash: false, main: false, obl: false, cover: false,
@@ -130,36 +131,9 @@ const TheHeader = () => {
         borderBottom: "1px solid whitesmoke"
     };
 
-    const LanguageSwitcher2 = () => {
-
-        const onCl = () => {
-            document.getElementById('off').style.height = '90px'
-            if (locale !== 'ua') document.getElementById('ua1').style.display = 'block'
-            if (locale !== 'ru')  document.getElementById('ru1').style.display = 'block'
-            if (locale !== 'en') document.getElementById('en1').style.display = 'block'
-        }
-
-        const close = () => {
-            document.getElementById('off').style.height = '35px'
-            if (locale !== 'ua') document.getElementById('ua1').style.display = 'none'
-            if (locale !== 'ru') document.getElementById('ru1').style.display = 'none'
-            if (locale !== 'en')  document.getElementById('en1').style.display = 'none'
-        }
-
-        return (
-            <div className='ranslateDiv'>
-                <button className='trBut2 displayNoneMob' onClick={onCl} id='off' onBlur={close}>
-                 <span className='s.pLang s.pLangSpan' onClick={onCl} id='land'>{locale.toUpperCase()}</span>
-                    {locale === 'ua' ? '' : <Link href='/' locale="ua" className='pLang hovP pHov' id='ua1' title="ua">UA</Link>}
-                    {locale === 'en' ? '' :
-                        <Link href='/' locale="ua" className={`pLang hovP ${locale === 'ru' ? '' : 'pHov'}`} id='en1' title="en">EN</Link>}
-                    {locale === 'ru' ? '' : <Link href='/' locale="ua" className='pLang hovP' id='ru1' title="ru">RU</Link>}
-                </button>
-            </div>
-        )
+    const rou = () => {
+        console.log(router)
     }
-
-
 
     return <>
         <header className='displayNoneComp'>
@@ -187,10 +161,13 @@ const TheHeader = () => {
                             <button className='trBut displayNoneComp'>
                             <span className='pLang pLangSpan'>{locale.toUpperCase()}</span>
                                 {locale === 'ua' ? '' :
-                                    <Link href={`/${currentUrl}`} locale="ua" className='pLang hovP pHov'>UA</Link> }
+                                    <Link href={`/${router.slice(1, 3) === 'en' || router.slice(1, 3) === 'ru' ? router.slice(3) : ''}`}
+                                          locale="ua" className='pLang hovP pHov'>UA</Link> }
                                 {locale === 'en' ? '' :
-                                    <Link href={`/${currentUrl}`} locale="en" className={`pLang hovP ${locale === 'ru' ? '' : 'pHov'}`}>EN</Link> }
-                                {locale === 'ru' ? '' : <Link href={`/${currentUrl}`} locale="ru" className='pLang hovP'>RU</Link> }
+                                    <Link href={`/${router.slice(1, 3) === 'ru' ? router.slice(3) : router}`} locale="en"
+                                          className={`pLang hovP ${locale === 'ru' ? '' : 'pHov'}`}>EN</Link> }
+                                {locale === 'ru' ? '' : <Link href={`/${router.slice(1, 3) === 'en' ? router.slice(3) : router}`}
+                                                              locale="ru" className='pLang hovP'>RU</Link> }
                             </button>
                         </div>
                     </div>
@@ -211,11 +188,25 @@ const TheHeader = () => {
                 <div className="manDiv">
                     <div className="man2Div">
                         <div className="telDiv">
-                  <span><a className="nomer" href="tel:+380505923772">
-                    <Image priority id='telephone' className='imgClass' src={image2} alt='telephone'/></a></span>
+                            <span><a className="nomer" href="tel:+380505923772">
+                            <Image priority id='telephone' className='imgClass' src={image2} alt='telephone'/></a></span>
                         </div>
-                        <div className='displayNoneMob'>
-                            <LanguageSwitcher2 />
+                        <div>
+                            <div className='ranslateDiv'>
+                                <button className='trBut2'>
+                                    <span className='pLang pLangSpan' id='land'>{locale.toUpperCase()}</span>
+                                    {locale === 'ua' ? '' : <Link
+                                        href={`/${router.slice(1, 3) === 'en' || router.slice(1, 3) === 'ru' ? router.slice(3) : ''}`}
+                                                                  locale="ua" className='pLang hovP pHov'>UA</Link>}
+                                    {locale === 'en' ? '' :
+                                        <Link
+                                            href={`/${router.slice(1, 3) === 'ru' ? router.slice(3) : router}`} locale="en"
+                                              className={`pLang hovP ${locale === 'ru' ? '' : 'pHov'}`}>EN</Link>}
+                                    {locale === 'ru' ? '' : <Link
+                                        href={`/${router.slice(1, 3) === 'en' ? router.slice(3) : router}`}
+                                                                  locale="ru" className='pLang hovP'>RU</Link>}
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div className="humManu" id="menu__toggle">

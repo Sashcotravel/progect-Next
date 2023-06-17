@@ -25,14 +25,11 @@ export default function Contacts() {
         name: "", phone: "", email: "", post: ""});
     const [formPass, setFormPass] = useState({
         phone: false, email: false });
-    const [screen, setScreen] = useState(false)
     const dispatch = useDispatch();
 
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        if(window.screen.width < 900){ setScreen(true) }
-        else { setScreen(false) }
     }, [])
 
     const sendPost = () => {
@@ -96,34 +93,28 @@ export default function Contacts() {
             if (e.target.value.length > 14) {}
             else if (Number(e.target.value)) {
                 setUserData((actual) => {
-                    return { ...actual, [e.target.title]: e.target.value }})
-            }
+                    return { ...actual, [e.target.title]: e.target.value }})}
             else if(e.target.value.length === 1){
                 setUserData((actual) => {
-                    return { ...actual, [e.target.title]: '+' }})
-            }
+                    return { ...actual, [e.target.title]: '+' }})}
         }
         else if (locale === 'en'){
             if (e.target.value.length > 16) {}
             else if (Number(e.target.value)) {
                 setUserData((actual) => {
-                    return { ...actual, [e.target.title]: e.target.value }})
-            }
+                    return { ...actual, [e.target.title]: e.target.value }})}
             else if(e.target.value.length === 1){
                 setUserData((actual) => {
-                    return { ...actual, [e.target.title]: '+' }})
-            }
+                    return { ...actual, [e.target.title]: '+' }})}
         }
         else if (locale === 'ru'){
             if (e.target.value.length > 14) {}
             else if (Number(e.target.value)) {
                 setUserData((actual) => {
-                    return { ...actual, [e.target.title]: e.target.value }})
-            }
+                    return { ...actual, [e.target.title]: e.target.value }})}
             else if(e.target.value.length === 1){
                 setUserData((actual) => {
-                    return { ...actual, [e.target.title]: '+' }})
-            }
+                    return { ...actual, [e.target.title]: '+' }})}
         }
 
         let phone = document.getElementById("phone");
@@ -165,19 +156,13 @@ export default function Contacts() {
     const phoneClick = () => {
         if(locale === 'ua'){
             if(userData.phone === ''){
-                setUserData((actual) => {return { ...actual, phone: '+380' }})
-            }
-        }
+                setUserData((actual) => {return { ...actual, phone: '+380' }})}}
         if(locale === 'en'){
             if(userData.phone === ''){
-                setUserData((actual) => {return { ...actual, phone: '+1' }})
-            }
-        }
+                setUserData((actual) => {return { ...actual, phone: '+1' }})}}
         if(locale === 'ru'){
             if(userData.phone === ''){
-                setUserData((actual) => {return { ...actual, phone: '+380' }})
-            }
-        }
+                setUserData((actual) => {return { ...actual, phone: '+380' }})}}
     }
 
     return (
@@ -219,7 +204,7 @@ export default function Contacts() {
                                         <p className={`${s.circle} ${s.red}`}></p>
                                         <span className={s.fontCont} style={{ color: '#B2B1B7'}}>{t("question")}</span>
                                     </div>
-                                    <div style={{display: 'flex', justifyContent: 'center', width: '81%'}}>
+                                    <div style={{display: 'flex', justifyContent: 'center', width: '250px'}}>
                                         <a href="viber://chat?number=%2B380505923772" target='_blank'>
                                             <Image src={viber} alt="viber" width={30} height={30} style={{margin: '0 20px 20px'}} /></a>
                                         <a href="https://t.me/dstevark" target='_blank'>
