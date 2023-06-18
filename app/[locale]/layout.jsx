@@ -35,14 +35,14 @@ export default async function RootLayout(props) {
     {/*<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>*/}
     <NextIntlClientProvider locale={props?.params.locale} messages={messages}>
       <Provider store={store}>
-        <head>
-          <title>Автомийка самообслуговування SamWash</title>
-          <meta name="description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>
-          <meta property="og:title" content='Автомийка самообслуговування SamWash'/>
-          <meta property="og:description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>
-          <link rel="apple-touch-icon" href="../logo144.png" />
-          <meta property="og:image" content="../logo144.png" />
-        </head>
+        {/*<head>*/}
+        {/*  <title>Автомийка самообслуговування SamWash</title>*/}
+        {/*  <meta name="description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>*/}
+        {/*  <meta property="og:title" content='Автомийка самообслуговування SamWash'/>*/}
+        {/*  <meta property="og:description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>*/}
+        {/*  <link rel="apple-touch-icon" href="../logo144.png" />*/}
+        {/*  <meta property="og:image" content="../logo144.png" />*/}
+        {/*</head>*/}
       <body>
       <TheHeader />
       <main>
