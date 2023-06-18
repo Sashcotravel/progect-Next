@@ -154,7 +154,7 @@
 }
 
 .close{
-    background-image: url("../../svg/icons8-close.svg");
+    background-image: url("../../image/svg/icons8-close.svg");
     width: 30px;
     position: fixed;
     top: 35px;

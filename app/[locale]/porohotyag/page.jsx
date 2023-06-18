@@ -1,5 +1,6 @@
 'use client'
 
+import React from "react";
 import {useLocale, useTranslations} from "next-intl";
 import { useRouter } from 'next/navigation';
 import {useEffect, useState} from "react";
@@ -8,6 +9,10 @@ import {addChecked, addMeneger} from "../../../store/thanks-reduser";
 import {fetchUserZam} from "../../../API/mail";
 import emailjs from "@emailjs/browser";
 import s from './porohotag.module.css'
+import background from "../../../image/svg/swlogo.svg";
+import Image from "next/image";
+import Link from "next/link";
+
 
 
 let numPhone = 0
@@ -20,11 +25,19 @@ export default function Porohotag() {
     const router = useRouter()
     const [userData, setUserData] = useState({
         name: "", phone: "" });
+    const [screen, setScreen] = useState(false)
     const [formPass, setFormPass] = useState({ phone: false });
     const [load1, setLoad1] = useState(true);
     const dispatch = useDispatch();
 
-    useEffect(() => { window.scrollTo(0, 0) }, [])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        if(window.innerWidth > 900){
+            setScreen(false)
+        } else {
+            setScreen(true)
+        }
+    }, [])
 
     const blurClose = (e) => {
         if(e.target.id === "lightblue"){
@@ -196,13 +209,13 @@ export default function Porohotag() {
     // });
 
 
-    return (<>
-        <head>
-            <title>Автомийка самообслуговування SamWash</title>
-            <meta name="description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>
-            <meta property="og:title" content='Автомийка самообслуговування SamWash'/>
-            <meta property="og:description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>
-        </head>
+    return (<React.Fragment>
+        {/*<head>*/}
+        {/*    <title>{t(`porohPage.metaTitle`)}</title>*/}
+        {/*     <meta name="description" content={t(`porohPage.metaDesc`)} />*/}
+        {/*     <meta property="og:title" content={t(`porohPage.metaTitle`)} />*/}
+        {/*     <meta property="og:description" content={t(`porohPage.metaDesc`)} />*/}
+        {/*</head>*/}
         <main className={s.main}>
 
             {/*<HelmetProvider>*/}
@@ -219,108 +232,107 @@ export default function Porohotag() {
             {/*    </Helmet>*/}
             {/*</HelmetProvider>*/}
 
-            {/*<div data-loading='lazy' className={s.slideStyleBack}></div>*/}
+            <Image src={background} className={s.imageThanks} alt="lable" />
 
-            {/*<div id="lightblue" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>*/}
-            {/*    <div className={s.userdata2}>*/}
-            {/*        <div className={s.ix}>*/}
-            {/*    <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}*/}
-            {/*          onClick={hiddeItem}>&#10006;</span>*/}
-            {/*        </div>*/}
-            {/*        <p className={s.titleUser}>{t("getAnOffer")}</p>*/}
-            {/*        <br />*/}
-            {/*        <p className={s.descSpan}>{t("descCon")}</p>*/}
-            {/*        <br />*/}
-            {/*        <input className={s.inputUser} type="name" title="name"*/}
-            {/*               placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {*/}
-            {/*            setUserData((actual) => {return { ...actual, [e.target.title]: e.target.value }})}} />*/}
-            {/*        <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onClick={phoneClick}*/}
-            {/*               placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={onBlur2} />*/}
-            {/*        <br />*/}
-            {/*        <button className={s.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42df4c' }}*/}
-            {/*                onClick={useSubmit} disabled={!formPass.phone}>{t("send")}</button>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div id="lightblue" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>
+                <div className={s.userdata2}>
+                    <div className={s.ix}>
+                <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}
+                      onClick={hiddeItem}>&#10006;</span>
+                    </div>
+                    <p className={s.titleUser}>{t("getAnOffer")}</p>
+                    <br />
+                    <p className={s.descSpan}>{t("descCon")}</p>
+                    <br />
+                    <input className={s.inputUser} type="name" title="name"
+                           placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {
+                        setUserData((actual) => {return { ...actual, [e.target.title]: e.target.value }})}} />
+                    <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onClick={phoneClick}
+                           placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={onBlur2} />
+                    <br />
+                    <button className={s.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42df4c' }}
+                            onClick={useSubmit} disabled={!formPass.phone}>{t("send")}</button>
+                </div>
+            </div>
 
-            {/*<div id="lightblue2" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>*/}
-            {/*    <div className={s.userdata2}>*/}
-            {/*        <div className={s.ix}>*/}
-            {/*    <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}*/}
-            {/*          onClick={hiddeItem} id='2'>&#10006;</span>*/}
-            {/*        </div>*/}
-            {/*        <p className={s.titleUser}>{t("porohotyagZam2")}</p>*/}
-            {/*        <br />*/}
-            {/*        <p className={s.descSpan}>{t("descCon")}</p>*/}
-            {/*        <br />*/}
-            {/*        <input className={s.inputUser} type="name" title="name"*/}
-            {/*               placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {*/}
-            {/*            setUserData((actual) => {return { ...actual, [e.target.title]: e.target.value }})}} />*/}
-            {/*        <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onClick={phoneClick}*/}
-            {/*               placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={onBlur2} />*/}
-            {/*        <br />*/}
-            {/*        <button className={s.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42df4c' }}*/}
-            {/*                onClick={useSubmit} disabled={!formPass.phone} id='2'>{t("send")}</button>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div id="lightblue2" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>
+                <div className={s.userdata2}>
+                    <div className={s.ix}>
+                <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}
+                      onClick={hiddeItem} id='2'>&#10006;</span>
+                    </div>
+                    <p className={s.titleUser}>{t("porohotyagZam2")}</p>
+                    <br />
+                    <p className={s.descSpan}>{t("descCon")}</p>
+                    <br />
+                    <input className={s.inputUser} type="name" title="name"
+                           placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {
+                        setUserData((actual) => {return { ...actual, [e.target.title]: e.target.value }})}} />
+                    <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onClick={phoneClick}
+                           placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={onBlur2} />
+                    <br />
+                    <button className={s.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42df4c' }}
+                            onClick={useSubmit} disabled={!formPass.phone} id='2'>{t("send")}</button>
+                </div>
+            </div>
 
 
-            {/*<div className={s.mainDiv}>*/}
+            <div className={s.mainDiv}>
 
-            {/*    <div className={s.breadcrumbs}>*/}
-            {/*        <a className={s.breads} href="/" style={{ color: "#7d7d80" }}>{t("home")}</a>*/}
-            {/*        <span className={s.breads}> / {t(`porohotyag`)}</span>*/}
-            {/*    </div>*/}
+                <div className={s.breadcrumbs}>
+                    <Link className={s.breads} href="/">{t(`home`)}</Link>
+                    <span className={s.breads2}> / {t(`porohotyag`)}</span>
+                </div>
 
-            {/*    <h1 className={s.h1}>{t(`porohotyagH1`)}</h1>*/}
+                <h1 className={s.h1}>{t(`porohotyagH1`)}</h1>
 
-            {/*    <p className={s.p2_1}>{t(`porohPage.tit2`)}</p>*/}
+                <p className={s.p2_1}>{t(`porohPage.tit2`)}</p>
 
-            {/*    <h2  className={s.p2_1+' '+s.font}>{t(`porohPage.tit3`)}</h2>*/}
-            {/*    <ul className={s.p2_1}>*/}
-            {/*        <li style={{listStyleType: 'none'}}>+ Paypass Ingenico 850 €</li>*/}
-            {/*        <li style={{listStyleType: 'none'}}>+ {t(`porohPage.moneyPr`)} 350 €</li>*/}
-            {/*        <li style={{listStyleType: 'none'}}>+ {t(`porohPage.monPr`)} 350 €</li>*/}
-            {/*        <li style={{listStyleType: 'none'}}>+ {t(`porohPage.scanPr`)} 300 €</li>*/}
-            {/*    </ul>*/}
+                <h2  className={s.p2_1+' '+s.font}>{t(`porohPage.tit3`)}</h2>
+                <ul className={s.p2_1}>
+                    <li style={{listStyleType: 'none'}}>+ Paypass Ingenico 850 €</li>
+                    <li style={{listStyleType: 'none'}}>+ {t(`porohPage.moneyPr`)} 350 €</li>
+                    <li style={{listStyleType: 'none'}}>+ {t(`porohPage.monPr`)} 350 €</li>
+                    <li style={{listStyleType: 'none'}}>+ {t(`porohPage.scanPr`)} 300 €</li>
+                </ul>
 
-            {/*    <p className={s.p2_1}>{t(`porohPage.opis`)}</p>*/}
-            {/*    <ul className={s.p3_1}>*/}
-            {/*        <li>{t(`porohPage.li1`)}</li>*/}
-            {/*        <li>{t(`porohPage.li2`)}</li>*/}
-            {/*        <li>{t(`porohPage.li3`)}</li>*/}
-            {/*        <li>{t(`porohPage.li4`)}</li>*/}
-            {/*        <li>{t(`porohPage.li5`)}</li>*/}
-            {/*    </ul>*/}
+                <p className={s.p2_1}>{t(`porohPage.opis`)}</p>
+                <ul className={s.p3_1}>
+                    <li>{t(`porohPage.li1`)}</li>
+                    <li>{t(`porohPage.li2`)}</li>
+                    <li>{t(`porohPage.li3`)}</li>
+                    <li>{t(`porohPage.li4`)}</li>
+                    <li>{t(`porohPage.li5`)}</li>
+                </ul>
 
-            {/*    <div className={s.button2} style={{gridRowEnd: '5'}} onClick={greenBut} id='2'>{t(`porohotyagZam`)}</div>*/}
+                <div className={s.button2} style={{gridRowEnd: '5'}} onClick={greenBut} id='2'>{t(`porohotyagZam`)}</div>
 
-            {/*    <div className={s.divImage2+' '+s.divImage2Plus+' '+s.leftPrise3} >*/}
-            {/*        {*/}
-            {/*            load1 ? <img src={screen ? require('../../uploads/img/svg/Screenshot_Poroh.webp')*/}
-            {/*                    : require('../../uploads/img/svg/Screenshot_PorohMin.webp')}*/}
-            {/*                         onClick={() => setLoad1(false)} alt="youtube" loading='lazy' className={s.imageInBox2}  />*/}
-            {/*                :*/}
-            {/*                <iframe src="https://www.youtube.com/embed/OJv67JG7QRo?autoplay=1"*/}
-            {/*                        title="Програма піна високий тиск" className={s.imageInBox2} loading="lazy"  />*/}
-            {/*        }*/}
-            {/*        /!*<iframe src="https://www.youtube.com/embed/OJv67JG7QRo"*!/*/}
-            {/*    </div>*/}
+                <div className={s.divImage2+' '+s.divImage2Plus+' '+s.leftPrise3} >
+                    {
+                        load1 ? <Image src={screen ? require('../../../image/svg/Screenshot_Poroh.webp')
+                                : require('../../../image/svg/Screenshot_PorohMin.webp')}
+                                     onClick={() => setLoad1(false)} alt="youtube" loading='lazy' className={s.imageInBox2}  />
+                            : <iframe src="https://www.youtube.com/embed/OJv67JG7QRo?autoplay=1"
+                                    title="Програма піна високий тиск" className={s.imageInBox2} loading="lazy"  />
+                    }
+                    {/*<iframe src="https://www.youtube.com/embed/OJv67JG7QRo"*/}
+                </div>
 
-            {/*    <p className={s.p3} style={{paddingRight: '15px'}}>{t(`porohPage.opis2`)}</p>*/}
+                <p className={s.p3} style={{paddingRight: '15px'}}>{t(`porohPage.opis2`)}</p>
 
-            {/*    <p className={s.p4}>{t(`porohPage.opis3`)}</p>*/}
+                <p className={s.p4}>{t(`porohPage.opis3`)}</p>
 
-            {/*    <div style={{margin: '50px 0 50px 0', gridColumnStart: '2'}} className={s.divImage2}>*/}
-            {/*        <a data-fancybox="gallery" href={require('../../uploads/img/nacr/poroh4.jpg')}>*/}
-            {/*            <picture>*/}
-            {/*                {!screen && <source srcSet={require('../../uploads/img/nacr/poroh4Min.jpg')} type="image/jpeg" />}*/}
-            {/*                {screen && <source srcSet={require('../../uploads/img/nacr/poroh4.webp')} type="image/jpeg" />}*/}
-            {/*                <source srcSet={require('../../uploads/img/nacr/poroh4.webp')} />*/}
-            {/*                <img style={{objectFit: 'none'}} className={s.imageInBox2} loading='lazy'*/}
-            {/*                     src={require('../../uploads/img/nacr/poroh4.webp')} alt="photo" />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*    </div>*/}
+                <div style={{margin: '50px 0 50px 0', gridColumnStart: '2'}} className={s.divImage2}>
+                    <a data-fancybox="gallery" href={require('../../../image/nacr/poroh4.jpg')}>
+                        <picture>
+                            {!screen && <source srcSet={require('../../../image/nacr/poroh4Min.jpg')} type="image/png" />}
+                            {screen && <source srcSet={require('../../../image/nacr/poroh4.webp')} type="image/jpeg" />}
+                            <source srcSet={require('../../../image/nacr/poroh4.webp')} />
+                            <Image style={{objectFit: 'none'}} className={s.imageInBox2} loading='lazy'
+                                 src={require('../../../image/nacr/poroh4.webp')} alt="photo" />
+                        </picture>
+                    </a>
+                </div>
 
             {/*    <p className={s.p3} style={{paddingRight: '15px'}}>{t(`porohPage.opis4`)}</p>*/}
 
@@ -375,8 +387,8 @@ export default function Porohotag() {
             {/*        </button>*/}
             {/*    </div>*/}
 
-            {/*</div>*/}
+            </div>
 
         </main>
-    </> )
+    </React.Fragment> )
 }

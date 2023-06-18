@@ -9,10 +9,10 @@ import {addChecked, addMeneger} from "../../../store/thanks-reduser";
 import Link from "next/link";
 import s from "./contacts.module.css"
 import Image from 'next/image';
-import background from "../../../svg/swlogo.svg";
-import whatsapp from "../../../logo/webp/whatsapp.webp";
-import telegram from "../../../logo/webp/telegram.webp";
-import viber from "../../../logo/webp/viber.webp";
+import background from "../../../image/svg/swlogo.svg";
+import whatsapp from "../../../image/logo/webp/whatsapp.webp";
+import telegram from "../../../image/logo/webp/telegram.webp";
+import viber from "../../../image/logo/webp/viber.webp";
 
 let numPhone = 0
 let numEmail = 0

@@ -5,9 +5,9 @@ import {useLocale, useTranslations} from 'next-intl';
 import './header.css'
 import {useEffect, useState} from "react";
 import Image from 'next/image';
-import image5 from "../../svg/samwash_logo_vector-01.svg";
-import image1 from "../../svg/BurgerMenuIcon.svg";
-import image2 from "../../svg/icons8-phone-50.png";
+import image5 from "../../image/svg/samwash_logo_vector-01.svg";
+import image1 from "../../image/svg/BurgerMenuIcon.svg";
+import image2 from "../../image/svg/icons8-phone-50.png";
 import { usePathname } from 'next/navigation'
 
 const TheHeader = () => {
@@ -29,42 +29,50 @@ const TheHeader = () => {
 
     useEffect(() => {
         window.addEventListener('click', function () {
-            if(window.location.pathname === '/'){
+            if(window.location.pathname === '/' ||
+                window.location.pathname === `/${locale}`){
                 setWindows2((actual) => { return { ...actual, main: true,
                     listWash: false, obl: false, cover: false,
                     calc: false, poroh: false, blog: false, cont: false} })
             }
-            if(window.location.pathname === '/all-car-wash'){
+            if(window.location.pathname === '/all-car-wash' ||
+                window.location.pathname === `/${locale}/all-car-wash`){
                 setWindows2((actual) => { return { ...actual, listWash: true,
                     main: false, obl: false, cover: false,
                     calc: false, poroh: false, blog: false, cont: false} })
             }
-            if(window.location.pathname === '/equipment'){
+            if(window.location.pathname === '/equipment' ||
+                window.location.pathname === `/${locale}/equipment`){
                 setWindows2((actual) => { return { ...actual, obl: true,
                     listWash: false, main: false, cover: false,
                     calc: false, poroh: false, blog: false, cont: false } })
             }
-            if(window.location.pathname === '/cover'){
+            if(window.location.pathname === '/cover' ||
+                window.location.pathname === `/${locale}/cover`){
                 setWindows2((actual) => { return { ...actual, cover: true,
                     listWash: false, main: false, obl: false, calc: false,
                     poroh: false, blog: false, cont: false } })
             }
-            if(window.location.pathname === '/obladnannya'){
+            if(window.location.pathname === '/obladnannya' ||
+                window.location.pathname === `/${locale}/obladnannya`){
                 setWindows2((actual) => { return { ...actual, calc: true,
                     listWash: false, main: false, obl: false, cover: false,
                     poroh: false, blog: false, cont: false } })
             }
-            if(window.location.pathname === '/porohotyag'){
+            if(window.location.pathname === '/porohotyag' ||
+                window.location.pathname === `/${locale}/porohotyag`){
                 setWindows2((actual) => { return { ...actual, poroh: true,
                     listWash: false, main: false, obl: false, cover: false,
                     calc: false, blog: false, cont: false } })
             }
-            if(window.location.pathname === '/blog'){
+            if(window.location.pathname === '/blog' ||
+                window.location.pathname === `/${locale}/blog`){
                 setWindows2((actual) => { return { ...actual, blog: true,
                     listWash: false, main: false, obl: false, cover: false,
                     calc: false, poroh: false, cont: false } })
             }
-            if(window.location.pathname === '/contacts'){
+            if(window.location.pathname === '/contacts' ||
+                window.location.pathname === `/${locale}/contacts`){
                 setWindows2((actual) => { return { ...actual, cont: true,
                     listWash: false, main: false, obl: false, cover: false,
                     calc: false, poroh: false, blog: false } })
@@ -131,9 +139,6 @@ const TheHeader = () => {
         borderBottom: "1px solid whitesmoke"
     };
 
-    const rou = () => {
-        console.log(router)
-    }
 
     return <>
         <header className='displayNoneComp'>

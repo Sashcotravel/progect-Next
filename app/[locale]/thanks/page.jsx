@@ -4,7 +4,7 @@ import {useTranslations} from "next-intl";
 import s from "./thanks.module.css"
 import Link from "next/link";
 import Image from 'next/image';
-import background from "../../../svg/swlogo.svg";
+import background from "../../../image/svg/swlogo.svg";
 import {useSelector} from "react-redux";
 
 export default function Thanks() {

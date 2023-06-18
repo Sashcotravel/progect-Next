@@ -1,12 +1,12 @@
 'use client'
 
-import facabook from "../../svg/facebook.png";
-import instagram from "../../svg/instagram.png";
-import youtube from "../../svg/youtube.png";
-import tiktok from "../../svg/tik-tok.png";
-import whatsapp from "../../logo/webp/whatsapp.webp";
-import telegram from "../../logo/webp/telegram.webp";
-import viber from "../../logo/webp/viber.webp";
+import facabook from "../../image/svg/facebook.png";
+import instagram from "../../image/svg/instagram.png";
+import youtube from "../../image/svg/youtube.png";
+import tiktok from "../../image/svg/tik-tok.png";
+import whatsapp from "../../image/logo/webp/whatsapp.webp";
+import telegram from "../../image/logo/webp/telegram.webp";
+import viber from "../../image/logo/webp/viber.webp";
 import Image from 'next/image';
 import './footer.css'
 import { useTranslations } from "next-intl";
@@ -71,40 +71,40 @@ const TheFooter = () => {
             </div>
             <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center'}}>
                 <picture>
-                    <Image src={require("../../logo/webp/logo23.webp")} className="imgLogo" loading="lazy" alt="photo" />
+                    <Image src={require("../../image/logo/webp/logo23.webp")} className="imgLogo" loading="lazy" alt="photo" />
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/maker2.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/maker2.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/maker1.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/maker1.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/maker.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/maker.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/maxus-logo.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/maxus-logo.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/intel600.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/intel600.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/pilkington-min.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/pilkington-min.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/microsoft.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/microsoft.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/xCiaOfER_400x400.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/xCiaOfER_400x400.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/1.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/1.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/2.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/2.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
                 <picture>
-                    <Image src={require("../../logo/webp/3.webp")} className='imgLogo' loading='lazy' alt="photo"/>
+                    <Image src={require("../../image/logo/webp/3.webp")} className='imgLogo' loading='lazy' alt="photo"/>
                 </picture>
             </div>
         </div>
