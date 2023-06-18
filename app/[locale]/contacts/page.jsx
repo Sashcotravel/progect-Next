@@ -165,8 +165,16 @@ export default function Contacts() {
                 setUserData((actual) => {return { ...actual, phone: '+380' }})}}
     }
 
-    return (
-        <div className={s.divBlock}>
+    return (<>
+        <head>
+            <title>{t("contactTit")}</title>
+            <meta name="description" content={t("contacDesc")} />
+            <meta property="og:title" content={t("contactTit")} />
+            <meta property="og:description" content={t("contacDesc")} />
+            <link rel="canonical" href={locale === 'en' ? "https://samwash.ua/en/contacts" : locale === 'ru' ? "https://samwash.ua/ru/contacts" : "https://samwash.ua/contacts"} />
+        </head>
+
+        <main className={s.divBlock}>
 
             {/*<HelmetProvider>*/}
             {/*    <Helmet>*/}
@@ -303,6 +311,6 @@ export default function Contacts() {
                 </div>
             </div>
 
-        </div>
-    )
+        </main>
+    </>)
 }
