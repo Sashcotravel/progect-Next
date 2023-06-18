@@ -1,6 +1,6 @@
 'use client'
 
-import React from "react";
+import React, {useLayoutEffect} from "react";
 import {useLocale, useTranslations} from "next-intl";
 import { useRouter } from 'next/navigation';
 import {useEffect, useState} from "react";
@@ -10,8 +10,12 @@ import {fetchUserZam} from "../../../API/mail";
 import emailjs from "@emailjs/browser";
 import s from './porohotag.module.css'
 import background from "../../../image/svg/swlogo.svg";
+import poroh4 from '../../../image/nacr/poroh4.jpg';
+import poroh4Webp from '../../../image/nacr/poroh4.webp';
 import Image from "next/image";
 import Link from "next/link";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 
 
@@ -187,11 +191,10 @@ export default function Porohotag() {
     //     // console.log(d.outerHTML);
     // }, [])
 
-
     // useLayoutEffect(() => {
-    //     fan += 1
+    //     // fan += 1
     //     setTimeout(() => {
-    //         if(fan === 1){
+    //         // if(fan === 1){
     //             function reCaptchaOnFocus() {
     //                 let head = document.getElementsByTagName("head")[0];
     //                 let script = document.createElement("link");
@@ -200,13 +203,13 @@ export default function Porohotag() {
     //                 head.appendChild(script);
     //             }
     //             reCaptchaOnFocus()
-    //         }
+    //         // }
     //     }, 6000)
     // }, [])
 
-    // Fancybox.bind('[data-fancybox="gallery"]', {
-    //     Thumbs: { Carousel: { fill: false, center: true, }, },
-    // });
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        Thumbs: { Carousel: { fill: false, center: true, }, },
+    });
 
 
     return (<React.Fragment>
@@ -323,41 +326,41 @@ export default function Porohotag() {
                 <p className={s.p4}>{t(`porohPage.opis3`)}</p>
 
                 <div style={{margin: '50px 0 50px 0', gridColumnStart: '2'}} className={s.divImage2}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/poroh4.jpg')}>
+                    <a data-fancybox="gallery" href={poroh4}>
                         <picture>
-                            {!screen && <source srcSet={require('../../../image/nacr/poroh4Min.jpg')} type="image/png" />}
-                            {screen && <source srcSet={require('../../../image/nacr/poroh4.webp')} type="image/jpeg" />}
+                            {!screen && <source srcSet={require('../../../image/nacr/poroh4Min.jpg')} type="image/jpg" />}
+                            {screen && <source srcSet={require('../../../image/nacr/poroh4.webp')} type="image/webp" />}
                             <source srcSet={require('../../../image/nacr/poroh4.webp')} />
                             <Image style={{objectFit: 'none'}} className={s.imageInBox2} loading='lazy'
-                                 src={require('../../../image/nacr/poroh4.webp')} alt="photo" />
+                                 src={poroh4Webp} alt="photo" />
                         </picture>
                     </a>
                 </div>
 
-            {/*    <p className={s.p3} style={{paddingRight: '15px'}}>{t(`porohPage.opis4`)}</p>*/}
+                <p className={s.p3} style={{paddingRight: '15px'}}>{t(`porohPage.opis4`)}</p>
 
-            {/*    <div className={s.divImage2+' '+ s.divImage21}>*/}
-            {/*        <a data-fancybox="gallery" href={require('../../uploads/img/nacr/poroh5.jpg')}>*/}
-            {/*            <picture>*/}
-            {/*                {!screen && <source srcSet={require("../../uploads/img/nacr/poroh5Min.jpg")} type="image/jpeg" />}*/}
-            {/*                {screen && <source srcSet={require("../../uploads/img/nacr/poroh5.jpg")} type="image/jpeg" />}*/}
-            {/*                <source srcSet={require('../../uploads/img/nacr/poroh5.webp')} />*/}
-            {/*                <img loading='lazy' className={s.imageInBox2} alt="photo" src={require('../../uploads/img/nacr/poroh5.webp')} />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*    </div>*/}
+                <div className={s.divImage2+' '+ s.divImage21}>
+                    <a data-fancybox="gallery" href={require('../../../image/nacr/poroh5.jpg')}>
+                        <picture>
+                            {!screen && <source srcSet={require("../../../image/nacr/poroh5Min.jpg")} type="image/jpg" />}
+                            {screen && <source srcSet={require("../../../image/nacr/poroh5.jpg")} type="image/jpg" />}
+                            <source srcSet={require('../../../image/nacr/poroh5.webp')} />
+                            <Image loading='lazy' className={s.imageInBox2} alt="photo" src={require('../../../image/nacr/poroh5.webp')} />
+                        </picture>
+                    </a>
+                </div>
 
-            {/*    <div className={s.divPoroh}>*/}
-            {/*        <h2 className={s.p5Poroh}>{t(`porohPage.recommend`)}</h2>*/}
-            {/*        <ul className={s.liPoroh}>*/}
-            {/*            <li>{t(`porohPage.recLi1`)}</li>*/}
-            {/*            <li>{t(`porohPage.recLi2`)}</li>*/}
-            {/*            <li>{t(`porohPage.recLi3`)}</li>*/}
-            {/*            <li>{t(`porohPage.recLi4`)}</li>*/}
-            {/*            <li>{t(`porohPage.recLi5`)}</li>*/}
-            {/*            <li>{t(`porohPage.recLi6`)}</li>*/}
-            {/*        </ul>*/}
-            {/*    </div>*/}
+                <div className={s.divPoroh}>
+                    <h2 className={s.p5Poroh}>{t(`porohPage.recommend`)}</h2>
+                    <ul className={s.liPoroh}>
+                        <li>{t(`porohPage.recLi1`)}</li>
+                        <li>{t(`porohPage.recLi2`)}</li>
+                        <li>{t(`porohPage.recLi3`)}</li>
+                        <li>{t(`porohPage.recLi4`)}</li>
+                        <li>{t(`porohPage.recLi5`)}</li>
+                        <li>{t(`porohPage.recLi6`)}</li>
+                    </ul>
+                </div>
 
             {/*    <div className={s.divImage}>*/}
             {/*        /!*<a data-fancybox="gallery" href={require('../../uploads/img/nacr/videoporoh.mp4')}>*!/*/}
