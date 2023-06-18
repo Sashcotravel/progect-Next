@@ -1,9 +1,9 @@
 'use client'
 
-import facabook from "../../image/svg/facebook.png";
-import instagram from "../../image/svg/instagram.png";
-import youtube from "../../image/svg/youtube.png";
-import tiktok from "../../image/svg/tik-tok.png";
+import facabook from "../../image/svg/facebook.svg";
+import instagram from "../../image/svg/instagram.svg";
+import youtube from "../../image/svg/youtube.svg";
+import tiktok from "../../image/svg/tik-tok.svg";
 import whatsapp from "../../image/logo/webp/whatsapp.webp";
 import telegram from "../../image/logo/webp/telegram.webp";
 import viber from "../../image/logo/webp/viber.webp";

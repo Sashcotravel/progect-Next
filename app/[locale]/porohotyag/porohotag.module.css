@@ -3,7 +3,7 @@
 .main{
     text-align: start;
     padding: 20px 0;
-    background: transparent linear-gradient(70deg, #1D2025 20%, #29373A 116%) -180% -198%;
+    /*background: transparent linear-gradient(70deg, #1D2025 20%, #29373A 116%) -180% -198%;*/
 }
 
 .mainDiv{
@@ -232,29 +232,504 @@
     color: #B2B1B7;
 }
 
+.divImage{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 95px;
+}
 
+.imgAndVideo{
+    width: 100%;
+    height: 90%;
+    border-radius: 25px;
+}
+
+.p5{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    margin: 100px 0 70px;
+    width: 425px;
+    color: #FFFFFF;
+    font: normal normal 300 33px/44px Gilroy Medium, sans-serif;
+}
+
+.buttonGreen{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin-bottom: 200px;
+}
+
+.greenButDiv{
+    background-color: white;
+    width: 418px;
+    border-radius: 56px;
+    height: 89px;
+}
+
+.greenBut{
+    width: 420px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #42DF4C;
+    background: linear-gradient(#42DF4C 0 0) no-repeat;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    font: normal normal 400 18px/47px Gilroy Light, sans-serif;
+    color: white;
+    line-height: 90px;
+    padding-left: 70px;
+    background-size: 100%;
+    transition: .4s;
+}
+
+.greenBut:hover{
+    color: black;
+    background-size: 0%;
+    transition: .4s;
+}
+
+.spanArrow{
+    position: relative;
+    top: 5px;
+    right: 5px;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50px;
+    z-index: 3;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.imgClass{
+    width: 30px;
+    height: 30px;
+}
+
+
+
+@media screen and (min-width: 2000px) {
+    .imageInBox {
+        width: 40%;
+        height: 520px;
+    }
+    .p4, .p3 {
+        font: normal normal 300 16px/25px Gilroy Medium, sans-serif;
+        margin-right: 0;
+        width: 400px;
+    }
+    .imageMax{
+        width: 95%;
+        height: 520px;
+    }
+    .height720{
+        width: 95%;
+        height: 720px;
+    }
+    .width525{
+        width: 525px;
+        height: 710px;
+        object-fit: scale-down;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .imageInBox {
+        width: 350px;
+        height: 420px;
+    }
+    .p4, .p3 {
+        font: normal normal 300 16px/25px Gilroy Medium, sans-serif;
+        margin-right: 0;
+        width: 400px;
+    }
+    .videoWidth {
+        width: 45%;
+    }
+    .imageInBoxObl{
+        width: 350px;
+        height: 350px;
+    }
+    .shafa{
+        height: 265px;
+    }
+
+    .pult{
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 1305px) {
+    .greenButDiv {
+        width: 360px;
+        right: -45px;
+    }
+    .greenBut {
+        width: 360px;
+        padding-left: 50px;
+        font: normal normal 400 17px/47px Gilroy Light, sans-serif;
+        padding-top: 20px;
+    }
+    .spanArrow{
+        top: -15px;
+    }
+    .main{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .divImage {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .divImage2 {
+        grid-column-start: 2;
+    }
+    .imageInBox {
+        margin-right: 10px;
+        margin-bottom: 40px;
+        width: 300px;
+        height: 350px;
+        object-fit: cover;
+    }
+    .imageInBox {
+        margin-right: 10px;
+        margin-bottom: 40px;
+        width: 300px;
+        height: 350px;
+        object-fit: cover;
+    }
+    .spanBoll{
+        margin-left: 0;
+    }
+    .imageInBoxObl{
+        width: 305px;
+        height: 250px;
+    }
+    .shafa{
+        height: 265px;
+    }
+    .pult{
+        height: 300px;
+    }
+    .videoWidth{
+        width: 45%;
+    }
+    .main{
+        margin: -20px 0 0 0
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .mainDiv{
+        padding: 0 20px;
+    }
+    .h1 {
+        grid-column-end: 3;
+        width: 490px;
+        font: normal normal 300 36px/45px Gilroy Light, sans-serif;
+    }
+    .text1{
+        margin-top: 50px;
+        width: 90%;
+        height: auto;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font: normal normal 300 22px/26px Gilroy Light, sans-serif;
+    }
+    .button{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-end: auto;
+        margin: 60px 0 0;
+    }
+    .imgObl{
+        border-radius: 0;
+        margin-left: -20px;
+        height: 390px;
+        width: 100vw;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .spanBoll{
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        margin-left: 0;
+    }
+    .divBoll {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .pBoll{
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .p2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        width: 90%;
+    }
+    .p3, .p4{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font: normal normal 300 20px/25px Gilroy Medium, sans-serif;
+        color: #B2B1B7;
+        width: 90%;
+    }
+    .imageInBox3{
+        display: none;
+    }
+    .divImage2{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        height: 290px;
+        width: 87%;
+    }
+    .divImage{
+        width: 100%;
+    }
+    .p5{
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
+    .buttonGreen{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        margin-bottom: 100px;
+    }
+    .mainDiv {
+        grid-template-columns: 50px 1fr 1fr;
+    }
+    .nonImage{
+        height: 50px;
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
+    .text2{
+        margin: 40px 0 0 0;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font: normal normal 300 18px/32px Gilroy Medium, sans-serif;
+    }
+    .button2{
+        width: 320px;
+        height: 60px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-end: auto;
+        margin: 40px 0 0;
+    }
+    .videoBox{
+        flex-direction: column;
+    }
+    .videoWidth{
+        width: 95%;
+        height: 260px;
+    }
+    .obj{
+        object-fit: cover;
+    }
+    .imageTerminal{
+        width: 95%;
+    }
+    .height370{
+        height: 370px;
+    }
+    .p3_1{
+        grid-column-start: 2;
+        margin: -30px 0 15px 30px;
+    }
+    .divPoroh{
+        margin: 0 0 50px; /* -90 */
+    }
+    .p5Poroh{
+        font: normal normal 300 50px/55px Gilroy Medium, sans-serif;
+    }
+    .liPoroh{
+        font: normal normal 300 22px/25px Gilroy Medium, sans-serif;
+        color: #B2B1B7;
+    }
+    .photoeVideo{
+        height: 360px;
+    }
+    .photo2{
+        object-fit: cover;
+    }
+    .hide{
+        display: none;
+    }
+    .block{
+        display: block;
+    }
+}
 
 @media screen and (max-width: 900px) {
-    .imageThanks{
+    .h1 {
+        width: 335px;
+        grid-column-end: 2;
+    }
+    .text1{
+        width: 335px;
+        grid-column-end: 2;
+        font: normal normal 300 18px/26px Gilroy Light, sans-serif;
+    }
+    .button{
+        width: 335px;
+    }
+    .imgObl{
+        border-radius: 0;
+        margin-left: -20px;
+        height: 138px;
+        width: 100vw;
+        grid-column-start: 2;
+    }
+    .p2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font: normal normal 300 18px/25px Gilroy Medium, sans-serif;
+    }
+    .p3, .p4{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font: normal normal 300 18px/25px Gilroy Medium, sans-serif;
+    }
+    .imageInBox3{
         display: none;
+    }
+    .divImage2{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        height: 190px;
+        width: auto;
+        margin-top: 0;
+    }
+    .divImage{
+        width: auto;
+        flex-wrap: nowrap;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+    .p5{
+        font: normal normal 300 18px/25px Gilroy Medium, sans-serif;
+        width: 100%;
+        margin: 80px 0 30px;
+    }
+    .imageInBox, .imageInBoxObl {
+        height: 200px;
+        margin-bottom: 10px;
+        width: 100%;
+        border-radius: 25px;
+        object-fit: cover;
+    }
+    .buttonGreen{
+        margin-bottom: 80px;
+    }
+    .mainDiv {
+        grid-template-columns: auto;
+    }
+    .main{
+        margin: -30px 0 0 0;
+        background: #1E2227;
+    }
+    .button2{
+        margin: 40px 0 50px;
+    }
+    .videoBox{
+        flex-direction: column;
+    }
+    .videoWidth{
+        height: 200px;
+    }
+    .obj{
+        object-fit: cover;
+    }
+    .height370{
+        height: 370px;
+    }
+    .p3_1{
+        font-size: 18px;
     }
     .divImage2Plus{
         margin-top: 0;
     }
+    .p2_1{
+        font-size: 18px;
+    }
+    .p5Poroh{
+        margin: 75px 0 30px;
+        font: normal normal 300 25px/32px Gilroy Medium, sans-serif;
+    }
+    .liPoroh{
+        font: normal normal 300 19px/25px Gilroy Medium, sans-serif;
+        color: #B2B1B7;
+    }
+    .liPoroh li {
+        margin-bottom: 10px;
+    }
+    .spanNacr{
+        margin-left: 80px;
+        color: #B2B1B7;
+        font: normal normal 300 16px/25px Gilroy Medium, sans-serif;
+    }
+    .leftPrise{
+        margin-left: 30px;
+    }
+    .leftPrise2{
+        margin-left: 50px;
+    }
     .leftPrise3{
         margin-bottom: 50px;
     }
-    .p3{
-        grid-column-start: 3;
-        grid-column-end: 3;
-        font: normal normal 300 20px/25px Gilroy Medium, sans-serif;
-        color: #B2B1B7;
+    .pRight{
+        padding-right: 20px;
     }
-    .p4{
-        grid-column-start: 4;
-        grid-column-end: 5;
-        font: normal normal 300 20px/25px Gilroy Medium, sans-serif;
-        color: #B2B1B7;
-        margin-right: -77px;
+    .divImage21{
+        margin: 50px 0;
+    }
+    .greenButDiv{
+        width: 336px;
+        height: 71px;
+        border-radius: 45px;
+    }
+    .greenBut{
+        width: 337px;
+        height: 71px;
+        border-radius: 45px;
+        line-height: 70px;
+        padding-left: 45px;
+        font-size: 16px;
+        padding-top: 0;
+    }
+    .spanArrow{
+        width: 63px;
+        height: 63px;
+        top: 4px;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .greenButDiv {
+        width: 336px;
+        height: 71px;
+        border-radius: 45px;
+    }
+    .greenBut {
+        width: 337px;
+        height: 71px;
+        border-radius: 45px;
+        line-height: 70px;
+        padding-left: 45px;
+        font-size: 16px;
+    }
+    .spanArrow {
+        padding-left: 5px;
     }
 }

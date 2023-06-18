@@ -10,8 +10,8 @@ import {fetchUserZam} from "../../../API/mail";
 import emailjs from "@emailjs/browser";
 import s from './porohotag.module.css'
 import background from "../../../image/svg/swlogo.svg";
-import poroh4 from '../../../image/nacr/poroh4.jpg';
-import poroh4Webp from '../../../image/nacr/poroh4.webp';
+import image5 from "../../../image/svg/Group 103.svg";
+import video1 from "../../../image/nacr/videoporoh.mp4";
 import Image from "next/image";
 import Link from "next/link";
 import { Fancybox } from "@fancyapps/ui";
@@ -326,13 +326,13 @@ export default function Porohotag() {
                 <p className={s.p4}>{t(`porohPage.opis3`)}</p>
 
                 <div style={{margin: '50px 0 50px 0', gridColumnStart: '2'}} className={s.divImage2}>
-                    <a data-fancybox="gallery" href={poroh4}>
+                    <a data-fancybox="gallery" href={require('../../../image/nacr/poroh4.jpg')}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/poroh4Min.jpg')} type="image/jpg" />}
                             {screen && <source srcSet={require('../../../image/nacr/poroh4.webp')} type="image/webp" />}
                             <source srcSet={require('../../../image/nacr/poroh4.webp')} />
                             <Image style={{objectFit: 'none'}} className={s.imageInBox2} loading='lazy'
-                                 src={poroh4Webp} alt="photo" />
+                                 src={require('../../../image/nacr/poroh4.webp')} alt="photo" />
                         </picture>
                     </a>
                 </div>
@@ -362,33 +362,33 @@ export default function Porohotag() {
                     </ul>
                 </div>
 
-            {/*    <div className={s.divImage}>*/}
-            {/*        /!*<a data-fancybox="gallery" href={require('../../uploads/img/nacr/videoporoh.mp4')}>*!/*/}
-            {/*        <picture>*/}
-            {/*            <video className={s.imgAndVideo} src={require('../../uploads/img/nacr/videoporoh.mp4')}*/}
-            {/*                   title="photo" preload="auto" autoPlay playsInline muted loop controls={true} />*/}
-            {/*        </picture>*/}
-            {/*        /!*</a>*!/*/}
-            {/*        <a data-fancybox="gallery" href={require('../../uploads/img/nacr/poroh7.jpg')}>*/}
-            {/*            <picture>*/}
-            {/*                {!screen && <source srcSet={require('../../uploads/img/nacr/poroh7Min.jpg')} type="image/jpeg" />}*/}
-            {/*                {screen && <source srcSet={require('../../uploads/img/nacr/poroh7.webp')} type="image/jpeg" />}*/}
-            {/*                <source srcSet={require('../../uploads/img/nacr/poroh7.webp')} />*/}
-            {/*                <img className={s.imgAndVideo+ " " +s.photo2} loading='lazy' src={require('../../uploads/img/nacr/poroh7.webp')} alt="photo" />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*    </div>*/}
+                <div className={s.divImage}>
+                    {/*<a data-fancybox="gallery" href={'../../../image/nacr/videoporoh.mp4'}>*/}
+                    <picture style={{marginRight: '20px'}}>
+                        <video className={s.imgAndVideo} src={video1}
+                        title="photo" preload="auto" autoPlay playsInline muted loop controls={true} />
+                    </picture>
+                    {/*</a>*/}
+                    <a data-fancybox="gallery" href={'http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fporoh7.ed973a99.webp&w=1920&q=75%201x'}>
+                        <picture>
+                            {/*{!screen && <source srcSet={require('../../../image/nacr/poroh7Min.jpg')} type="image/jpeg" />}*/}
+                            {/*{screen && <source srcSet={require('../../../image/nacr/poroh7.webp')} type="image/jpeg" />}*/}
+                            {/*<source srcSet={require('../../../image/nacr/poroh7.webp')} />*/}
+                            <Image className={s.imgAndVideo+ " " +s.photo2} loading='lazy' src={require('../../../image/nacr/poroh7.webp')} alt="photo" />
+                        </picture>
+                    </a>
+                </div>
 
-            {/*    <p className={s.p5}>{t("footerCont")}</p>*/}
+                <p className={s.p5}>{t("footerCont")}</p>
 
-            {/*    <div className={m.greenButDiv+' '+s.buttonGreen} onClick={greenBut} onTouchEnd={greenBut}>*/}
-            {/*        <button className={m.greenBut} style={{ cursor: "pointer" }}>*/}
-            {/*            <span>{t("main.zam")}</span>*/}
-            {/*            <span className={m.spanArrow}>*/}
-            {/*  <img src={image5} loading='lazy' className={m.imgClass} alt='Замовити консультацію'/>*/}
-            {/*</span>*/}
-            {/*        </button>*/}
-            {/*    </div>*/}
+                <div className={s.greenButDiv+' '+s.buttonGreen} onClick={greenBut} onTouchEnd={greenBut}>
+                    <button className={s.greenBut} style={{ cursor: "pointer" }}>
+                        <span>{t("main.zam")}</span>
+                        <span className={s.spanArrow}>
+              <Image src={image5} loading='lazy' className={s.imgClass} alt='Замовити консультацію'/>
+            </span>
+                    </button>
+                </div>
 
             </div>
 

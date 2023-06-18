@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 import Image from 'next/image';
 import image5 from "../../image/svg/samwash_logo_vector-01.svg";
 import image1 from "../../image/svg/BurgerMenuIcon.svg";
-import image2 from "../../image/svg/icons8-phone-50.png";
+import image2 from "../../image/svg/phone.svg";
 import { usePathname } from 'next/navigation'
 
 const TheHeader = () => {
