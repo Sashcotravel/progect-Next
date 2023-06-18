@@ -40,6 +40,8 @@ export default async function RootLayout(props) {
           <meta name="description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>
           <meta property="og:title" content='Автомийка самообслуговування SamWash'/>
           <meta property="og:description" content='Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'/>
+          <link rel="apple-touch-icon" href="../logo144.png" />
+          <meta property="og:image" content="../logo144.png" />
         </head>
       <body>
       <TheHeader />

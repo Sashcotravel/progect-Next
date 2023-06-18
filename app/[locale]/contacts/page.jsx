@@ -166,13 +166,13 @@ export default function Contacts() {
     }
 
     return (<>
-        <head>
-            <title>{t("contactTit")}</title>
-            <meta name="description" content={t("contacDesc")} />
-            <meta property="og:title" content={t("contactTit")} />
-            <meta property="og:description" content={t("contacDesc")} />
-            <link rel="canonical" href={locale === 'en' ? "https://samwash.ua/en/contacts" : locale === 'ru' ? "https://samwash.ua/ru/contacts" : "https://samwash.ua/contacts"} />
-        </head>
+        {/*<head>*/}
+        {/*    <title>{t("contactTit")}</title>*/}
+        {/*    <meta name="description" content={t("contacDesc")} />*/}
+        {/*    <meta property="og:title" content={t("contactTit")} />*/}
+        {/*    <meta property="og:description" content={t("contacDesc")} />*/}
+        {/*    <link rel="canonical" href={locale === 'en' ? "https://samwash.ua/en/contacts" : locale === 'ru' ? "https://samwash.ua/ru/contacts" : "https://samwash.ua/contacts"} />*/}
+        {/*</head>*/}
 
         <main className={s.divBlock}>
 
