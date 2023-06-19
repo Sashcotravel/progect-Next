@@ -243,10 +243,12 @@ export default function Nacritya() {
 
                 <div style={{ marginBottom: "50px" }} className={s.divImage + " " + s.videoBox + " " + s.pRight}>
                     <p className={s.p2 + " " + s.block}>Піна кольорова на технології високого тиску</p>
-                    <video className={s.imageInBox + " " + s.videoWidth} src={require("../../../image/svg/pinaVis.mp4")}
+                    <video className={s.imageInBox + " " + s.videoWidth}
+                           src={'https://samwash.ua/static/media/pinaVis.efe76439b501e06960bb.mov'}
                            title="photo" preload="auto" autoPlay playsInline muted loop controls={true} />
                     <p className={s.p2 + " " + s.block}>Піна на технології низького тиску</p>
-                    <video className={s.imageInBox + " " + s.videoWidth} src={require("../../../image/svg/pinaNis.mp4")}
+                    <video className={s.imageInBox + " " + s.videoWidth}
+                           src={'https://samwash.ua/static/media/pinaNis.3dfefda1afacfc03f3b3.mp4'}
                            title="photo" preload="auto" autoPlay playsInline muted loop controls={true} />
                 </div>
 
@@ -257,17 +259,17 @@ export default function Nacritya() {
 
                 <Link href={"/obladnannya"} className={s.bollButton + " " + s.hide}>{t(`butObl`)}</Link>
 
-            {/*    <p className={s.p2}>{t(`equipPage.elecroTit`)}</p>*/}
+                <p className={s.p2}>{t(`equipPage.elecroTit`)}</p>
 
-            {/*    <p className={s.p3} style={{paddingRight: '15px'}}>{t(`equipPage.elecroOpis2`)}</p>*/}
+                <p className={s.p3} style={{paddingRight: '15px'}}>{t(`equipPage.elecroOpis2`)}</p>
 
-            {/*    <p className={s.p4}>{t(`equipPage.elecroOpis3`)}</p>*/}
+                <p className={s.p4}>{t(`equipPage.elecroOpis3`)}</p>
 
-            {/*    <div className={s.divImage + " " + s.hide} style={{ margin: "10px 0 -80px 0" }}>*/}
-            {/*        <p className={s.p2 + " " + s.hide} style={{width: '33%'}}>{t(`equipPage.opisImg1`)}</p>*/}
-            {/*        <p className={s.p2 + " " + s.hide} style={{width: '33%'}}>{t(`equipPage.opisImg2`)}</p>*/}
-            {/*        <p className={s.p2 + " " + s.hide} style={{width: '33%'}}>{t(`equipPage.opisImg3`)}</p>*/}
-            {/*    </div>*/}
+                <div className={s.divImage + " " + s.hide} style={{ margin: "10px 0 -80px 0" }}>
+                    <p className={s.p2 + " " + s.hide} style={{width: '33%'}}>{t(`equipPage.opisImg1`)}</p>
+                    <p className={s.p2 + " " + s.hide} style={{width: '33%'}}>{t(`equipPage.opisImg2`)}</p>
+                    <p className={s.p2 + " " + s.hide} style={{width: '33%'}}>{t(`equipPage.opisImg3`)}</p>
+                </div>
 
             {/*    <div className={s.divImage+' '+s.pRight}>*/}
             {/*        <a data-fancybox="gallery" href={require('../../uploads/img/svg/electro2.webp')}>*/}

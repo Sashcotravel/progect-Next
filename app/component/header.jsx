@@ -235,7 +235,7 @@ const TheHeader = () => {
                                           style={windows2.calc ? activeStyle : undefined} className="menu__item"
                                           href={"/obladnannya"}>{t("equipment2")}</Link></li>
                                 <li><Link onClick={threeClick}
-                                          style={windows2.poroh === '/porohotyag' ? activeStyle : undefined} className="menu__item"
+                                          style={windows2.poroh ? activeStyle : undefined} className="menu__item"
                                           href={"/porohotyag"}>{t("porohotyag")}</Link></li>
                                 <li><Link onClick={threeClick}
                                           style={windows2.blog ? activeStyle : undefined} className="menu__item"
