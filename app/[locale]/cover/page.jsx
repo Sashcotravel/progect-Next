@@ -195,8 +195,7 @@ export default function Nacritya() {
                 <p style={{paddingRight: '15px'}} className={s.p3}>{t(`coverPage.smartOpis1`)}</p>
 
                 <div className={s.divImage}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/hos1.jpg')}>
-                        {/*'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos1.e7f04f22.webp&w=1920&q=75'*/}
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos1.8b535deb.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/hos1Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/hos1.webp')} type="image/jpeg" />}
@@ -204,7 +203,7 @@ export default function Nacritya() {
                             <Image className={s.imageInBoxObl+' '+s.imageMax} loading='lazy' src={require('../../../image/nacr/hos1.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/hos3.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos3.29d24bb6.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/hos3Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/hos3.webp')} type="image/jpeg" />}
@@ -212,18 +211,18 @@ export default function Nacritya() {
                             <Image className={s.imageInBoxObl+' '+s.imageMax} loading='lazy' src={require('../../../image/nacr/hos3.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/hos4.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos4.bdc32d83.webp&w=1080&q=75'}>
                         <picture>
                             <source srcSet={require('../../../image/nacr/hos4.webp')} type="image/jpeg" />
                             <source srcSet={require('../../../image/nacr/hos4.webp')} />
                             <Image className={s.imageInBoxObl+' '+s.imageInBox3+' '+s.imageMax} loading='lazy'
-                                 src={require('../../../image/nacr/hos4.webp')} alt="photo" />
+                                 src={require('../../../image/nacr/hos4.jpg')} alt="photo" />
                         </picture>
                     </a>
                 </div>
 
                 <div style={{marginBottom: '50px'}} className={s.divImage2}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/hos2.webp')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos2.6420f26c.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/hos2Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/hos2.webp')} type="image/jpeg" />}
