@@ -6,7 +6,6 @@ export default function Head(){
     const locale = useLocale();
     return (
         <React.Fragment>
-            <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css' />
             <title>{t(`equipPage.metaTitle`)}</title>
             <meta name="description" content={t(`equipPage.metaDesc`)} />
             <meta property="og:title" content={t(`equipPage.metaTitle`)} />

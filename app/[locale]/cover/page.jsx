@@ -131,13 +131,13 @@ export default function Nacritya() {
     Fancybox.bind('[data-fancybox="gallery"]', {
         Thumbs: { Carousel: { fill: false, center: true, }, },});
 
-    // useEffect(() => {
-    //     let head = document.getElementsByTagName("head")[0];
-    //     let script = document.createElement("link");
-    //     script.rel = "stylesheet";
-    //     script.href = "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css";
-    //     head.appendChild(script);
-    // }, [])
+    useEffect(() => {
+        let head = document.getElementsByTagName("head")[0];
+        let script = document.createElement("link");
+        script.rel = "stylesheet";
+        script.href = "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css";
+        head.appendChild(script);
+    }, [])
 
 
 
