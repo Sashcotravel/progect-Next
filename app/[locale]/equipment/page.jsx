@@ -190,7 +190,7 @@ export default function Nacritya() {
                 <p className={s.p4}>{t(`equipPage.ramaOp3`)}</p>
 
                 <div className={s.divImage+' '+s.pRight}>
-                    <a data-fancybox="gallery" href={require('../../../image/svg/oblWEBP1.webp')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FoblWEBP1.6376c47f.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/svg/oblWEBP1Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/svg/oblWEBP1.webp')} type="image/jpeg" />}
@@ -199,7 +199,7 @@ export default function Nacritya() {
                                  src={require('../../../image/svg/oblWEBP1.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/svg/oblWEBP2.webp')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FoblWEBP2.f3916742.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/svg/oblWEBP2Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/svg/oblWEBP2.webp')} type="image/jpeg" />}
@@ -208,7 +208,7 @@ export default function Nacritya() {
                                  src={require('../../../image/svg/oblWEBP2.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/svg/obrizati2.webp')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fobrizati2.c0a23364.webp&w=1920&q=75'}>
                         <picture>
                             <source srcSet={require('../../../image/svg/obrizati2.webp')} type="image/jpeg" />
                             <source srcSet={require('../../../image/svg/obrizati2.webp')} />
@@ -219,7 +219,7 @@ export default function Nacritya() {
                 </div>
 
                 <div style={{ marginBottom: "50px" }} className={s.divImage2 + " " + s.pRight}>
-                    <a data-fancybox="gallery" href={require("../../../image/svg/oblStend.webp")}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FoblStend.122e33c0.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require("../../../image/svg/oblStendMin.webp")} type="image/jpeg" />}
                             {screen && <source srcSet={require("../../../image/svg/oblStend.webp")} type="image/jpeg" />}
@@ -274,7 +274,7 @@ export default function Nacritya() {
                 </div>
 
                 <div className={s.divImage+' '+s.pRight}>
-                    <a data-fancybox="gallery" href={require('../../../image/svg/electro2.webp')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Felectro2.8908e299.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/svg/electro2Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/svg/electro2.webp')} type="image/jpeg" />}
@@ -283,7 +283,7 @@ export default function Nacritya() {
                                  src={require('../../../image/svg/electro2.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/svg/electro3.webp')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Felectro3.a22332bf.webp&w=640&q=75'}>
                         <picture>
                             <source srcSet={require('../../../image/svg/electro3.webp')} type="image/jpeg" />
                             <source srcSet={require('../../../image/svg/electro3.webp')} />
@@ -291,7 +291,7 @@ export default function Nacritya() {
                                  src={require('../../../image/svg/electro3.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/svg/pult.webp')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpult.28261bb3.webp&w=1920&q=75'}>
                         <picture>
                             <source srcSet={require('../../../image/svg/pult.webp')} type="image/jpeg" />
                             <source srcSet={require('../../../image/svg/pult.webp')} />
@@ -302,7 +302,7 @@ export default function Nacritya() {
                 </div>
 
                 <div className={s.divImage2+' '+s.pRight} style={{marginBottom: '50px'}}>
-                    <a data-fancybox="gallery" href={require('../../../image/svg/electro1.webp')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Felectro1.45d5d163.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/svg/electro1Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/svg/electro1.webp')} type="image/jpeg" />}
@@ -323,7 +323,7 @@ export default function Nacritya() {
                 <p className={s.p2}>{t(`equipPage.panelTit`)}</p>
 
                 <div className={s.divImage + " " + s.videoBox+' '+s.pRight}>
-                    <a data-fancybox="gallery" href={require("../../../image/svg/terminal2.webp")}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fterminal2.abb27b25.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require("../../../image/svg/terminal2Min.webp")} type="image/jpeg" />}
                             {screen && <source srcSet={require("../../../image/svg/terminal2.webp")} type="image/jpeg" />}
@@ -332,12 +332,20 @@ export default function Nacritya() {
                                  src={require("../../../image/svg/terminal2.webp")} alt="photo" loading='lazy' />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require("../../../image/svg/terminal4.webp")}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fterminal4.75c69d17.webp&w=828&q=75'}>
                         <picture>
                             <source srcSet={require("../../../image/svg/terminal4.webp")} type="image/jpeg" />
                             <source srcSet={require("../../../image/svg/terminal4.webp")} />
                             <Image className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
                                  src={require("../../../image/svg/terminal4.webp")} alt="photo" loading='lazy' />
+                        </picture>
+                    </a>
+                    <a data-fancybox="gallery" href={require("../../logo144.png")}>
+                        <picture>
+                            <source srcSet={require("../../logo144.png")} type="image/jpeg" />
+                            <source srcSet={require("../../logo144.png")} />
+                            <Image className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
+                                 src={require("../../logo144.png")} alt="photo" loading='lazy' />
                         </picture>
                     </a>
                 </div>
