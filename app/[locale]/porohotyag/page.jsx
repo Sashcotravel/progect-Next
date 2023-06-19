@@ -343,12 +343,13 @@ export default function Porohotag() {
                 </div>
 
                 <div className={s.divImage}>
-                    {/*<a data-fancybox="gallery" href={'../../../image/nacr/videoporoh.mp4'}>*/}
+                    <a data-fancybox="gallery" href={'https://samwash.ua/static/media/videoporoh.815049ca16e79d7b624d.mp4'}>
                     <picture style={{marginRight: '20px'}}>
-                        <video className={s.imgAndVideo} src={require("../../../image/nacr/videoporoh.mp4")}
+                        {/*<video className={s.imgAndVideo} src={require("../../../image/nacr/videoporoh.mp4")}*/}
+                        <video className={s.imgAndVideo} src={'https://samwash.ua/static/media/videoporoh.815049ca16e79d7b624d.mp4'}
                         title="photo" preload="auto" autoPlay playsInline muted loop controls={true} />
                     </picture>
-                    {/*</a>*/}
+                    </a>
                     <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fporoh7.ed973a99.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/poroh7Min.jpg')} type="image/jpeg" />}

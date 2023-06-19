@@ -1,4 +1,5 @@
 const withImages = require('next-images');
+const withVideos = require('next-videos')
 const withOptimizedImages = require('next-optimized-images');
 
 const nextConfig = {
@@ -109,4 +110,4 @@ const withNextIntl = require('next-intl/plugin')(
     './i18n.js'
 );
 
-module.exports = withNextIntl(nextConfig);
+module.exports = withVideos(withNextIntl(nextConfig));
