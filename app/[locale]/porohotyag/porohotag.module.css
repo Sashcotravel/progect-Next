@@ -3,6 +3,7 @@
 .main{
     text-align: start;
     padding: 20px 0;
+    font-family: Gilroy Light, sans-serif;
     /*background: transparent linear-gradient(70deg, #1D2025 20%, #29373A 116%) -180% -198%;*/
 }
 
@@ -311,6 +312,120 @@
     height: 30px;
 }
 
+/* cover */
+
+.bollButton{
+    background: #42DF4C 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    width: 220px;
+    height: 60px;
+    color: #FFFFFF;
+    font: normal normal normal 18px/19px Gilroy Light, sans-serif;
+    margin-left: -221px;
+    grid-column-start: 5;
+    grid-column-end: 5;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bollButton:hover{
+    background-color: white;
+    color: black;
+}
+
+.text1{
+    width: 505px;
+    color: #FFFFFF;
+    margin-top: 80px;
+    font: normal normal normal 33px/44px Gilroy Light, sans-serif;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.button{
+    width: 380px;
+    height: 60px;
+    display: flex;
+    background: #42DF4C 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-end: 5;
+    margin: -50px 0 0 30px;
+}
+
+.button:hover{
+    background-color: white;
+    color: black;
+}
+
+.nonImage{
+    height: 130px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.divBoll{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    display: flex;
+    align-items: center;
+}
+
+.spanBoll{
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: transparent linear-gradient(180deg, #00000000 0%, #0000000A 25%, #000000 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font: normal normal bold 36px/27px Gilroy Light, sans-serif;
+    margin-left: -110px;
+}
+
+.pBoll{
+    display: block;
+    margin-left: 25px;
+    color: #FFFFFF;
+    font: normal normal bold 36px/41px Gilroy Light, sans-serif;
+}
+
+.spanNacr{
+    margin-left: 95px;
+    color: #B2B1B7;
+    font: normal normal 300 20px/32px Gilroy Medium, sans-serif;
+}
+
+.p2{
+    color: #FFFFFF;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    font: normal normal 600 22px/33px Gilroy Light, sans-serif;
+    margin: 30px 0 55px;
+}
+
+.imageInBoxObl{
+    width: 400px;
+    height: 350px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.divImg2Photo{
+    justify-content: space-around;
+}
+
+/* cover end */
+
 
 
 @media screen and (min-width: 2000px) {
@@ -384,19 +499,15 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .spanBoll{
+        margin-left: 0;
+    }
     .divImage {
         flex-wrap: wrap;
         justify-content: space-around;
     }
     .divImage2 {
         grid-column-start: 2;
-    }
-    .imageInBox {
-        margin-right: 10px;
-        margin-bottom: 40px;
-        width: 300px;
-        height: 350px;
-        object-fit: cover;
     }
     .imageInBox {
         margin-right: 10px;
@@ -427,6 +538,30 @@
 }
 
 @media screen and (max-width: 1000px) {
+    .p2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        width: 90%;
+    }
+    .pBoll{
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .spanBoll{
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        margin-left: 0;
+    }
+    .divBoll {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .nonImage{
+        height: 50px;
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
     .mainDiv{
         padding: 0 20px;
     }
@@ -571,6 +706,16 @@
 }
 
 @media screen and (max-width: 900px) {
+    .p2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        font: normal normal 300 18px/25px Gilroy Medium, sans-serif;
+    }
+    .spanNacr{
+        margin-left: 80px;
+        color: #B2B1B7;
+        font: normal normal 300 16px/25px Gilroy Medium, sans-serif;
+    }
     .h1 {
         width: 335px;
         grid-column-end: 2;

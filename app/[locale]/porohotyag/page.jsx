@@ -169,44 +169,6 @@ export default function Porohotag() {
         }
     };
 
-    // useEffect(() => {
-    //     let head = document.getElementsByTagName("head")[0];
-    //     let script = document.createElement("script");
-    //     script.type = "application/ld+json";
-    //     script.text = ` {
-    //   "@context": "https://schema.org",
-    //   "@type": ["VideoObject", "LearningResource"],
-    //   "name": "${t("porohTitSerch")}",
-    //   "description": "${t("porohDescSerch")}",
-    //   "learningResourceType": "Concept Overview",
-    //   "educationalLevel": "SamWash",
-    //   "contentUrl": "${language === 'ru' ? "https://samwash.ua/ru/porohotyag" : language === 'en' ? "https://samwash.ua/en/porohotyag" : "https://samwash.ua/porohotyag"}",
-    //   "thumbnailUrl": [
-    //     "https://www.youtube.com/watch?v=OJv67JG7QRo"
-    //   ],
-    //   "uploadDate": "2023-03-31T08:00:00+08:00"
-    // }`
-    //     head.appendChild(script);
-    //     // const d = document.querySelector("head");
-    //     // console.log(d.outerHTML);
-    // }, [])
-
-    // useLayoutEffect(() => {
-    //     // fan += 1
-    //     setTimeout(() => {
-    //         // if(fan === 1){
-    //             function reCaptchaOnFocus() {
-    //                 let head = document.getElementsByTagName("head")[0];
-    //                 let script = document.createElement("link");
-    //                 script.rel = "stylesheet";
-    //                 script.href = "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css";
-    //                 head.appendChild(script);
-    //             }
-    //             reCaptchaOnFocus()
-    //         // }
-    //     }, 6000)
-    // }, [])
-
     Fancybox.bind('[data-fancybox="gallery"]', {
         Thumbs: { Carousel: { fill: false, center: true, }, },
     });
@@ -215,7 +177,7 @@ export default function Porohotag() {
     return (<React.Fragment>
         <main className={s.main}>
 
-            <Image src={background} className={s.imageThanks} alt="lable" />
+            <Image src={background} loading='lazy' className={s.imageThanks} alt="lable" />
 
             <div id="lightblue" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>
                 <div className={s.userdata2}>
@@ -345,7 +307,6 @@ export default function Porohotag() {
                 <div className={s.divImage}>
                     <a data-fancybox="gallery" href={'https://samwash.ua/static/media/videoporoh.815049ca16e79d7b624d.mp4'}>
                     <picture style={{marginRight: '20px'}}>
-                        {/*<video className={s.imgAndVideo} src={require("../../../image/nacr/videoporoh.mp4")}*/}
                         <video className={s.imgAndVideo} src={'https://samwash.ua/static/media/videoporoh.815049ca16e79d7b624d.mp4'}
                         title="photo" preload="auto" autoPlay playsInline muted loop controls={true} />
                     </picture>
@@ -366,8 +327,7 @@ export default function Porohotag() {
                     <button className={s.greenBut} style={{cursor: "pointer"}}>
                         <span>{t("main.zam")}</span>
                         <span className={s.spanArrow}>
-              <Image src={image5} loading='lazy' className={s.imgClass} alt='Замовити консультацію'/>
-            </span>
+                    <Image src={image5} loading='lazy' className={s.imgClass} alt='Замовити консультацію'/></span>
                     </button>
                 </div>
 
