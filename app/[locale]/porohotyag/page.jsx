@@ -18,10 +18,6 @@ import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 
-
-let numPhone = 0
-let numEmail = 0
-
 export default function Porohotag() {
 
     const t = useTranslations();

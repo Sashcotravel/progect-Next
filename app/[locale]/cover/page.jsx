@@ -8,6 +8,7 @@ import {addChecked, addMeneger} from "../../../store/thanks-reduser";
 import {fetchUserZam} from "../../../API/mail";
 import emailjs from "@emailjs/browser";
 import {Fancybox} from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import s from '../porohotyag/porohotag.module.css'
 import Image from "next/image";
 import image5 from "../../../image/svg/Group 103.svg";
@@ -130,15 +131,6 @@ export default function Nacritya() {
 
     Fancybox.bind('[data-fancybox="gallery"]', {
         Thumbs: { Carousel: { fill: false, center: true, }, },});
-
-    useEffect(() => {
-        let head = document.getElementsByTagName("head")[0];
-        let script = document.createElement("link");
-        script.rel = "stylesheet";
-        script.href = "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css";
-        head.appendChild(script);
-    }, [])
-
 
 
     return (
