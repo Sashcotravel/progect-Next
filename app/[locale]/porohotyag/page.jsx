@@ -213,27 +213,7 @@ export default function Porohotag() {
 
 
     return (<React.Fragment>
-        {/*<head>*/}
-        {/*    <title>{t(`porohPage.metaTitle`)}</title>*/}
-        {/*     <meta name="description" content={t(`porohPage.metaDesc`)} />*/}
-        {/*     <meta property="og:title" content={t(`porohPage.metaTitle`)} />*/}
-        {/*     <meta property="og:description" content={t(`porohPage.metaDesc`)} />*/}
-        {/*</head>*/}
         <main className={s.main}>
-
-            {/*<HelmetProvider>*/}
-            {/*    <Helmet>*/}
-            {/*        <meta charSet="utf-8" />*/}
-            {/*        <title>{t(`porohPage.metaTitle`)}</title>*/}
-            {/*        <meta name="description" content={t(`porohPage.metaDesc`)} />*/}
-            {/*        <meta property="og:image" content="../../uploads/img/nacr/poroh5.jpg" />*/}
-            {/*        <link rel="apple-touch-icon" href="../../uploads/img/nacr/poroh5.jpg" />*/}
-            {/*        <meta property="og:title" content={t(`porohPage.metaTitle`)} />*/}
-            {/*        <meta property="og:description" content={t(`porohPage.metaDesc`)} />*/}
-            {/*        <meta property="og:url" content={language === 'en' ? "https://samwash.ua/en/porohotyag" : language === 'ru' ? "https://samwash.ua/ru/porohotyag" : "https://samwash.ua/porohotyag"} />*/}
-            {/*        <link rel="canonical" href={language === 'en' ? "https://samwash.ua/en/porohotyag" : language === 'ru' ? "https://samwash.ua/ru/porohotyag" : "https://samwash.ua/porohotyag"} />*/}
-            {/*    </Helmet>*/}
-            {/*</HelmetProvider>*/}
 
             <Image src={background} className={s.imageThanks} alt="lable" />
 
@@ -326,7 +306,7 @@ export default function Porohotag() {
                 <p className={s.p4}>{t(`porohPage.opis3`)}</p>
 
                 <div style={{margin: '50px 0 50px 0', gridColumnStart: '2'}} className={s.divImage2}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/poroh4.jpg')}>
+                    <a data-fancybox="gallery" href={'http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fporoh4.e7f04f22.webp&w=1920&q=75%201x'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/poroh4Min.jpg')} type="image/jpg" />}
                             {screen && <source srcSet={require('../../../image/nacr/poroh4.webp')} type="image/webp" />}
@@ -340,7 +320,7 @@ export default function Porohotag() {
                 <p className={s.p3} style={{paddingRight: '15px'}}>{t(`porohPage.opis4`)}</p>
 
                 <div className={s.divImage2+' '+ s.divImage21}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/poroh5.jpg')}>
+                    <a data-fancybox="gallery" href={'http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fporoh5.51bbb1ca.webp&w=1920&q=75%201x,%20'}>
                         <picture>
                             {!screen && <source srcSet={require("../../../image/nacr/poroh5Min.jpg")} type="image/jpg" />}
                             {screen && <source srcSet={require("../../../image/nacr/poroh5.jpg")} type="image/jpg" />}
@@ -381,8 +361,8 @@ export default function Porohotag() {
 
                 <p className={s.p5}>{t("footerCont")}</p>
 
-                <div className={s.greenButDiv+' '+s.buttonGreen} onClick={greenBut} onTouchEnd={greenBut}>
-                    <button className={s.greenBut} style={{ cursor: "pointer" }}>
+                <div className={s.greenButDiv + ' ' + s.buttonGreen} onClick={greenBut} onTouchEnd={greenBut}>
+                    <button className={s.greenBut} style={{cursor: "pointer"}}>
                         <span>{t("main.zam")}</span>
                         <span className={s.spanArrow}>
               <Image src={image5} loading='lazy' className={s.imgClass} alt='Замовити консультацію'/>
