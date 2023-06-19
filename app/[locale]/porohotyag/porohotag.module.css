@@ -452,6 +452,29 @@
     border-radius: 25px;
 }
 
+.shafa{
+    object-fit: contain;
+    height: 300px;
+}
+
+.pult{
+    object-fit: contain;
+    height: 342px;
+}
+
+.height720{
+    width: 410px;
+}
+
+/*.pasent{*/
+/*    width: 45%;*/
+/*}*/
+
+.procOne{
+    object-fit: contain;
+    width: 100%;
+}
+
 /* obl emd */
 
 
@@ -483,9 +506,16 @@
         width: 40%;
         height: 520px;
     }
+    .height720{
+        width: 95%;
+        height: 720px;
+    }
 }
 
 @media screen and (max-width: 1450px) {
+    .pult{
+        height: 300px;
+    }
     .imageInBox {
         width: 350px;
         height: 420px;
@@ -507,6 +537,9 @@
     }
     .pult{
         height: 300px;
+    }
+    .shafa{
+        height: 265px;
     }
 }
 
@@ -530,6 +563,12 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .pult{
+        height: 300px;
+    }
+    .shafa{
+        height: 265px;
+    }
     .spanBoll{
         margin-left: 0;
     }

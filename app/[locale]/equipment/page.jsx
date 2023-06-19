@@ -13,6 +13,7 @@ import background from "../../../image/svg/swlogo.svg";
 import s from '../porohotyag/porohotag.module.css'
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
 
 export default function Nacritya() {
 
@@ -271,87 +272,84 @@ export default function Nacritya() {
                     <p className={s.p2 + " " + s.hide} style={{width: '33%'}}>{t(`equipPage.opisImg3`)}</p>
                 </div>
 
-            {/*    <div className={s.divImage+' '+s.pRight}>*/}
-            {/*        <a data-fancybox="gallery" href={require('../../uploads/img/svg/electro2.webp')}>*/}
-            {/*            <picture>*/}
-            {/*                {!screen && <source srcSet={require('../../uploads/img/svg/electro2Min.webp')} type="image/jpeg" />}*/}
-            {/*                {screen && <source srcSet={require('../../uploads/img/svg/electro2.webp')} type="image/jpeg" />}*/}
-            {/*                <source srcSet={require('../../uploads/img/svg/electro2.webp')} />*/}
-            {/*                <img className={s.imageInBox+' '+s.height720+' '+s.shafa} loading='lazy'*/}
-            {/*                     src={require('../../uploads/img/svg/electro2.webp')} alt="photo" />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*        <a data-fancybox="gallery" href={require('../../uploads/img/svg/electro3.webp')}>*/}
-            {/*            <picture>*/}
-            {/*                <source srcSet={require('../../uploads/img/svg/electro3.webp')} type="image/jpeg" />*/}
-            {/*                <source srcSet={require('../../uploads/img/svg/electro3.webp')} />*/}
-            {/*                <img className={s.imageInBox+' '+s.height720} loading='lazy'*/}
-            {/*                     src={require('../../uploads/img/svg/electro3.webp')} alt="photo" />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*        <a data-fancybox="gallery" href={require('../../uploads/img/svg/pult.webp')}>*/}
-            {/*            <picture>*/}
-            {/*                <source srcSet={require('../../uploads/img/svg/pult.webp')} type="image/jpeg" />*/}
-            {/*                <source srcSet={require('../../uploads/img/svg/pult.webp')} />*/}
-            {/*                <img className={s.imageInBox+' '+s.imageInBox3+' '+s.height720+' '+s.pult} loading='lazy'*/}
-            {/*                     src={require('../../uploads/img/svg/pult.webp')} alt="photo" />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*    </div>*/}
+                <div className={s.divImage+' '+s.pRight}>
+                    <a data-fancybox="gallery" href={require('../../../image/svg/electro2.webp')}>
+                        <picture>
+                            {!screen && <source srcSet={require('../../../image/svg/electro2Min.webp')} type="image/jpeg" />}
+                            {screen && <source srcSet={require('../../../image/svg/electro2.webp')} type="image/jpeg" />}
+                            <source srcSet={require('../../../image/svg/electro2.webp')} />
+                            <Image className={s.imageInBox+' '+s.height720+' '+s.shafa} loading='lazy'
+                                 src={require('../../../image/svg/electro2.webp')} alt="photo" />
+                        </picture>
+                    </a>
+                    <a data-fancybox="gallery" href={require('../../../image/svg/electro3.webp')}>
+                        <picture>
+                            <source srcSet={require('../../../image/svg/electro3.webp')} type="image/jpeg" />
+                            <source srcSet={require('../../../image/svg/electro3.webp')} />
+                            <Image className={s.imageInBox+' '+s.height720} loading='lazy'
+                                 src={require('../../../image/svg/electro3.webp')} alt="photo" />
+                        </picture>
+                    </a>
+                    <a data-fancybox="gallery" href={require('../../../image/svg/pult.webp')}>
+                        <picture>
+                            <source srcSet={require('../../../image/svg/pult.webp')} type="image/jpeg" />
+                            <source srcSet={require('../../../image/svg/pult.webp')} />
+                            <Image className={s.imageInBox+' '+s.imageInBox3+' '+s.height720+' '+s.pult} loading='lazy'
+                                 src={require('../../../image/svg/pult.webp')} alt="photo" />
+                        </picture>
+                    </a>
+                </div>
 
-            {/*    <div className={s.divImage2+' '+s.pRight} style={{marginBottom: '50px'}}>*/}
-            {/*        <a data-fancybox="gallery" href={require('../../uploads/img/svg/electro1.webp')}>*/}
-            {/*            <picture>*/}
-            {/*                {!screen && <source srcSet={require('../../uploads/img/svg/electro1Min.webp')} type="image/jpeg" />}*/}
-            {/*                {screen && <source srcSet={require('../../uploads/img/svg/electro1.webp')} type="image/jpeg" />}*/}
-            {/*                <source srcSet={require('../../uploads/img/svg/electro1.webp')} />*/}
-            {/*                <img className={s.imageInBox2} loading='lazy'*/}
-            {/*                     src={require('../../uploads/img/svg/electro1.webp')} alt="photo" />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*    </div>*/}
+                <div className={s.divImage2+' '+s.pRight} style={{marginBottom: '50px'}}>
+                    <a data-fancybox="gallery" href={require('../../../image/svg/electro1.webp')}>
+                        <picture>
+                            {!screen && <source srcSet={require('../../../image/svg/electro1Min.webp')} type="image/jpeg" />}
+                            {screen && <source srcSet={require('../../../image/svg/electro1.webp')} type="image/jpeg" />}
+                            <source srcSet={require('../../../image/svg/electro1.webp')} />
+                            <Image className={s.imageInBox2} loading='lazy'
+                                 src={require('../../../image/svg/electro1.webp')} alt="photo" />
+                        </picture>
+                    </a>
+                </div>
 
-            {/*    <div className={s.divBoll} >*/}
-            {/*        <p className={s.spanBoll}>4</p>*/}
-            {/*        <span className={s.pBoll}>{t('namePult')}</span>*/}
-            {/*    </div>*/}
+                <div className={s.divBoll} >
+                    <p className={s.spanBoll}>4</p>
+                    <span className={s.pBoll}>{t('namePult')}</span>
+                </div>
 
-            {/*    <a*/}
-            {/*        href={language === "en" ? `/${language}/obladnannya` : language === "ru" ? `/${language}/obladnannya` : "/obladnannya"}*/}
-            {/*        className={s.bollButton + " " + s.hide}>{t(`butObl`)}</a>*/}
+                <Link href={"/obladnannya"} className={s.bollButton + " " + s.hide}>{t(`butObl`)}</Link>
 
-            {/*    <p className={s.p2}>{t(`equipPage.panelTit`)}</p>*/}
+                <p className={s.p2}>{t(`equipPage.panelTit`)}</p>
 
-            {/*    <div className={s.divImage + " " + s.videoBox+' '+s.pRight}>*/}
-            {/*        <a data-fancybox="gallery" href={require("../../uploads/img/svg/terminal2.webp")}>*/}
-            {/*            <picture>*/}
-            {/*                {!screen && <source srcSet={require("../../uploads/img/svg/terminal2Min.webp")} type="image/jpeg" />}*/}
-            {/*                {screen && <source srcSet={require("../../uploads/img/svg/terminal2.webp")} type="image/jpeg" />}*/}
-            {/*                <source srcSet={require("../../uploads/img/svg/terminal2.webp")} />*/}
-            {/*                <img className={s.imageInBox + " " + s.imageTerminal + " " + s.width525 + " " + s.height370}*/}
-            {/*                     src={require("../../uploads/img/svg/terminal2.webp")} alt="photo" loading='lazy' />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*        <a data-fancybox="gallery" href={require("../../uploads/img/svg/terminal4.webp")}>*/}
-            {/*            <picture>*/}
-            {/*                <source srcSet={require("../../uploads/img/svg/terminal4.webp")} type="image/jpeg" />*/}
-            {/*                <source srcSet={require("../../uploads/img/svg/terminal4.webp")} />*/}
-            {/*                <img className={s.imageInBox + " " + s.imageTerminal + " " + s.width525 + " " + s.height370}*/}
-            {/*                     src={require("../../uploads/img/svg/terminal4.webp")} alt="photo" loading='lazy' />*/}
-            {/*            </picture>*/}
-            {/*        </a>*/}
-            {/*    </div>*/}
+                <div className={s.divImage + " " + s.videoBox+' '+s.pRight}>
+                    <a data-fancybox="gallery" href={require("../../../image/svg/terminal2.webp")}>
+                        <picture>
+                            {!screen && <source srcSet={require("../../../image/svg/terminal2Min.webp")} type="image/jpeg" />}
+                            {screen && <source srcSet={require("../../../image/svg/terminal2.webp")} type="image/jpeg" />}
+                            <source srcSet={require("../../../image/svg/terminal2.webp")} />
+                            <Image className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne  + " " + s.width525 + " " + s.height370}
+                                 src={require("../../../image/svg/terminal2.webp")} alt="photo" loading='lazy' />
+                        </picture>
+                    </a>
+                    <a data-fancybox="gallery" href={require("../../../image/svg/terminal4.webp")}>
+                        <picture>
+                            <source srcSet={require("../../../image/svg/terminal4.webp")} type="image/jpeg" />
+                            <source srcSet={require("../../../image/svg/terminal4.webp")} />
+                            <Image className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
+                                 src={require("../../../image/svg/terminal4.webp")} alt="photo" loading='lazy' />
+                        </picture>
+                    </a>
+                </div>
 
-            {/*    <p className={s.p5}>{t("footerCont")}</p>*/}
+                <p className={s.p5}>{t("footerCont")}</p>
 
-            {/*    <div className={m.greenButDiv+' '+s.buttonGreen} onClick={greenBut} onTouchEnd={greenBut}>*/}
-            {/*        <button className={m.greenBut} style={{ cursor: "pointer" }}>*/}
-            {/*            <span>{t("main.zam")}</span>*/}
-            {/*            <span className={m.spanArrow}>*/}
-            {/*  <img src={image5}  className={m.imgClass} alt='Замовити консультацію'/>*/}
-            {/*</span>*/}
-            {/*        </button>*/}
-            {/*    </div>*/}
+                <div className={s.greenButDiv + ' ' + s.buttonGreen} onClick={greenBut} onTouchEnd={greenBut}>
+                    <button className={s.greenBut} style={{cursor: "pointer"}}>
+                        <span>{t("main.zam")}</span>
+                        <span className={s.spanArrow}>
+                    <Image src={image5} loading='lazy' className={s.imgClass} alt='Замовити консультацію'/></span>
+                    </button>
+                </div>
 
             </div>
 
