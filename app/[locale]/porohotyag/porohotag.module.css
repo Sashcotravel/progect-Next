@@ -426,6 +426,24 @@
 
 /* cover end */
 
+/* obl */
+
+.imgObl{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    width: 100%;
+    object-fit: cover;
+    margin: 80px auto;
+    height: 590px;
+    border-radius: 25px;
+}
+
+.block{
+    display: none;
+}
+
+/* obl emd */
+
 
 
 @media screen and (min-width: 2000px) {
@@ -538,6 +556,17 @@
 }
 
 @media screen and (max-width: 1000px) {
+    .block{
+        display: block;
+    }
+    .imgObl{
+        border-radius: 0;
+        margin-left: -20px;
+        height: 390px;
+        width: 98vw;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
     .p2 {
         grid-column-start: 2;
         grid-column-end: 3;
@@ -583,14 +612,6 @@
         grid-column-end: 3;
         grid-row-end: auto;
         margin: 60px 0 0;
-    }
-    .imgObl{
-        border-radius: 0;
-        margin-left: -20px;
-        height: 390px;
-        width: 100vw;
-        grid-column-start: 1;
-        grid-column-end: 3;
     }
     .spanBoll{
         width: 40px;
@@ -706,6 +727,13 @@
 }
 
 @media screen and (max-width: 900px) {
+    .imgObl{
+        border-radius: 0;
+        margin-left: -20px;
+        height: 138px;
+        width: 97vw;
+        grid-column-start: 2;
+    }
     .p2 {
         grid-column-start: 2;
         grid-column-end: 3;
@@ -728,19 +756,14 @@
     .button{
         width: 335px;
     }
-    .imgObl{
-        border-radius: 0;
-        margin-left: -20px;
-        height: 138px;
-        width: 100vw;
-        grid-column-start: 2;
-    }
     .p2 {
+        margin-left: 15px;
         grid-column-start: 2;
         grid-column-end: 3;
         font: normal normal 300 18px/25px Gilroy Medium, sans-serif;
     }
     .p3, .p4{
+        margin-left: 15px;
         grid-column-start: 2;
         grid-column-end: 3;
         font: normal normal 300 18px/25px Gilroy Medium, sans-serif;

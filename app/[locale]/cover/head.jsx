@@ -14,6 +14,7 @@ export default function Head(){
             <meta property="og:image" content="../../logo144.png"/>
             <meta property="og:url" content={locale === 'en' ? "https://samwash.ua/en/cover" : locale === 'ru' ? "https://samwash.ua/ru/cover" : "https://samwash.ua/cover"} />
             <link rel="canonical" href={locale === 'en' ? "https://samwash.ua/en/cover" : locale === 'ru' ? "https://samwash.ua/ru/cover" : "https://samwash.ua/cover"} />
+            <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css' />
             {/*<script type="application/ld+json">*/}
             {/*     ` {
                 "@context": "https://schema.org",

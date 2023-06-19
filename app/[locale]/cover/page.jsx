@@ -178,7 +178,7 @@ export default function Nacritya() {
 
                 <p className={s.text1}>{t(`coverPage.coverTit`)}</p>
 
-                <a href={"/obladnannya"} className={s.button}>{t(`calcObl`)}</a>
+                <Link href={"/obladnannya"} className={s.button}>{t(`calcObl`)}</Link>
 
                 <div className={s.nonImage}></div>
 
@@ -188,7 +188,7 @@ export default function Nacritya() {
                     <span className={s.spanNacr}>~6 200 € {t(`main.forPost1`)}</span>
                 </div>
 
-                {!screen && <Link href={"/nakritya"} className={s.bollButton}>{t(`butObl`)}</Link>}
+                <Link href={"/nakritya"} className={s.bollButton + " " + s.hide}>{t(`butObl`)}</Link>
 
                 <p className={s.p2}>{t(`coverPage.smartTit`)}</p>
 
@@ -211,7 +211,7 @@ export default function Nacritya() {
                             <Image className={s.imageInBoxObl+' '+s.imageMax} loading='lazy' src={require('../../../image/nacr/hos3.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos4.9747824e.jpg&w=1920&q=75'}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos4.bdc32d83.webp&w=1080&q=75'}>
                         <picture>
                             <source srcSet={require('../../../image/nacr/hos4.webp')} type="image/jpeg" />
                             <source srcSet={require('../../../image/nacr/hos4.webp')} />
@@ -240,7 +240,7 @@ export default function Nacritya() {
                     <span className={s.spanNacr}>~7 200 € {t(`main.forPost1`)}</span>
                 </div>
 
-                {!screen && <Link href={"/nakritya"} className={s.bollButton}>{t(`butObl`)}</Link>}
+                <Link href={"/nakritya"} className={s.bollButton + " " + s.hide}>{t(`butObl`)}</Link>
 
                 <p className={s.p2}>{t(`coverPage.pixelTit`)}</p>
 
@@ -249,7 +249,7 @@ export default function Nacritya() {
                 <p className={s.p4}>{t(`coverPage.pixelOpis2`)}</p>
 
                 <div className={s.divImage}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/marchello18.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarchello18.388a2d6c.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/marchello18Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/marchello18.webp')} type="image/jpeg" />}
@@ -257,7 +257,7 @@ export default function Nacritya() {
                             <Image className={s.imageInBoxObl+' '+s.imageMax} src={require('../../../image/nacr/marchello18.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/marchello8.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarchello8.7fadecae.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/marchello8Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/marchello8.webp')} type="image/jpeg" />}
@@ -265,7 +265,7 @@ export default function Nacritya() {
                             <Image className={s.imageInBoxObl+' '+s.imageMax} src={require('../../../image/nacr/marchello8.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/marchello14.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarchello14.31900e92.webp&w=1080&q=75'}>
                         <picture>
                             <source srcSet={require('../../../image/nacr/marchello14.webp')} type="image/jpeg" />
                             <source srcSet={require('../../../image/nacr/marchello14.webp')} />
@@ -275,7 +275,7 @@ export default function Nacritya() {
                 </div>
 
                 <div style={{marginBottom: '50px'}} className={s.divImage2}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/marchello6.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarchello6.3bd2e673.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/marchello6Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/marchello6.webp')} type="image/jpeg" />}
@@ -293,7 +293,7 @@ export default function Nacritya() {
                     <span className={s.spanNacr+' '+s.leftPrise}>~7 700 € {t(`main.forPost1`)}</span>
                 </div>
 
-                {!screen && <Link href={"/nakritya"} className={s.bollButton}>{t(`butObl`)}</Link>}
+                <Link href={"/nakritya"} className={s.bollButton + " " + s.hide}>{t(`butObl`)}</Link>
 
                 <p className={s.p2}>{t(`coverPage.marcoBTit`)}</p>
 
@@ -302,7 +302,7 @@ export default function Nacritya() {
                 <p className={s.p4}>{t(`coverPage.marcoBOpis2`)}</p>
 
                 <div className={s.divImage+' '+s.divImg2Photo}>
-                    <a data-fancybox="gallery" href={require('../../../image/Vinnitsa/2.JPG')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F2.7c2f4bf6.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/Vinnitsa/2Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/Vinnitsa/2.webp')} type="image/jpeg" />}
@@ -311,7 +311,7 @@ export default function Nacritya() {
                                  src={require('../../../image/Vinnitsa/2.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/Vinnitsa/1.jpeg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1.77dc2b3c.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/Vinnitsa/1Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/Vinnitsa/1.webp')} type="image/jpeg" />}
@@ -323,7 +323,7 @@ export default function Nacritya() {
                 </div>
 
                 <div style={{marginBottom: '50px'}} className={s.divImage2}>
-                    <a data-fancybox="gallery" href={require('../../../image/Vinnitsa/4.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F4.5c39184d.webp&w=2048&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/Vinnitsa/4Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/Vinnitsa/4.webp')} type="image/jpeg" />}
@@ -341,7 +341,7 @@ export default function Nacritya() {
                     <span className={s.spanNacr+' '+s.leftPrise}>~8 200 € {t(`main.forPost1`)}</span>
                 </div>
 
-                {!screen && <Link href={"/nakritya"} className={s.bollButton}>{t(`butObl`)}</Link>}
+                <Link href={"/nakritya"} className={s.bollButton + " " + s.hide}>{t(`butObl`)}</Link>
 
                 <p className={s.p2}>{t(`coverPage.marcoGTit`)}</p>
 
@@ -350,7 +350,7 @@ export default function Nacritya() {
                 <p className={s.p4}>{t(`coverPage.marcoGOpis2`)}</p>
 
                 <div style={{marginBottom: '50px', gridColumnStart: '2', marginTop: '40px'}} className={s.divImage2}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/hosi2.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhosi2.c2190c8e.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/hosi2Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/hosi2.webp')} type="image/jpeg" />}
@@ -368,7 +368,7 @@ export default function Nacritya() {
                     <span className={s.spanNacr+' '+s.leftPrise2}>~12 800 € {t(`main.forPost1`)}</span>
                 </div>
 
-                {!screen && <Link href={"/nakritya"} className={s.bollButton}>{t(`butObl`)}</Link>}
+                <Link href={"/nakritya"} className={s.bollButton + " " + s.hide}>{t(`butObl`)}</Link>
 
                 <p className={s.p2}>{t(`coverPage.marchelloTit`)}</p>
 
@@ -377,7 +377,7 @@ export default function Nacritya() {
                 <p className={s.p4}>{t(`coverPage.marchelloOpis2`)}</p>
 
                 <div className={s.divImage}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/marchello3.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarchello3.f2c8b6b8.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/marchello3Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/marchello3.webp')} type="image/jpeg" />}
@@ -385,7 +385,7 @@ export default function Nacritya() {
                             <Image loading='lazy' className={s.imageInBoxObl+' '+s.imageMax} src={require('../../../image/nacr/marchello3.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/marchello4.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarchello4.5286466e.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/marchello4Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/marchello4.webp')} type="image/jpeg" />}
@@ -393,7 +393,7 @@ export default function Nacritya() {
                             <Image loading='lazy' className={s.imageInBoxObl+' '+s.imageMax} src={require('../../../image/nacr/marchello4.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/marchello13.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarchello13.eee58328.webp&w=1920&q=75'}>
                         <picture>
                             <source srcSet={require('../../../image/nacr/marchello13.webp')} type="image/jpeg" />
                             <source srcSet={require('../../../image/nacr/marchello13.webp')} />
@@ -404,7 +404,7 @@ export default function Nacritya() {
                 </div>
 
                 <div style={{marginBottom: '50px'}} className={s.divImage2}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/marchello2.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmarchello2.2322b947.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/marchello2Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/marchello2.webp')} type="image/jpeg" />}
@@ -422,7 +422,7 @@ export default function Nacritya() {
                     <span className={s.spanNacr}>~13 500 € {t(`main.forPost1`)}</span>
                 </div>
 
-                {!screen && <Link href={"/nakritya"} className={s.bollButton}>{t(`butObl`)}</Link>}
+                <Link href={"/nakritya"} className={s.bollButton + " " + s.hide}>{t(`butObl`)}</Link>
 
                 <p className={s.p2}>{t(`coverPage.ufoTit`)}</p>
 
@@ -431,7 +431,7 @@ export default function Nacritya() {
                 <p className={s.p4}>{t(`coverPage.ufoOpis2`)}</p>
 
                 <div className={s.divImage}>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/ufo1.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fufo1.a320ac1c.webp&w=1920&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/ufo1Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/ufo1.webp')} type="image/jpeg" />}
@@ -439,7 +439,7 @@ export default function Nacritya() {
                             <Image loading='lazy' className={s.imageInBoxObl+' '+s.imageMax} src={require('../../../image/nacr/ufo1.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/ufo2.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fufo2.03a73d51.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/ufo2Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/ufo2.webp')} type="image/jpeg" />}
@@ -447,7 +447,7 @@ export default function Nacritya() {
                             <Image loading='lazy' className={s.imageInBoxObl+' '+s.imageMax} src={require('../../../image/nacr/ufo2.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={require('../../../image/nacr/ufo3.jpg')}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fufo3.81f4036f.webp&w=3840&q=75'}>
                         <picture>
                             {!screen && <source srcSet={require('../../../image/nacr/ufo3Min.webp')} type="image/jpeg" />}
                             {screen && <source srcSet={require('../../../image/nacr/ufo3.webp')} type="image/jpeg" />}
