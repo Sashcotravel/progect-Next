@@ -211,12 +211,12 @@ export default function Nacritya() {
                             <Image className={s.imageInBoxObl+' '+s.imageMax} loading='lazy' src={require('../../../image/nacr/hos3.webp')} alt="photo" />
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos4.bdc32d83.webp&w=1080&q=75'}>
+                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhos4.9747824e.jpg&w=1920&q=75'}>
                         <picture>
                             <source srcSet={require('../../../image/nacr/hos4.webp')} type="image/jpeg" />
                             <source srcSet={require('../../../image/nacr/hos4.webp')} />
                             <Image className={s.imageInBoxObl+' '+s.imageInBox3+' '+s.imageMax} loading='lazy'
-                                 src={require('../../../image/nacr/hos4.jpg')} alt="photo" />
+                                 src={require('../../../image/nacr/hos4.webp')} alt="photo" />
                         </picture>
                     </a>
                 </div>
