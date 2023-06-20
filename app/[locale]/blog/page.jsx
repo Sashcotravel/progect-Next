@@ -28,6 +28,7 @@ export default async function Blog() {
     const [isLoaders, setIsLoaders] = useState(false)
 
 
+
     useEffect(() => {
         window.scrollTo(0, 0)
         if (window.innerWidth > 900) {
