@@ -54,14 +54,12 @@ export default async function Blog() {
     }, [screen])
 
     async function getData() {
-        setIsLoaders(true)
         const response = await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=1000`, {
             next: {revalidate: 60}
         });
         const data = await response.json();
         dispatch(addBlog(data.data.data))
         setArticleAll(data.data.data.data)
-        setIsLoaders(false)
         return data.data.data;
     }
 
@@ -139,13 +137,11 @@ export default async function Blog() {
     useEffect(() => {
         main();
         (async function () {
-            setIsLoaders(true)
             let item = await
                 axios.get(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=6`, {
                     next: {revalidate: 60}
                 }).then(item => dispatch(addBlog(item.data.data.data)))
             setArticleAll(item?.data?.data.data)
-            setIsLoaders(false)
         })()
     }, [])
 
@@ -161,9 +157,9 @@ export default async function Blog() {
 
             <Image src={background} loading='lazy' className={s.imageThanks} alt="lable"/>
 
-            {isLoaders && <div className={s.loader}>Loading...</div> }
+            {/*{isLoaders && <div className={s.loader}>Loading...</div> }*/}
 
-            {!isLoaders && <div>
+            <div>
 
                 <div className={s.breadcrumbs}>
                     <Link className={s.breads} href="/">{t(`home`)}</Link>
@@ -218,7 +214,7 @@ export default async function Blog() {
                         )
                     }
                 </div>
-            </div>}
+            </div>
 
               {/*paginator*/}
             <div className={s.container} style={{zIndex: '2', position: 'relative'}}>
