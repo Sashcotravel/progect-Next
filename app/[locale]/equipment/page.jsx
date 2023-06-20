@@ -14,7 +14,6 @@ import background from "../../../image/svg/swlogo.svg";
 import s from '../porohotyag/porohotag.module.css'
 import Image from "next/image";
 import Link from "next/link";
-import axios from "axios";
 
 export default function Nacritya() {
 
@@ -338,14 +337,6 @@ export default function Nacritya() {
                             <source srcSet={require("../../../image/svg/terminal4.webp")} />
                             <Image className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
                                  src={require("../../../image/svg/terminal4.webp")} alt="photo" loading='lazy' />
-                        </picture>
-                    </a>
-                    <a data-fancybox="gallery" href={require("../../logo144.png")}>
-                        <picture>
-                            <source srcSet={require("../../logo144.png")} type="image/jpeg" />
-                            <source srcSet={require("../../logo144.png")} />
-                            <Image className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
-                                 src={require("../../logo144.png")} alt="photo" loading='lazy' />
                         </picture>
                     </a>
                 </div>
