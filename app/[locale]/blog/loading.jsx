@@ -1,3 +1,5 @@
+import s from './blog.module.css'
+
 export default function LoadingPosts(){
-    return <h1>Loading...</h1>
+    return <div className={s.loader}>Loading...</div>
 }

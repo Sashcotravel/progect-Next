@@ -354,7 +354,7 @@
     animation: infinite 1.4s load-loop ease;
     width: 60vw;
     height: 60vh;
-    margin: 0 auto;
+    margin: 200px auto;
 }
 
 .loader::after {
