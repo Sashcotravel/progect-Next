@@ -29,7 +29,7 @@ export default async function Blog() {
 
 
     useEffect(() => {
-        // window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
         if (window.innerWidth > 900) {
             setScreen(false) }
         else { setScreen(true) }
@@ -49,16 +49,18 @@ export default async function Blog() {
                 }
             }
         }
-        window.addEventListener('scroll', changeColor)
+        // window.addEventListener('scroll', changeColor)
     }, [screen])
 
     async function getData() {
+        setIsLoaders(true)
         const response = await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=1000`, {
             next: {revalidate: 60}
         });
         const data = await response.json();
         dispatch(addBlog(data.data.data))
         setArticleAll(data.data.data.data)
+        setIsLoaders(false)
         return data.data.data;
     }
 
@@ -158,7 +160,9 @@ export default async function Blog() {
 
             <Image src={background} loading='lazy' className={s.imageThanks} alt="lable"/>
 
-            <div>
+            {isLoaders && <div className={s.loader}>Loading...</div> }
+
+            {!isLoaders && <div>
 
                 <div className={s.breadcrumbs}>
                     <Link className={s.breads} href="/">{t(`home`)}</Link>
@@ -213,7 +217,7 @@ export default async function Blog() {
                         )
                     }
                 </div>
-            </div>
+            </div>}
 
               {/*paginator*/}
             <div className={s.container} style={{zIndex: '2', position: 'relative'}}>
