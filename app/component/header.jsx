@@ -82,7 +82,7 @@ const TheHeader = () => {
         if(window.screen.width < 900){
             setScreen(true)
         } else { setScreen(false) }
-    }, [])
+    }, [locale])
 
     const scroll = () => {window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
 

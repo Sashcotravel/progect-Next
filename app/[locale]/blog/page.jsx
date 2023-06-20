@@ -25,10 +25,11 @@ export default async function Blog() {
     let paginatedData = []
     const pageUrl = searchParams.get('page') || 1
     let allBlog = useSelector((state) => state.blog.articleAll)
+    const [isLoaders, setIsLoaders] = useState(false)
 
 
     useEffect(() => {
-        window.scrollTo(0, 0)
+        // window.scrollTo(0, 0)
         if (window.innerWidth > 900) {
             setScreen(false) }
         else { setScreen(true) }
@@ -49,7 +50,7 @@ export default async function Blog() {
             }
         }
         window.addEventListener('scroll', changeColor)
-    }, [])
+    }, [screen])
 
     async function getData() {
         const response = await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=1000`, {
@@ -135,11 +136,13 @@ export default async function Blog() {
     useEffect(() => {
         main();
         (async function () {
+            setIsLoaders(true)
             let item = await
                 axios.get(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=6`, {
                     next: {revalidate: 60}
                 }).then(item => dispatch(addBlog(item.data.data.data)))
             setArticleAll(item?.data?.data.data)
+            setIsLoaders(false)
         })()
     }, [])
 
@@ -149,7 +152,7 @@ export default async function Blog() {
         border: "none"
     };
 
-    // <div className={s.loader}>Loading...</div>
+
     return (
         <main className={s.main}>
 
@@ -176,32 +179,39 @@ export default async function Blog() {
                     </div>
                 </div>
 
-                    <div className={s.articleBlog}>
-                        {
-                            articleAll?.map((item, index) => <Link
-                                    href={`/blog/${item.type === "article" ? "shares" : "news"}/${item.slug}`}
-                                    onClick={() => dispatch(setArticle(item))} className={s.boxOne} key={index}>
-                                    <p className={s.spanNew} style={item.type === "article" ? {backgroundColor: ''} : {backgroundColor: 'white', color: 'black'}}
-                                    >{item.type === "article" ? t("blogs.shares1") : t("blogs.news1")}</p>
-                                    {
-                                        item.images.length !== 0 && <div className={s.blockInfo} style={{padding: '0'}}>
-                                            <img src={'https://cb.samwash.ua/storage/image/' + item.id + '/' + item.images[0]?.path} alt="photo" width={"100%"}
-                                                 height={"90%"} className={s.imgBlog} />
-                                        </div>
-                                    }
-                                    <div className={s.blockInfo} style={item.images.length === 0 ? {marginTop: '20px'} : {}}>
-                                        <div className={s.blogTitle}>
-                                            <p className={s.articleTime}>{item?.start_date_time.replace(/-/g, ".").slice(0, 10)}</p>
-                                            <span className={s.pTitle}>{item.content[0].title}</span>
-                                        </div>
-                                        <p className={s.spanDesc} dangerouslySetInnerHTML={{
-                                            __html: item.content[0].description.length > 190
-                                                ? item.content[0].description.slice(0, 190) + "..." : item.content[0].description }}></p>
-                                        <div style={{display: 'flex', justifyContent: 'center'}}><button className={s.readMore}>Детальніше</button></div>
+                <div className={s.articleBlog}>
+                    {
+                        articleAll?.map((item, index) => <Link
+                                href={`/blog/${item.type === "article" ? "shares" : "news"}/${item.slug}`}
+                                onClick={() => dispatch(setArticle(item))} className={s.boxOne} key={index}>
+                                <p className={s.spanNew} style={item.type === "article" ? {backgroundColor: ''} : {
+                                    backgroundColor: 'white',
+                                    color: 'black'
+                                }}
+                                >{item.type === "article" ? t("blogs.shares1") : t("blogs.news1")}</p>
+                                {
+                                    item.images.length !== 0 && <div className={s.blockInfo} style={{padding: '0'}}>
+                                        <img src={'https://cb.samwash.ua/storage/image/' + item.id + '/' + item.images[0]?.path}
+                                             alt="photo" width={"100%"}
+                                             height={"90%"} className={s.imgBlog}/>
                                     </div>
-                                </Link>
-                            )
-                        }
+                                }
+                                <div className={s.blockInfo} style={item.images.length === 0 ? {marginTop: '20px'} : {}}>
+                                    <div className={s.blogTitle}>
+                                        <p className={s.articleTime}>{item?.start_date_time.replace(/-/g, ".").slice(0, 10)}</p>
+                                        <span className={s.pTitle}>{item.content[0].title}</span>
+                                    </div>
+                                    <p className={s.spanDesc} dangerouslySetInnerHTML={{
+                                        __html: item.content[0].description.length > 190
+                                            ? item.content[0].description.slice(0, 190) + "..." : item.content[0].description
+                                    }}></p>
+                                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                                        <button className={s.readMore}>Детальніше</button>
+                                    </div>
+                                </div>
+                            </Link>
+                        )
+                    }
                 </div>
             </div>
 
