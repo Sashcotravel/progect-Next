@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {useLocale, useTranslations} from "next-intl";
-import {useRouter, useSearchParams} from "next/navigation";
+import {useSearchParams} from "next/navigation";
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
@@ -16,17 +16,14 @@ export default async function Blog() {
 
     const t = useTranslations();
     const locale = useLocale();
-    const router = useRouter()
     const [screen, setScreen] = useState(false)
     const [color, setColor] = useState(false)
     const [articleAll, setArticleAll] = useState([])
     const dispatch = useDispatch();
     const searchParams = useSearchParams()
     let paginatedData = []
-    const pageUrl = searchParams.get('page') || 1
+    let pageUrl = searchParams.get('page') || 1
     let allBlog = useSelector((state) => state.blog.articleAll)
-    const [isLoaders, setIsLoaders] = useState(false)
-
 
 
     useEffect(() => {
@@ -87,7 +84,6 @@ export default async function Blog() {
             const pagesCount = Math.ceil(arrData.length / rowPerPage);
             if (pagesCount < Number(pageUrl)) {
                 // setSearchParams({ page: 1 })
-                searchParams.get(1)
                 currentPage = 1
             }
             const ulEl = document.createElement("ul");
@@ -118,7 +114,7 @@ export default async function Blog() {
                 let currentItemLi = document.getElementById('pagination__item__active');
 
                 // setSearchParams({ page })
-                searchParams.get(page)
+                searchParams.get({'page': '1'})
 
                 currentItemLi.classList.remove(s['pagination__item__active']);
                 currentItemLi.id = ''

@@ -14,7 +14,7 @@ const blogSlice = createSlice({
             state.articleAll.push(action.payload)
         },
         setArticle: (state, action) => {
-            state.articleAll.push(action.payload)
+            state.article = action.payload
         },
     },
     extraReducers: {}
