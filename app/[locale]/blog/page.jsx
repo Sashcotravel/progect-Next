@@ -8,7 +8,7 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {addBlog, setArticle} from "../../../store/blog-reduser";
-import s from './blog.module.css'
+import s from "./blog.module.css"
 import background from "../../../image/svg/swlogo.svg";
 
 

@@ -78,7 +78,8 @@ export default async function MoreInfoBlog() {
 
             {!article && <div className={s.loader}>Loading...</div> }
 
-            {article && <div>
+            {/*{article && <div>*/}
+            <div>
                 <div className={s.breadcrumbs}>
                     <Link className={s.breads} href="/">{t(`home`)}</Link>
                     <Link className={s.breads} href="/blog"> / {t(`blog`)}</Link>
@@ -143,7 +144,8 @@ export default async function MoreInfoBlog() {
                     </div>
                 }
 
-            </div>}
+            {/*</div>}*/}
+            </div>
 
         </main>
     )

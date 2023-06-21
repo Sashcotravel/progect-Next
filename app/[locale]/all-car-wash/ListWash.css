@@ -1,0 +1,128 @@
+.select-menu, .select-menu2{
+    height: 50px;
+    position: relative;
+    border: none;
+    margin: 0 0 15px 0;
+    padding: 9px 10px 10px 10px;
+    background-color: #DF4242;
+    width: 335px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: Gilroy Light, sans-serif;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+.select-menu .select-btn{
+    height: 50px;
+    position: relative;
+    border: none;
+    padding: 9px 10px 10px 10px;
+    width: 335px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: Gilroy Light, sans-serif;
+    outline: none;
+    appearance: none;
+    background: transparent url("../../../image/svg/Arrow.svg") 94% 50% no-repeat padding-box;
+    background-color: #DF4242;
+}
+.select-menu2 .select-btn2{
+    height: 50px;
+    position: relative;
+    border: none;
+    padding: 9px 0 10px 0;
+    width: 335px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: Gilroy Light, sans-serif;
+    outline: none;
+    appearance: none;
+    background: transparent url("../../../image/svg/Arrow.svg") 94% 50% no-repeat padding-box;
+    background-color: #DF4242;
+}
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+.select-btn2 i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+.select-menu2.active .select-btn2 i{
+    transform: rotate(-180deg);
+}
+.select-menu .options{
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+    background: #df4242;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+    width: 106%;
+}
+.select-menu2 .options2{
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+    background: #df4242;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+    width: 106%;
+}
+.select-menu.active .options{
+    display: block;
+}
+.select-menu2.active .options2{
+    display: block;
+}
+.options .option{
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #df4242;
+}
+.options2 .option2{
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: rgb(41, 54, 59);
+}
+.options .option:hover{
+    background: #F2F2F2;
+    color: #1d2025;
+}
+.options2 .option2:hover{
+    background: #F2F2F2;
+    color: #1d2025;
+}
+.option i{
+    font-size: 25px;
+    margin-right: 12px;
+}
+.option2 i{
+    font-size: 25px;
+    margin-right: 12px;
+}
+
+.piSelector{
+    background-color: rgb(41, 54, 59);
+    border: 1px solid gray;
+}

@@ -1,0 +1,232 @@
+@import url('../../../fonts/stylesheet.css');
+
+.imageThanks{
+    position: absolute;
+    opacity: 0.01;
+    z-index: -1;
+    width: 84%;
+}
+
+.divBlock{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px 120px 100px;
+}
+
+.breadcrumbs{
+    font-size: 14px;
+    font-family: Gilroy Medium, sans-serif;
+    z-index: 2;
+    margin: 40px 0 60px 0;
+}
+
+.breads{
+    cursor: pointer;
+    color: rgb(125, 125, 128);
+}
+
+.breads2{
+    color: white;
+}
+
+.divBoxTitASel{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.titleH2{
+    font-family: Gilroy Light, sans-serif;
+    font-size: 72px;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-align: left;
+    width: 550px;
+    height: 177px;
+
+}
+
+.marginLeftSelector{
+    margin-left: 21px;
+}
+
+.addBlock{
+    background-color: white;
+    width: 125px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-family: Gilroy Medium, sans-serif;
+    line-height: 20px;
+    position: absolute;
+    top: -10px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.projectClass{
+    font-size: 11px;
+    width: 170px;
+}
+
+.boxItem{
+    background: transparent linear-gradient(70deg, #1D2025 0%, #29373A 100%) 0% 0% no-repeat padding-box;
+    width: 325px;
+    height: 130px;
+    border-radius: 20px;
+    padding: 15px 10px 10px;
+    margin: 0 30px 90px 0;
+}
+
+.pRed{
+    color: rgba(223, 66, 66, 1);
+    font-size: 10px;
+    text-align: left;
+    margin: 3px 0 0 10px;
+    font-family: Gilroy Light, sans-serif;
+}
+
+.divRoad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: rgba(217, 217, 217, 1);
+    font-family: Gilroy Medium, sans-serif;
+    margin-left: 10px;
+}
+
+.titlePName{
+    font-size: 18px;
+    width: 172px;
+    text-align: start;
+    height: 24px;
+    font-family: Gilroy Medium, sans-serif;
+    font-weight: normal;
+}
+
+.titlePName2{
+    font-size: 12px;
+    text-align: start;
+    font-family: Gilroy Medium, sans-serif;
+    margin: 5px 0 -2px 0;
+    font-weight: normal;
+}
+
+.redBut{
+    position: relative;
+    bottom: -20px;
+    width: 285px;
+    height: 40px;
+    background-color: rgba(223, 66, 66, 1);
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Gilroy Medium, sans-serif;
+    margin-left: 12px;
+}
+
+.divBox12{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 75px;
+    justify-content: space-between;
+}
+
+
+
+@media screen and (min-width: 2000px) {
+
+}
+
+@media screen and (max-width: 1400px) {
+    .divBlock{
+        padding: 0 100px 100px;
+    }
+}
+
+@media screen and (max-width: 1305px) {
+
+}
+
+@media screen and (max-width: 1200px) {
+    .divBoxTitASel{
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        height: 370px;
+        flex-wrap: nowrap;
+    }
+    .divBlock{
+        padding: 0 50px 100px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .divBoxTitASel{
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        height: 370px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .imageThanks{
+     display: none;
+    }
+    .divBlock {
+        margin-top: -50px;
+        padding: 35px 20px 100px;
+    }
+    .breadcrumbs{
+        margin: 40px 0 50px;
+    }
+    .divBoxTitASel{
+        margin-bottom: -50px;
+        height: auto;
+        align-items: flex-start;
+    }
+    .titleH2 {
+        height: 90px;
+        font-size: 36px;
+        width: 335px;
+        margin: -10px 0 50px 20px;
+    }
+    .marginLeftSelector{
+        margin: 0 auto;
+    }
+    .addBlock {
+        top: 39px;
+        left: 51px;
+        position: relative;
+    }
+    .boxItem {
+        margin: 30px;
+    }
+    .divBox12{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .divBlock{
+        margin-top: -30px;
+    }
+    .titleH2{
+        margin: 10px 0 50px;
+    }
+    .boxItem{
+        margin: 30px auto;
+    }
+    .breadcrumbs{
+        margin: 20px 0 50px;
+    }
+}
