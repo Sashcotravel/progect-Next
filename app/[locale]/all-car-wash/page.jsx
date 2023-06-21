@@ -3,7 +3,7 @@
 import {useLocale, useTranslations} from 'next-intl';
 import Link from 'next-intl/link';
 import React, {useEffect, useState} from "react";
-import {useParams} from "next/navigation";
+import {useParams, useRouter} from "next/navigation";
 import background from "../../../image/svg/swlogo.svg";
 import s from "./ListWash.module.css";
 import Image from "next/image";
@@ -11,22 +11,15 @@ import './ListWash.css'
 import image from "../../../image/svg/Route.svg";
 import image1 from "../../../image/svg/Location_icon.svg";
 import image3 from "../../../image/svg/Ω.svg";
-import {LazyLoadComponent} from "react-lazy-load-image-component";
 import { listWash } from "../../../users";
 
-let col = [];
-let col2 = 0;
-let colP = 0;
-let obl = "all";
-let colPost;
-let allObl = [];
+
 
 export default function ListWash() {
 
     const t = useTranslations();
     const locale = useLocale();
-    const {id} = useParams();
-    const [checked, setChecked] = useState(false);
+    const router = useRouter()
 
     const onePost = (e) => {
         listWash.forEach(item => {
@@ -40,7 +33,6 @@ export default function ListWash() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        setChecked(true)
         const optionMenu = document.querySelector(".select-menu"),
             sBtn_text = optionMenu.querySelector(".sBtn-text");
         const optionMenu2 = document.querySelector(".select-menu2"),
@@ -115,7 +107,6 @@ export default function ListWash() {
 
     const container = ({ item, city, vOb, imgNum, map, city2, st, i,
                            proect, st2, st3, st4, city3, city4, obl, colPost }) => {
-        console.log(proect)
         let oblUrl = oblTrue(obl);
         if(locale === 'en') oblUrl = clickObl(obl)
         return (
@@ -161,9 +152,14 @@ export default function ListWash() {
     };
 
     const clickNumber = (e) => {
-        colP = e.target.title;
-        console.log(colP)
+        router.push(`/all-car-wash/${e.target.title}`)
     };
+
+    const clickRegion = (e) => {
+        let oblUrl = oblTrue(e.id);
+        router.push(`/all-car-wash${oblUrl}`)
+    };
+
 
 
     return (
@@ -196,7 +192,8 @@ export default function ListWash() {
                                         <li className="option">
                                             <i className="bx bxl-instagram-alt" ></i>
                                             <Image alt='photo' style={{marginRight: '10px'}} src={image1} />
-                                            <span className="option-text" id={url ? "Dnipropetrovska Oblast" : "Дніпропетровська область"}>
+                                            <span className="option-text"
+                                                  id={url ? "Dnipropetrovska Oblast" : "Дніпропетровська область"}>
                                     {url ? "Dnipropetrovska Oblast" : "Дніпропетровська область"}</span>
                                         </li>
                                         <li className="option">
@@ -270,50 +267,47 @@ export default function ListWash() {
                                     <span id='0' className="option-text2"
                                           onClick={clickNumber}>{t("NumberOfPosts")}</span>
                                 </li>
-                                {checked && <>
-                                    <li className="option2" title='2' onClick={clickNumber}>
-                                        <i className="bx2 bxl-instagram-alt2" title='2'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='2' src={image3}/>
-                                        <span id='2' title='2' className="option-text2">2</span>
-                                    </li>
-                                    <li className="option2" title='3' onClick={clickNumber}>
-                                        <i className="bx2 bxl-linkedin-square2" title='3'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='3' src={image3}/>
-                                        <span id='3' title='3' className="option-text2">3</span>
-                                    </li>
-                                    <li className="option2" title='4' onClick={clickNumber}>
-                                        <i className="bx2 bxl-facebook-circle2" title='4'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='4' src={image3}/>
-                                        <span id='4' title='4' className="option-text2">4</span>
-                                    </li>
-                                    <li className="option2" title='5' onClick={clickNumber}>
-                                        <i className="bx2 bxl-twitter2" title='5'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='5' src={image3}/>
-                                        <span id='5' title='5' className="option-text2">5</span>
-                                    </li>
-                                    <li className="option2" title='6' onClick={clickNumber}>
-                                        <i className="bx2 bxl-linkedin-square3" title='6'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='6' src={image3}/>
-                                        <span id='6' title='6' className="option-text2">6</span>
-                                    </li>
-                                    <li className="option2" title='7' onClick={clickNumber}>
-                                        <i className="bx2 bxl-facebook-circle3" title='7'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='7' src={image3}/>
-                                        <span id='7' title='7' className="option-text2">7</span>
-                                    </li>
-                                    <li className="option2" title='10' onClick={clickNumber}>
-                                        <i className="bx2 bxl-twitter3"></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='10' src={image3}/>
-                                        <span id='10' title='10' className="option-text2">10</span>
-                                    </li>
-                                </>}
+                                <li className="option2" title='2' onClick={clickNumber}>
+                                    <i className="bx2 bxl-instagram-alt2" title='2'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='2' src={image3}/>
+                                    <span id='2' title='2' className="option-text2">2</span>
+                                </li>
+                                <li className="option2" title='3' onClick={clickNumber}>
+                                    <i className="bx2 bxl-linkedin-square2" title='3'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='3' src={image3}/>
+                                    <span id='3' title='3' className="option-text2">3</span>
+                                </li>
+                                <li className="option2" title='4' onClick={clickNumber}>
+                                    <i className="bx2 bxl-facebook-circle2" title='4'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='4' src={image3}/>
+                                    <span id='4' title='4' className="option-text2">4</span>
+                                </li>
+                                <li className="option2" title='5' onClick={clickNumber}>
+                                    <i className="bx2 bxl-twitter2" title='5'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='5' src={image3}/>
+                                    <span id='5' title='5' className="option-text2">5</span>
+                                </li>
+                                <li className="option2" title='6' onClick={clickNumber}>
+                                    <i className="bx2 bxl-linkedin-square3" title='6'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='6' src={image3}/>
+                                    <span id='6' title='6' className="option-text2">6</span>
+                                </li>
+                                <li className="option2" title='7' onClick={clickNumber}>
+                                    <i className="bx2 bxl-facebook-circle3" title='7'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='7' src={image3}/>
+                                    <span id='7' title='7' className="option-text2">7</span>
+                                </li>
+                                <li className="option2" title='10' onClick={clickNumber}>
+                                    <i className="bx2 bxl-twitter3"></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='10' src={image3}/>
+                                    <span id='10' title='10' className="option-text2">10</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-                <LazyLoadComponent>
                     <div className={s.divBox12} style={{ zIndex: "1", position: "relative" }}>
                         {
                             listWash.map((item, i) => {
@@ -329,7 +323,6 @@ export default function ListWash() {
                                 }})
                         }
                     </div>
-                </LazyLoadComponent>
 
         </main>
     )

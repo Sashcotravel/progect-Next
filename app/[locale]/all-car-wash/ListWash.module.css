@@ -70,7 +70,7 @@
 
 .projectClass{
     font-size: 11px;
-    width: 170px;
+    width: 200px;
 }
 
 .boxItem{
@@ -187,7 +187,7 @@
         padding: 35px 20px 100px;
     }
     .breadcrumbs{
-        margin: 40px 0 50px;
+        margin: 30px 0 40px;
     }
     .divBoxTitASel{
         margin-bottom: -50px;
@@ -205,7 +205,7 @@
     }
     .addBlock {
         top: 39px;
-        left: 51px;
+        /*left: 30px;*/
         position: relative;
     }
     .boxItem {
@@ -227,6 +227,6 @@
         margin: 30px auto;
     }
     .breadcrumbs{
-        margin: 20px 0 50px;
+        margin: 10px 0 40px;
     }
 }
