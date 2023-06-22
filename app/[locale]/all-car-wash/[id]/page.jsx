@@ -204,8 +204,11 @@ export default function ListWash2() {
     };
 
     const clickNumber = (e) => {
+        let oblUrl = oblTrue(obl);
         if(e.target.title === ''){
             router.push(`/all-car-wash`)
+        } else if(obl !== 'all') {
+            router.push(`/all-car-wash${oblUrl}/${e.target.title}`)
         } else {
             router.push(`/all-car-wash/${e.target.title}`)
         }
@@ -220,6 +223,20 @@ export default function ListWash2() {
         }
     };
 
+    if(Number(id)){
+        colPost = Number(id);
+    } else {
+        obl = oblFalse(id);
+    }
+
+    useEffect(() => {
+        col = []
+        listWash.filter(item => {
+            if(item.obl === obl || item.obl2 === obl){
+                col.push(item.colPost)
+            }
+        })
+    }, [])
 
     return (
         <main className={s.divBlock}>
@@ -338,43 +355,41 @@ export default function ListWash2() {
                                     <span id='0' className="option-text2"
                                           onClick={clickNumber}>{t("NumberOfPosts")}</span>
                                 </li>
-                                {checked && <>
-                                    <li className="option2" title='2' onClick={clickNumber}>
-                                        <i className="bx2 bxl-instagram-alt2" title='2'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='2' src={image3}/>
-                                        <span id='2' title='2' className="option-text2">2</span>
-                                    </li>
-                                    <li className="option2" title='3' onClick={clickNumber}>
-                                        <i className="bx2 bxl-linkedin-square2" title='3'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='3' src={image3}/>
-                                        <span id='3' title='3' className="option-text2">3</span>
-                                    </li>
-                                    <li className="option2" title='4' onClick={clickNumber}>
-                                        <i className="bx2 bxl-facebook-circle2" title='4'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='4' src={image3}/>
-                                        <span id='4' title='4' className="option-text2">4</span>
-                                    </li>
-                                    <li className="option2" title='5' onClick={clickNumber}>
-                                        <i className="bx2 bxl-twitter2" title='5'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='5' src={image3}/>
-                                        <span id='5' title='5' className="option-text2">5</span>
-                                    </li>
-                                    <li className="option2" title='6' onClick={clickNumber}>
-                                        <i className="bx2 bxl-linkedin-square3" title='6'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='6' src={image3}/>
-                                        <span id='6' title='6' className="option-text2">6</span>
-                                    </li>
-                                    <li className="option2" title='7' onClick={clickNumber}>
-                                        <i className="bx2 bxl-facebook-circle3" title='7'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='7' src={image3}/>
-                                        <span id='7' title='7' className="option-text2">7</span>
-                                    </li>
-                                    <li className="option2" title='10' onClick={clickNumber}>
-                                        <i className="bx2 bxl-twitter3"></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='10' src={image3}/>
-                                        <span id='10' title='10' className="option-text2">10</span>
-                                    </li>
-                                </>}
+                                {col.some(item => item === 2) && <li className="option2" title='2' onClick={clickNumber}>
+                                    <i className="bx2 bxl-instagram-alt2" title='2'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='2' src={image3}/>
+                                    <span id='2' title='2' className="option-text2">2</span>
+                                </li>}
+                                {col.some(item => item === 3) && <li className="option2" title='3' onClick={clickNumber}>
+                                    <i className="bx2 bxl-linkedin-square2" title='3'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='3' src={image3}/>
+                                    <span id='3' title='3' className="option-text2">3</span>
+                                </li>}
+                                {col.some(item => item === 4) && <li className="option2" title='4' onClick={clickNumber}>
+                                    <i className="bx2 bxl-facebook-circle2" title='4'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='4' src={image3}/>
+                                    <span id='4' title='4' className="option-text2">4</span>
+                                </li>}
+                                {col.some(item => item === 5) && <li className="option2" title='5' onClick={clickNumber}>
+                                    <i className="bx2 bxl-twitter2" title='5'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='5' src={image3}/>
+                                    <span id='5' title='5' className="option-text2">5</span>
+                                </li>}
+                                {col.some(item => item === 6) && <li className="option2" title='6' onClick={clickNumber}>
+                                    <i className="bx2 bxl-linkedin-square3" title='6'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='6' src={image3}/>
+                                    <span id='6' title='6' className="option-text2">6</span>
+                                </li>}
+                                {col.some(item => item === 7) && <li className="option2" title='7' onClick={clickNumber}>
+                                    <i className="bx2 bxl-facebook-circle3" title='7'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='7' src={image3}/>
+                                    <span id='7' title='7' className="option-text2">7</span>
+                                </li>}
+                                {col.some(item => item === 10) && <li className="option2" title='10' onClick={clickNumber}>
+                                    <i className="bx2 bxl-twitter3"></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='10' src={image3}/>
+                                    <span id='10' title='10' className="option-text2">10</span>
+                                </li>}
                             </ul>
                         </div>
                     </div>

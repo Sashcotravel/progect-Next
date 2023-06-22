@@ -24,7 +24,7 @@ export default function ListWash3() {
 
     const t = useTranslations();
     const locale = useLocale();
-    const {id} = useParams();
+    const {id, postPage} = useParams();
     const router = useRouter()
     const [checked, setChecked] = useState(false);
 
@@ -45,20 +45,16 @@ export default function ListWash3() {
             sBtn_text = optionMenu.querySelector(".sBtn-text");
         const optionMenu2 = document.querySelector(".select-menu2"),
             sBtn_text2 = optionMenu2.querySelector(".sBtn-text2");
-        if (Number(id)) {
-            if (Number(id) > 10 || Number(id) < 1) {
-                router.push('/error')
-            }
-            colPost = Number(id);
-            obl = 'all'
-            sBtn_text2.innerText = id;
-            optionMenu2.classList.remove("active");
-        } else {
-            colPost = Number(0);
-            obl = oblFalse(id);
-            let selectedOption = document.getElementById(obl).textContent;
-            sBtn_text.innerText = selectedOption;
+        if (Number(postPage) > 10 || Number(postPage) < 1) {
+            router.push('/error')
         }
+        colPost = Number(postPage);
+        obl = oblFalse(id);
+        sBtn_text2.innerText = postPage;
+        optionMenu2.classList.remove("active");
+        let selectedOption = document.getElementById(obl).textContent;
+        sBtn_text.innerText = selectedOption;
+
     }, [])
 
     useEffect(() => {
@@ -172,6 +168,18 @@ export default function ListWash3() {
         );
     };
 
+    const postColIn = (colPost, className) => {
+        if (colPost === 0) {
+            return "";
+        } else if (colPost === 1) {
+            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol1")}</span>;
+        } else if (colPost === 2 || colPost === 3 || colPost === 4) {
+            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol2")}</span>;
+        } else {
+            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol")}</span>;
+        }
+    };
+
     let tap = false
 
     const closeSelect = (e) => {
@@ -192,13 +200,38 @@ export default function ListWash3() {
     };
 
     const clickNumber = (e) => {
-        router.push(`/all-car-wash/${e.target.title}`)
+        let oblUrl = oblTrue(obl);
+        if(e.target.title === ''){
+            router.push(`/all-car-wash`)
+        } else if(obl !== 'all') {
+            router.push(`/all-car-wash${oblUrl}/${e.target.title}`)
+        } else {
+            router.push(`/all-car-wash/${e.target.title}`)
+        }
     };
 
     const clickRegion = (e) => {
         let oblUrl = oblTrue(e.id);
-        router.push(`/all-car-wash${oblUrl}`)
+        if(e.id === 'all'){
+            router.push(`/all-car-wash`)
+        } else {
+            router.push(`/all-car-wash${oblUrl}`)
+        }
     };
+
+    if(obl === 'all'){
+        colPost = Number(postPage);
+        obl = oblFalse(id);
+    }
+
+    useEffect(() => {
+        col = []
+        listWash.filter(item => {
+            if(item.obl === obl || item.obl2 === obl){
+                col.push(item.colPost)
+            }
+        })
+    }, [])
 
 
     return (
@@ -209,9 +242,7 @@ export default function ListWash3() {
             <div className={s.breadcrumbs}>
                 <Link className={s.breads} href="/">{t(`home`)}</Link>
                 <Link className={s.breads} href="/all-car-wash"> / {t(`OurCarWashes`)}</Link>
-                {obl === "all" ? "" :
-                    <span className={s.breads2}>
-                        {obl === "all" ? "" : ` / ${obl}`}</span>  }
+                {<Link className={s.breads} href={`/all-car-wash/${id}`}> / {oblFalse(id)}</Link>  }
                 { colPost === 0 ? "" : colPost === undefined ? ""
                     : <span className={s.breads2}>
                         {colPost !== 0 ? " / " : ""} {postColIn(colPost, "breads2")} </span> }
@@ -220,13 +251,9 @@ export default function ListWash3() {
             <div className={s.divBoxTitASel} id='divBox' onClick={closeSelect2}>
                 <div>
                     <h1 className={s.titleH2} id='divBox'>{t("title2")}</h1>
-                    { locale === "en" && obl !== "all" && <h3 className="titleH4">in {obl}</h3> }
-                    { locale === "en" && colPost > 0 ?
-                        <p style={{ textAlign: "start", margin: "40px 0 40px" }}>{postColIn(colPost, "titleH4")}</p> : '' }
-                    { locale !== "en" && obl !== "all" ? <h2 className="titleH4">в {obl.split(" ")[0]
-                        .slice(0, obl.split(" ")[0].length - 1)}ій {t("oblast")} {postColIn(colPost, "titleH4321")}</h2> : '' }
-                    { locale !== "en" && colPost > 0 ?
-                        <p style={{ textAlign: "start", margin: "40px 0 40px" }}>{postColIn(colPost, "titleH4")}</p> : ""}
+                    { locale === "en" && <h3 className="titleH4">in {oblFalse(id)} <p>{postColIn(colPost, "titleH4")}</p></h3> }
+                    { locale !== "en" && <h3 className="titleH4">в {oblFalse(id).split(" ")[0]
+                        .slice(0, obl.split(" ")[0].length - 1)}ій {t("oblast")} {postColIn(colPost, "titleH4321")}</h3>}
                 </div>
 
                 <div className={s.marginLeftSelector}>
@@ -321,43 +348,41 @@ export default function ListWash3() {
                                     <span id='0' className="option-text2"
                                           onClick={clickNumber}>{t("NumberOfPosts")}</span>
                                 </li>
-                                {checked && <>
-                                    <li className="option2" title='2' onClick={clickNumber}>
-                                        <i className="bx2 bxl-instagram-alt2" title='2'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='2' src={image3}/>
-                                        <span id='2' title='2' className="option-text2">2</span>
-                                    </li>
-                                    <li className="option2" title='3' onClick={clickNumber}>
-                                        <i className="bx2 bxl-linkedin-square2" title='3'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='3' src={image3}/>
-                                        <span id='3' title='3' className="option-text2">3</span>
-                                    </li>
-                                    <li className="option2" title='4' onClick={clickNumber}>
-                                        <i className="bx2 bxl-facebook-circle2" title='4'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='4' src={image3}/>
-                                        <span id='4' title='4' className="option-text2">4</span>
-                                    </li>
-                                    <li className="option2" title='5' onClick={clickNumber}>
-                                        <i className="bx2 bxl-twitter2" title='5'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='5' src={image3}/>
-                                        <span id='5' title='5' className="option-text2">5</span>
-                                    </li>
-                                    <li className="option2" title='6' onClick={clickNumber}>
-                                        <i className="bx2 bxl-linkedin-square3" title='6'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='6' src={image3}/>
-                                        <span id='6' title='6' className="option-text2">6</span>
-                                    </li>
-                                    <li className="option2" title='7' onClick={clickNumber}>
-                                        <i className="bx2 bxl-facebook-circle3" title='7'></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='7' src={image3}/>
-                                        <span id='7' title='7' className="option-text2">7</span>
-                                    </li>
-                                    <li className="option2" title='10' onClick={clickNumber}>
-                                        <i className="bx2 bxl-twitter3"></i>
-                                        <Image alt='photo' style={{marginRight: '10px'}} title='10' src={image3}/>
-                                        <span id='10' title='10' className="option-text2">10</span>
-                                    </li>
-                                </>}
+                                {col.some(item => item === 2) && <li className="option2" title='2' onClick={clickNumber}>
+                                    <i className="bx2 bxl-instagram-alt2" title='2'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='2' src={image3}/>
+                                    <span id='2' title='2' className="option-text2">2</span>
+                                </li>}
+                                {col.some(item => item === 3) && <li className="option2" title='3' onClick={clickNumber}>
+                                    <i className="bx2 bxl-linkedin-square2" title='3'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='3' src={image3}/>
+                                    <span id='3' title='3' className="option-text2">3</span>
+                                </li>}
+                                {col.some(item => item === 4) && <li className="option2" title='4' onClick={clickNumber}>
+                                    <i className="bx2 bxl-facebook-circle2" title='4'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='4' src={image3}/>
+                                    <span id='4' title='4' className="option-text2">4</span>
+                                </li>}
+                                {col.some(item => item === 5) && <li className="option2" title='5' onClick={clickNumber}>
+                                    <i className="bx2 bxl-twitter2" title='5'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='5' src={image3}/>
+                                    <span id='5' title='5' className="option-text2">5</span>
+                                </li>}
+                                {col.some(item => item === 6) && <li className="option2" title='6' onClick={clickNumber}>
+                                    <i className="bx2 bxl-linkedin-square3" title='6'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='6' src={image3}/>
+                                    <span id='6' title='6' className="option-text2">6</span>
+                                </li>}
+                                {col.some(item => item === 7) && <li className="option2" title='7' onClick={clickNumber}>
+                                    <i className="bx2 bxl-facebook-circle3" title='7'></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='7' src={image3}/>
+                                    <span id='7' title='7' className="option-text2">7</span>
+                                </li>}
+                                {col.some(item => item === 10) && <li className="option2" title='10' onClick={clickNumber}>
+                                    <i className="bx2 bxl-twitter3"></i>
+                                    <Image alt='photo' style={{marginRight: '10px'}} title='10' src={image3}/>
+                                    <span id='10' title='10' className="option-text2">10</span>
+                                </li>}
                             </ul>
                         </div>
                     </div>
@@ -367,20 +392,21 @@ export default function ListWash3() {
             <div className={s.divBox12} style={{zIndex: "1", position: "relative"}}>
                 {
                     listWash.map((item, i) => {
-                        if (item.obl === obl && colPost === 0 && item.vOb !== undefined) {
+                        if (item.colPost === colPost && item.obl === obl && item.vOb !== undefined) {
                             return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
                                 item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
-                        } else if (item.colPost === colPost && obl === "all" && item.vOb !== undefined) {
+                        } else if (item.colPost === colPost && item.obl2 === obl && item.vOb !== undefined) {
                             return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
                                 item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
                         }
                     })
                 }
-                {listWash.map((item, i) => {
-                    if (item.obl === obl && colPost === 0 && item.vOb === undefined) {
+                {
+                    listWash.map((item, i) => {
+                    if (item.colPost === colPost && item.obl === obl && item.vOb === undefined) {
                         return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
                             item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
-                    } else if (item.colPost === colPost && obl === "all" && item.vOb === undefined) {
+                    } else if (item.colPost === colPost && item.obl2 === obl  && item.vOb === undefined) {
                         return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
                             item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
                     }
