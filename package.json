@@ -25,6 +25,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "i18next": "^23.0.2",
+    "nanoid": "^4.0.2",
     "next": "13.4.5",
     "next-i18next": "^14.0.0",
     "next-images": "^1.8.5",

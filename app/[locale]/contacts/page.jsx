@@ -13,6 +13,7 @@ import background from "../../../image/svg/swlogo.svg";
 import whatsapp from "../../../image/logo/webp/whatsapp.webp";
 import telegram from "../../../image/logo/webp/telegram.webp";
 import viber from "../../../image/logo/webp/viber.webp";
+import { nanoid } from 'nanoid'
 
 let numPhone = 0
 let numEmail = 0
@@ -41,8 +42,10 @@ export default function Contacts() {
             email: userData.email,
             phone: userData.phone,
             post: userData.post,
+            token: getCsrfToken(),
             namePage: 'КОНТАКТИ'
         };
+        console.log(templateParams)
         dispatch(fetchUserZam(templateParams));
         emailjs.send('service_qcggpom', 'template_ugaoz0u', templateParams, 'e8GXwhbbyk4tXovwB');
         emailjs.send('service_qcggpom', 'template_dxf8e6l', templateParams, 'e8GXwhbbyk4tXovwB');
@@ -165,6 +168,40 @@ export default function Contacts() {
                 setUserData((actual) => {return { ...actual, phone: '+380' }})}}
     }
 
+    // const getCsrfToken = () => {
+    //     const csrfMetaTag = nanoid(22)
+    //     if (csrfMetaTag) {
+    //         return csrfMetaTag;
+    //     }
+    //     return '';
+    // };
+    //
+    // const addCsrfTokenToForm = () => {
+    //     // Додайте токен CSRF до форми перед відправкою
+    //     const csrfToken = getCsrfToken();
+    //
+    //     // Додайте поле з токеном CSRF до форми
+    //     const form = document.getElementById('form');
+    //     const csrfField = document.createElement('input');
+    //     csrfField.type = 'hidden';
+    //     csrfField.name = 'csrf_token';
+    //     csrfField.value = csrfToken;
+    //     form.appendChild(csrfField);
+    // };
+    //
+    // useEffect(() => {
+    //     // Генерація токену CSRF, якщо відповідний тег meta відсутній
+    //     const generatedCsrfToken = getCsrfToken();
+    //
+    //     // Створення тегу meta з токеном CSRF та вставка його в <head>
+    //     const metaTag = document.createElement('meta');
+    //     metaTag.setAttribute('name', 'csrf-token');
+    //     metaTag.setAttribute('content', generatedCsrfToken);
+    //     document.head.appendChild(metaTag);
+    //
+    // }, [])
+
+
     return (<>
         {/*<head>*/}
         {/*    <title>{t("contactTit")}</title>*/}
@@ -231,7 +268,7 @@ export default function Contacts() {
 
                         <div className={s.div1Cont}>
                             <p className={s.h2_1+' '+s.p_1_3}>{t(`feedback`)}</p>
-                            <div className={s.divInput1}>
+                            <div className={s.divInput1} id='form'>
                                 <input className={s.inputUser+' '+s.input1} type="text" title="name" placeholder={`${t("enterName")}`}
                                        onChange={(e) => {setUserData((actual) => {
                                            return { ...actual, [e.target.title]: e.target.value };});}} />
@@ -284,7 +321,7 @@ export default function Contacts() {
                         <div className={s.div1Cont}>
                             <p className={s.h2_1+' '+s.p_1_2}>{t(`feedback`)}</p>
                             <p className={s.h2_2}>{t(`descCont`)}</p>
-                            <div className={s.divInput1}>
+                            <div className={s.divInput1} id='form'>
                                 <input className={s.inputUser+' '+s.input1} type="text" title="name"
                                        placeholder={`${t("enterName")}`} onChange={(e) => {
                                     setUserData((actual) => {

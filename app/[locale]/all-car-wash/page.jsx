@@ -152,12 +152,20 @@ export default function ListWash() {
     };
 
     const clickNumber = (e) => {
-        router.push(`/all-car-wash/${e.target.title}`)
+        if(e.target.title === ''){
+            router.push(`/all-car-wash`)
+        } else {
+            router.push(`/all-car-wash/${e.target.title}`)
+        }
     };
 
     const clickRegion = (e) => {
         let oblUrl = oblTrue(e.id);
-        router.push(`/all-car-wash${oblUrl}`)
+        if(e.id === 'all'){
+            router.push(`/all-car-wash`)
+        } else {
+            router.push(`/all-car-wash${oblUrl}`)
+        }
     };
 
 

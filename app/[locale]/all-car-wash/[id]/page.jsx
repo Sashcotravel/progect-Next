@@ -53,8 +53,9 @@ export default function ListWash2() {
             obl = 'all'
             sBtn_text2.innerText = id;
             optionMenu2.classList.remove("active");
-            // router.push(`/all-car-wash/${id}`)
         } else {
+            colPost = Number(0);
+            obl = oblFalse(id);
             let selectedOption = document.getElementById(obl).textContent;
             sBtn_text.innerText = selectedOption;
         }
@@ -115,6 +116,24 @@ export default function ListWash2() {
         }
     };
 
+    const oblFalse = (id) => {
+        if (locale === "ua" || locale === "ru") {
+            return id === "wsi" ? "Виберіть область" : id === "zakarpatska-oblast" ? "Закарпатська область"
+                : id === "lvivska-oblast" ? "Львівська область" : id === "frankivska-oblast" ? "Франківська область"
+                    : id === "ternopilska-oblast" ? "Тернопільська область" : id === "dniprotrovska-oblast" ? "Дніпропетровська область"
+                        : id === "zhitomirska-oblast" ? "Житомирська область" : id === "volynska-oblast" ? "Волинська область"
+                            : id === "luganska-oblast" ? "Луганська область" : id === "vinnytska-oblast" ? "Вінницька область"
+                                : id === "poltavska-oblast" ? "Полтавська область" : "";
+        } else {
+            return id === "wsi" ? "Select an Oblast" : id === "zakarpatska-oblast" ? "Zakarpatska Oblast"
+                : id === "lvivska-oblast" ? "Lvivska Oblast" : id === "frankivska-oblast" ? "Ivano-Frankivska Oblast"
+                    : id === "ternopilska-oblast" ? "Ternopilska Oblast" : id === "dniprotrovska-oblast" ? "Dnipropetrovska Oblast"
+                        : id === "zhitomirska-oblast" ? "Zhytomyrska Oblast" : id === "volynska-oblast" ? "Volynska Oblast"
+                            : id === "luganska-oblast" ? "Luhansk Oblast" : id === "vinnytska-oblast" ? "Vinnytska Oblast"
+                                : id === "poltavska-oblast" ? "Poltavska Oblast" : "";
+        }
+    };
+
     const clickObl = (obl) => {
         if(obl){
             return obl === "all" ? "/wsi" : obl === "Закарпатська область" ? "/zakarpatska-oblast"
@@ -153,6 +172,18 @@ export default function ListWash2() {
         );
     };
 
+    const postColIn = (colPost, className) => {
+        if (colPost === 0) {
+            return "";
+        } else if (colPost === 1) {
+            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol1")}</span>;
+        } else if (colPost === 2 || colPost === 3 || colPost === 4) {
+            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol2")}</span>;
+        } else {
+            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol")}</span>;
+        }
+    };
+
     let tap = false
 
     const closeSelect = (e) => {
@@ -173,12 +204,20 @@ export default function ListWash2() {
     };
 
     const clickNumber = (e) => {
-        router.push(`/all-car-wash/${e.target.title}`)
+        if(e.target.title === ''){
+            router.push(`/all-car-wash`)
+        } else {
+            router.push(`/all-car-wash/${e.target.title}`)
+        }
     };
 
     const clickRegion = (e) => {
         let oblUrl = oblTrue(e.id);
-        router.push(`/all-car-wash${oblUrl}`)
+        if(e.id === 'all'){
+            router.push(`/all-car-wash`)
+        } else {
+            router.push(`/all-car-wash${oblUrl}`)
+        }
     };
 
 
@@ -189,12 +228,25 @@ export default function ListWash2() {
 
             <div className={s.breadcrumbs}>
                 <Link className={s.breads} href="/">{t(`home`)}</Link>
-                <span className={s.breads2}> / {t(`OurCarWashes`)}</span>
+                <Link className={s.breads} href="/all-car-wash"> / {t(`OurCarWashes`)}</Link>
+                {obl === "all" ? "" :
+                    <span className={s.breads2}>
+                        {obl === "all" ? "" : ` / ${obl}`}</span>  }
+                { colPost === 0 ? "" : colPost === undefined ? ""
+                    : <span className={s.breads2}>
+                        {colPost !== 0 ? " / " : ""} {postColIn(colPost, "breads2")} </span> }
             </div>
 
             <div className={s.divBoxTitASel} id='divBox' onClick={closeSelect2}>
                 <div>
                     <h1 className={s.titleH2} id='divBox'>{t("title2")}</h1>
+                    { locale === "en" && obl !== "all" && <h3 className="titleH4">in {obl}</h3> }
+                    { locale === "en" && colPost > 0 ?
+                            <p style={{ textAlign: "start", margin: "40px 0 40px" }}>{postColIn(colPost, "titleH4")}</p> : '' }
+                    { locale !== "en" && obl !== "all" ? <h2 className="titleH4">в {obl.split(" ")[0]
+                                .slice(0, obl.split(" ")[0].length - 1)}ій {t("oblast")} {postColIn(colPost, "titleH4321")}</h2> : '' }
+                        { locale !== "en" && colPost > 0 ?
+                                <p style={{ textAlign: "start", margin: "40px 0 40px" }}>{postColIn(colPost, "titleH4")}</p> : ""}
                 </div>
 
                 <div className={s.marginLeftSelector}>
@@ -332,16 +384,30 @@ export default function ListWash2() {
                 <div className={s.divBox12} style={{ zIndex: "1", position: "relative" }}>
                     {
                         listWash.map((item, i) => {
-                            if (item.vOb === true) {
+                           if (item.obl === obl && colPost === 0 && item.vOb !== undefined) {
                                 return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
                                     item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
-                            }})
+                            } else if (colPost === 0 && item.obl2 === obl && item.vOb !== undefined) {
+                               return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
+                                   item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
+                           } else if (item.colPost === colPost && obl === "all" && item.vOb !== undefined) {
+                               return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
+                                   item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
+                           }
+                        })
                     }
                     { listWash.map((item, i) => {
-                        if (item.vOb === undefined) {
+                        if (item.obl === obl && colPost === 0  && item.vOb === undefined) {
                             return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
                                 item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
-                        }})
+                        } else if (colPost === 0 && item.obl2 === obl && item.vOb === undefined) {
+                            return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
+                                item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
+                        } else if (item.colPost === colPost && obl === "all"  && item.vOb === undefined) {
+                            return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect, item.st2,
+                                item.st3, item.st4, item.city3, item.city4, item.obl, item.colPost);
+                        }
+                    })
                     }
                 </div>
 
