@@ -231,11 +231,15 @@ export default function ListWash2() {
 
     useEffect(() => {
         col = []
-        listWash.filter(item => {
-            if(item.obl === obl || item.obl2 === obl){
-                col.push(item.colPost)
-            }
-        })
+        if(obl === 'all'){
+            col = [2, 3, 4, 5, 6, 7, 10]
+        } else {
+            listWash.filter(item => {
+                if(item.obl === obl || item.obl2 === obl){
+                    col.push(item.colPost)
+                }
+            })
+        }
     }, [])
 
     return (
