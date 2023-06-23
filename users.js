@@ -763,6 +763,8 @@ export const listWash = [
         'colPost': 3,
         // 'src': [require('./image/Location/Rohatin/1.jpeg'), require('./image/Location/Rohatin/2.jpg'), require('./image/Location/Rohatin/3.jpg'), require('./image/Location/Rohatin/4.jpg'), require('./image/Location/Rohatin/5.jpg'), require('./image/Location/Rohatin/6.jpeg')],
         // 'src2': [require('./image/Location/RohatinWebp/1.webp'), require('./image/Location/RohatinWebp/2.webp'), require('./image/Location/RohatinWebp/3.webp'), require('./image/Location/RohatinWebp/4.webp'), require('./image/Location/RohatinWebp/5.webp'), require('./image/Location/RohatinWebp/6.webp'),],
+        'src': [require('./image/Rohatin/1.jpeg'), require('./image/Rohatin/2.jpg'), require('./image/Rohatin/3.jpg'), require('./image/Rohatin/4.jpg'), require('./image/Rohatin/5.jpg'), require('./image/Rohatin/6.jpeg')],
+        'src2': [require('./image/RohatinWebp/1.webp'), require('./image/RohatinWebp/2.webp'), require('./image/RohatinWebp/3.webp'), require('./image/RohatinWebp/4.webp'), require('./image/RohatinWebp/5.webp'), require('./image/RohatinWebp/6.webp'),],
         'imgNum': 3,
         'city': 'Рогатин',
         'city2': 'Rohatyn',

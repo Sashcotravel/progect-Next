@@ -12,6 +12,9 @@ import image from "../../../image/svg/Route.svg";
 import image1 from "../../../image/svg/Location_icon.svg";
 import image3 from "../../../image/svg/Ω.svg";
 import { listWash } from "../../../users";
+import {addPost} from "../../../store/listwash-reduser";
+import {useDispatch} from "react-redux";
+import {clickObl, oblTrue} from "./additionalFunctions";
 
 
 
@@ -20,11 +23,12 @@ export default function ListWash() {
     const t = useTranslations();
     const locale = useLocale();
     const router = useRouter()
+    const dispatch = useDispatch()
 
-    const onePost = (e) => {
+    const onePost = (st2) => {
         listWash.forEach(item => {
-            if (e.target.id === item.imgNum.toString()) {
-                setPostOne(item);
+            if(item.st2 === st2){
+                dispatch(addPost(item))
             }
         });
     };
@@ -68,46 +72,9 @@ export default function ListWash() {
         });
     }, [])
 
-    const oblTrue = (obl) => {
-        if (locale === "ua") {
-            return obl === "all" ? "/wsi" : obl === "Закарпатська область" ? "/zakarpatska-oblast"
-                : obl === "Львівська область" ? "/lvivska-oblast" : obl === "Франківська область" ? "/frankivska-oblast"
-                    : obl === "Тернопільська область" ? "/ternopilska-oblast" : obl === "Дніпропетровська область" ? "/dniprotrovska-oblast"
-                        : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
-                            : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
-                                : obl === "Полтавська область" ? "/poltavska-oblast" : "";
-        }
-        else if (locale === "ru") {
-            return obl === "all" ? "/wsi" : obl === "Закарпатська область" ? "/zakarpatska-oblast"
-                : obl === "Львівська область" ? "/lvivska-oblast" : obl === "Франківська область" ? "/frankivska-oblast"
-                    : obl === "Тернопільська область" ? "/ternopilska-oblast" : obl === "Дніпропетровська область" ? "/dniprotrovska-oblast"
-                        : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
-                            : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
-                                : obl === "Полтавська область" ? "/poltavska-oblast" : "";
-        } else {
-            return obl === "all" ? "/wsi" : obl === "Zakarpatska Oblast" ? "/zakarpatska-oblast"
-                : obl === "Lvivska Oblast" ? "/lvivska-oblast" : obl === "Ivano-Frankivska Oblast" ? "/frankivska-oblast"
-                    : obl === "Ternopilska Oblast" ? "/ternopilska-oblast" : obl === "Dnipropetrovska Oblast" ? "/dniprotrovska-oblast"
-                        : obl === "Zhytomyrska Oblast" ? "/zhitomirska-oblast" : obl === "Volynska Oblast" ? "/volynska-oblast"
-                            : obl === "Luhansk Oblast" ? "/luganska-oblast" : obl === "Vinnytska Oblast" ? "/vinnytska-oblast"
-                                : obl === "Poltavska Oblast" ? "/poltavska-oblast" : "";
-        }
-    };
-
-    const clickObl = (obl) => {
-        if(obl){
-            return obl === "all" ? "/wsi" : obl === "Закарпатська область" ? "/zakarpatska-oblast"
-                : obl === "Львівська область" ? "/lvivska-oblast" : obl === "Франківська область" ? "/frankivska-oblast"
-                    : obl === "Тернопільська область" ? "/ternopilska-oblast" : obl === "Дніпропетровська область" ? "/dniprotrovska-oblast"
-                        : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
-                            : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
-                                : obl === "Полтавська область" ? "/poltavska-oblast" : "";
-        }
-    }
-
     const container = ({ item, city, vOb, imgNum, map, city2, st, i,
                            proect, st2, st3, st4, city3, city4, obl, colPost }) => {
-        let oblUrl = oblTrue(obl);
+        let oblUrl = oblTrue(obl, locale);
         if(locale === 'en') oblUrl = clickObl(obl)
         return (
             <div key={imgNum} className="zPoz">
@@ -124,7 +91,7 @@ export default function ListWash() {
                             <Image src={image} style={{ margin: "0 10px 0 0" }} width={53.74} height={53.74} alt="Прокласти маршрут" />
                         </a>
                     </div>
-                    <Link onClick={onePost} href={`/all-car-wash${oblUrl}/${colPost}/${st2}`}>
+                    <Link onClick={() => onePost(st2)} href={`/all-car-wash${oblUrl}/${colPost}/${st2}`}>
                         <button key={imgNum} id={imgNum} className={s.redBut}>{t("Details")}</button>
                     </Link>
                 </div>
@@ -160,7 +127,7 @@ export default function ListWash() {
     };
 
     const clickRegion = (e) => {
-        let oblUrl = oblTrue(e.id);
+        let oblUrl = oblTrue(e.id, locale);
         if(e.id === 'all'){
             router.push(`/all-car-wash`)
         } else {

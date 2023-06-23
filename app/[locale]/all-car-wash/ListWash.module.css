@@ -13,6 +13,8 @@
     align-content: flex-start;
     flex-wrap: wrap;
     padding: 20px 120px 100px;
+    z-index: 1;
+    position: relative;
 }
 
 .breadcrumbs{
@@ -140,20 +142,226 @@
     justify-content: space-between;
 }
 
+/* form */
 
-
-@media screen and (min-width: 2000px) {
-
+.orderBlock{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    z-index: 4;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-out;
 }
+
+.userdata2{
+    width: 335px;
+    background-color: #1D2025;
+    margin: 25% auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.ix{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titleUser{
+    width: 283px;
+    height: 92px;
+    text-align: left;
+    font-family: Gilroy Light, sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin: 0 0 0 15px;
+}
+
+.descSpan{
+    font-family: Gilroy Light, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0;
+    color: #B2B1B7;
+    margin: 0 0 0 15px;
+    text-align: left;
+}
+
+.inputUser{
+    margin: 10px 0 10px 10px;
+    padding: 5px;
+    width: 90%;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    border-bottom: 1px solid #A7A5A5;
+    background-color: #1D2025;
+    color: #A7A5A5;
+    outline: none;
+    font-family: Gilroy Medium, sans-serif;
+}
+
+.footerBut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    width: 283px;
+    height: 60px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    font: normal normal normal 16px/19px Gilroy Light, sans-serif;
+}
+
+/* form end */
+
+/* onePost */
+
+.titlePost{
+    color: #FFFFFF;
+    font: normal normal normal 55px/59px Gilroy Light, sans-serif;
+    margin: -10px 0 0;
+    width: 900px;
+}
+
+.dataTitle{
+    margin: 40px 0 0;
+    color: #B2B1B7;
+    font-size: 20px;
+    font-family: Gilroy Medium, sans-serif;
+    font-weight: normal;
+    width: 80%;
+}
+
+.containerStyle {
+    display: flex;
+    overflow-y: hidden;
+    margin-top: 30px;
+    width: 85vw;
+}
+
+.containerStyle::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.imageBox{
+    width: 380px;
+    height: 240px;
+    border-radius: 18px;
+    /*margin: 40px -70px 0 100px;*/
+    margin: 40px 30px 0 0;
+    object-fit: cover;
+    z-index: -1;
+    position: relative;
+}
+
+.divButP{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 85px;
+}
+
+.pSt{
+    font-size: 20px;
+    font-family: Gilroy Medium, sans-serif;
+    color: #B2B1B7;
+    margin-top: 20px;
+}
+
+.marshBut{
+    margin: 0 0 70px 120px;
+    width: 283px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #DF4242;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 16px;
+    font-family: Gilroy Medium, sans-serif;
+}
+
+.serv{
+    margin: 20px 20px 40px 0;
+    font-size: 48px;
+    font-family: Gilroy Light, sans-serif;
+    color: white;
+}
+
+.servDiv{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0 50px;
+    justify-content: space-between;
+    color: white;
+}
+
+.servDiv2{
+    width: 26%;
+    display: flex;
+}
+
+.spanNameG{
+    font-size: 18px;
+    width: 200px;
+    margin-top: 12px;
+    font-family: Gilroy Medium, sans-serif;
+}
+
+.spanGrad{
+    width: 47px;
+    height: 47px;
+    display: block;
+    margin: 0 11px 30px 0;
+    border-radius: 50%;
+    background: linear-gradient(rgba(223, 66, 66, 0), rgba(223, 66, 66, 1));
+}
+
+.desc2{
+    margin: -10px 100px 20px 0;
+    color: #B2B1B7;
+    font-size: 20px;
+    font-family: Gilroy Medium, sans-serif;
+}
+
+.invest {
+    font-family: Gilroy Light,sans-serif;
+    font-size: 48px;
+    margin: 100px 100px 20px 0;
+    width: 582px;
+    color: white;
+}
+
+.hosh{
+    margin: 40px 0 100px 0;
+    width: 283px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgba(66, 223, 76, 1);
+    line-height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 16px;
+    font-family: Gilroy Medium, sans-serif;
+    cursor: pointer;
+    color: white;
+}
+
+/* onePost end */
+
+
 
 @media screen and (max-width: 1400px) {
     .divBlock{
         padding: 0 100px 100px;
     }
-}
-
-@media screen and (max-width: 1305px) {
-
 }
 
 @media screen and (max-width: 1200px) {
@@ -167,6 +375,13 @@
     .divBlock{
         padding: 0 50px 100px;
     }
+    .titlePost {
+        font: normal normal normal 36px Gilroy Light, sans-serif;
+        width: auto;
+    }
+    .marshBut {
+        margin: 0 0 70px 50px;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -175,6 +390,9 @@
         align-items: start;
         flex-direction: column;
         height: 370px;
+    }
+    .marshBut {
+        margin: 0 0 70px 50px;
     }
 }
 
@@ -214,6 +432,91 @@
     .divBox12{
         justify-content: center;
     }
+    .inputUser {
+        height: 35px;
+        font-size: 15px;
+    }
+    .descSpan {
+        font-size: 16px;
+    }
+    .titlePost {
+        font: normal normal normal 30px Gilroy Light, sans-serif;
+        height: auto;
+        width: auto;
+        margin: 0 20px
+    }
+    .dataTitle{
+        margin: 10px 20px;
+        font-size: 17px;
+        width: auto;
+    }
+    .containerStyle {
+        margin-left: 20px;
+    }
+    .imageBox{
+        width: 320px;
+        height: 210px;
+        margin: 0 20px 0 0;
+        object-fit: cover;
+    }
+    .divButP{
+        display: block;
+        flex-wrap: nowrap;
+        justify-content: normal;
+        margin-top: 0;
+        padding-left: 0;
+    }
+    .pSt{
+        margin: 40px 20px 20px;
+        font-size: 14px;
+    }
+    .marshBut{
+        margin: 0 0 70px 20px;
+    }
+    .servDiv{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 10px 10px 20px;
+    }
+    .servDiv2{
+        width: 45%;
+        display: flex;
+        margin-bottom: 10px;
+
+    }
+    .serv{
+        margin: 20px;
+        font-size: 18px;
+        font-family: Gilroy Light, sans-serif;
+    }
+    .spanGrad{
+        width: 30px;
+        height: 30px;
+        margin: 0 11px 30px 0;
+    }
+    .spanNameG{
+        font-size: 14px;
+        width: 100px;
+    }
+    .hosh {
+        margin: 40px auto;
+    }
+    .invest {
+        margin: 60px 20px 20px 0;
+        font-size: 18px;
+        font-family:  Gilroy Light, sans-serif;
+        width: 80%;
+    }
+    .desc2{
+        margin: -10px 20px 20px 0;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .imageBox{
+        width: 280px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -228,5 +531,10 @@
     }
     .breadcrumbs{
         margin: 10px 0 40px;
+    }
+    .footerBut{
+        width: 230px;
+        height: 50px;
+        font: unset;
     }
 }

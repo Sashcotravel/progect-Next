@@ -12,6 +12,9 @@ import image from "../../../../image/svg/Route.svg";
 import image1 from "../../../../image/svg/Location_icon.svg";
 import image3 from "../../../../image/svg/Ω.svg";
 import { listWash } from "../../../../users";
+import {clickObl, oblFalse, oblTrue, postColIn} from "../additionalFunctions";
+import {addPost} from "../../../../store/listwash-reduser";
+import {useDispatch} from "react-redux";
 
 let col = [];
 let col2 = 0;
@@ -26,12 +29,13 @@ export default function ListWash2() {
     const locale = useLocale();
     const {id} = useParams();
     const router = useRouter()
+    const dispatch = useDispatch()
     const [checked, setChecked] = useState(false);
 
-    const onePost = (e) => {
+    const onePost = (st2) => {
         listWash.forEach(item => {
-            if (e.target.id === item.imgNum.toString()) {
-                setPostOne(item);
+            if(item.st2 === st2){
+                dispatch(addPost(item))
             }
         });
     };
@@ -55,7 +59,7 @@ export default function ListWash2() {
             optionMenu2.classList.remove("active");
         } else {
             colPost = Number(0);
-            obl = oblFalse(id);
+            obl = oblFalse(id, locale);
             let selectedOption = document.getElementById(obl).textContent;
             sBtn_text.innerText = selectedOption;
         }
@@ -90,64 +94,9 @@ export default function ListWash2() {
         });
     }, [])
 
-    const oblTrue = (obl) => {
-        if (locale === "ua") {
-            return obl === "all" ? "/wsi" : obl === "Закарпатська область" ? "/zakarpatska-oblast"
-                : obl === "Львівська область" ? "/lvivska-oblast" : obl === "Франківська область" ? "/frankivska-oblast"
-                    : obl === "Тернопільська область" ? "/ternopilska-oblast" : obl === "Дніпропетровська область" ? "/dniprotrovska-oblast"
-                        : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
-                            : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
-                                : obl === "Полтавська область" ? "/poltavska-oblast" : "";
-        }
-        else if (locale === "ru") {
-            return obl === "all" ? "/wsi" : obl === "Закарпатська область" ? "/zakarpatska-oblast"
-                : obl === "Львівська область" ? "/lvivska-oblast" : obl === "Франківська область" ? "/frankivska-oblast"
-                    : obl === "Тернопільська область" ? "/ternopilska-oblast" : obl === "Дніпропетровська область" ? "/dniprotrovska-oblast"
-                        : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
-                            : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
-                                : obl === "Полтавська область" ? "/poltavska-oblast" : "";
-        } else {
-            return obl === "all" ? "/wsi" : obl === "Zakarpatska Oblast" ? "/zakarpatska-oblast"
-                : obl === "Lvivska Oblast" ? "/lvivska-oblast" : obl === "Ivano-Frankivska Oblast" ? "/frankivska-oblast"
-                    : obl === "Ternopilska Oblast" ? "/ternopilska-oblast" : obl === "Dnipropetrovska Oblast" ? "/dniprotrovska-oblast"
-                        : obl === "Zhytomyrska Oblast" ? "/zhitomirska-oblast" : obl === "Volynska Oblast" ? "/volynska-oblast"
-                            : obl === "Luhansk Oblast" ? "/luganska-oblast" : obl === "Vinnytska Oblast" ? "/vinnytska-oblast"
-                                : obl === "Poltavska Oblast" ? "/poltavska-oblast" : "";
-        }
-    };
-
-    const oblFalse = (id) => {
-        if (locale === "ua" || locale === "ru") {
-            return id === "wsi" ? "Виберіть область" : id === "zakarpatska-oblast" ? "Закарпатська область"
-                : id === "lvivska-oblast" ? "Львівська область" : id === "frankivska-oblast" ? "Франківська область"
-                    : id === "ternopilska-oblast" ? "Тернопільська область" : id === "dniprotrovska-oblast" ? "Дніпропетровська область"
-                        : id === "zhitomirska-oblast" ? "Житомирська область" : id === "volynska-oblast" ? "Волинська область"
-                            : id === "luganska-oblast" ? "Луганська область" : id === "vinnytska-oblast" ? "Вінницька область"
-                                : id === "poltavska-oblast" ? "Полтавська область" : "";
-        } else {
-            return id === "wsi" ? "Select an Oblast" : id === "zakarpatska-oblast" ? "Zakarpatska Oblast"
-                : id === "lvivska-oblast" ? "Lvivska Oblast" : id === "frankivska-oblast" ? "Ivano-Frankivska Oblast"
-                    : id === "ternopilska-oblast" ? "Ternopilska Oblast" : id === "dniprotrovska-oblast" ? "Dnipropetrovska Oblast"
-                        : id === "zhitomirska-oblast" ? "Zhytomyrska Oblast" : id === "volynska-oblast" ? "Volynska Oblast"
-                            : id === "luganska-oblast" ? "Luhansk Oblast" : id === "vinnytska-oblast" ? "Vinnytska Oblast"
-                                : id === "poltavska-oblast" ? "Poltavska Oblast" : "";
-        }
-    };
-
-    const clickObl = (obl) => {
-        if(obl){
-            return obl === "all" ? "/wsi" : obl === "Закарпатська область" ? "/zakarpatska-oblast"
-                : obl === "Львівська область" ? "/lvivska-oblast" : obl === "Франківська область" ? "/frankivska-oblast"
-                    : obl === "Тернопільська область" ? "/ternopilska-oblast" : obl === "Дніпропетровська область" ? "/dniprotrovska-oblast"
-                        : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
-                            : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
-                                : obl === "Полтавська область" ? "/poltavska-oblast" : "";
-        }
-    }
-
     const container = ({ item, city, vOb, imgNum, map, city2, st, i,
                            proect, st2, st3, st4, city3, city4, obl, colPost }) => {
-        let oblUrl = oblTrue(obl);
+        let oblUrl = oblTrue(obl, locale);
         if(locale === 'en') oblUrl = clickObl(obl)
         return (
             <div key={imgNum} className="zPoz">
@@ -164,24 +113,12 @@ export default function ListWash2() {
                             <Image src={image} style={{ margin: "0 10px 0 0" }} width={53.74} height={53.74} alt="Прокласти маршрут" />
                         </a>
                     </div>
-                    <Link onClick={onePost} href={`/all-car-wash${oblUrl}/${colPost}/${st2}`}>
+                    <Link onClick={() => onePost(st2)} href={`/all-car-wash${oblUrl}/${colPost}/${st2}`}>
                         <button key={imgNum} id={imgNum} className={s.redBut}>{t("Details")}</button>
                     </Link>
                 </div>
             </div>
         );
-    };
-
-    const postColIn = (colPost, className) => {
-        if (colPost === 0) {
-            return "";
-        } else if (colPost === 1) {
-            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol1")}</span>;
-        } else if (colPost === 2 || colPost === 3 || colPost === 4) {
-            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol2")}</span>;
-        } else {
-            return <span className={`${className}`}>{t("on")} {colPost} {t("postCol")}</span>;
-        }
     };
 
     let tap = false
@@ -204,7 +141,7 @@ export default function ListWash2() {
     };
 
     const clickNumber = (e) => {
-        let oblUrl = oblTrue(obl);
+        let oblUrl = oblTrue(obl, locale);
         if(e.target.title === ''){
             router.push(`/all-car-wash`)
         } else if(obl !== 'all') {
@@ -215,7 +152,7 @@ export default function ListWash2() {
     };
 
     const clickRegion = (e) => {
-        let oblUrl = oblTrue(e.id);
+        let oblUrl = oblTrue(e.id, locale);
         if(e.id === 'all'){
             router.push(`/all-car-wash`)
         } else {
@@ -226,7 +163,7 @@ export default function ListWash2() {
     if(Number(id)){
         colPost = Number(id);
     } else {
-        obl = oblFalse(id);
+        obl = oblFalse(id, locale);
     }
 
     useEffect(() => {
@@ -255,7 +192,7 @@ export default function ListWash2() {
                         {obl === "all" ? "" : ` / ${obl}`}</span>  }
                 { colPost === 0 ? "" : colPost === undefined ? ""
                     : <span className={s.breads2}>
-                        {colPost !== 0 ? " / " : ""} {postColIn(colPost, "breads2")} </span> }
+                        {colPost !== 0 ? " / " : ""} {postColIn(colPost, "breads2", t)} </span> }
             </div>
 
             <div className={s.divBoxTitASel} id='divBox' onClick={closeSelect2}>
@@ -263,11 +200,11 @@ export default function ListWash2() {
                     <h1 className={s.titleH2} id='divBox'>{t("title2")}</h1>
                     { locale === "en" && obl !== "all" && <h3 className="titleH4">in {obl}</h3> }
                     { locale === "en" && colPost > 0 ?
-                            <p style={{ textAlign: "start", margin: "40px 0 40px" }}>{postColIn(colPost, "titleH4")}</p> : '' }
+                            <p style={{ textAlign: "start", margin: "40px 0 40px" }}>{postColIn(colPost, "titleH4", t)}</p> : '' }
                     { locale !== "en" && obl !== "all" ? <h2 className="titleH4">в {obl.split(" ")[0]
-                                .slice(0, obl.split(" ")[0].length - 1)}ій {t("oblast")} {postColIn(colPost, "titleH4321")}</h2> : '' }
+                                .slice(0, obl.split(" ")[0].length - 1)}ій {t("oblast")} {postColIn(colPost, "titleH4321", t)}</h2> : '' }
                         { locale !== "en" && colPost > 0 ?
-                                <p style={{ textAlign: "start", margin: "40px 0 40px" }}>{postColIn(colPost, "titleH4")}</p> : ""}
+                                <p style={{ textAlign: "start", margin: "40px 0 40px" }}>{postColIn(colPost, "titleH4", t)}</p> : ""}
                 </div>
 
                 <div className={s.marginLeftSelector}>

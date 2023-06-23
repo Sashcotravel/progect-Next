@@ -1,3 +1,5 @@
+@import url('../../../fonts/stylesheet.css');
+
 .select-menu, .select-menu2{
     height: 50px;
     position: relative;
@@ -134,6 +136,36 @@
     margin: 40px 0 40px;
 }
 
+.divIm2{
+    background: transparent linear-gradient(180deg, #000000 0%, #1d20257d 100%) 0% 0% no-repeat padding-box;
+    position: absolute;
+    height: 610px;
+    width: 100%;
+    top: 0;
+    backdrop-filter: blur(1px);
+    z-index: 0;
+}
+
+.divIm1{
+    background: url('../../../image/nacr/marchello3.jpg') 37% 50% no-repeat;
+    position: absolute;
+    height: 610px;
+    width: 100%;
+    top: 0;
+    margin-bottom: 30px;
+    background-size: cover;
+}
+
+.divIm3{
+    background: url('../../../image/svg/ternImgWebp.webp') 37% 50% no-repeat;
+    position: absolute;
+    height: 610px;
+    width: 100%;
+    top: 0;
+    margin-bottom: 30px;
+    background-size: cover;
+}
+
 
 
 @media screen and (max-width: 900px) {
@@ -142,5 +174,30 @@
     }
     .titleH4321{
         margin: -30px 0 50px 5px
+    }
+    .divIm1 {
+        height: 435px;
+    }
+    .divIm3{
+        height: 435px;
+        margin-bottom: 30px;
+    }
+    .divIm2{
+        height: 435px;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .divIm1{
+        height: 520px;
+        margin-bottom: 30px;
+    }
+    .divIm3{
+        height: 520px;
+        margin-bottom: 30px;
+    }
+    .divIm2{
+        height: 520px;
     }
 }

@@ -2,13 +2,15 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import { postsReducer } from "./order-reduser";
 import thanksSlice from './thanks-reduser'
 import blogSlice from './blog-reduser'
+import listwashReduser from "./listwash-reduser";
 
 // initial states here
 const store = configureStore({
     reducer: {
         post: postsReducer,
         thanks: thanksSlice,
-        blog: blogSlice
+        blog: blogSlice,
+        onePost: listwashReduser
     }
 })
 
