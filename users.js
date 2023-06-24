@@ -2041,6 +2041,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 6,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Radehiv/radehiv.jpg'), require('./image/Location/Radehiv/0-02-05-808e90e5dbff9b07e51695dca549afc07859e16411142180e082f4407b499abb_a62bb8bab4663d6_1625638604.jpg'),],
         // 'src2': [require('./image/Location/RadehivWebp/radehiv.webp'), require('./image/Location/RadehivWebp/0-02-05-808e90e5dbff9b07e51695dca549afc07859e16411142180e082f4407b499abb_a62bb8bab4663d6_1625638604.webp'),],
         'imgNum': 20,
@@ -2092,6 +2094,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 6,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/HewchenkaLviv/output(compress-video-online.com).mp4'), require('./image/Location/HewchenkaLviv/video_2023-04-11_20-11-22.mp4'), require('./image/Location/HewchenkaLviv/1.JPG'), require('./image/Location/HewchenkaLviv/2.JPG'), require('./image/Location/HewchenkaLviv/3.jpg'), require('./image/Location/HewchenkaLviv/7.jpg'), require('./image/Location/HewchenkaLviv/8-compressed.jpg'), require('./image/Location/HewchenkaLviv/IMG_0208.jpeg'),],
         // 'src2': [require('./image/Location/HewchenkaLvivWebp/output(compress-video-online.com).mp4'), require('./image/Location/HewchenkaLvivWebp/video_2023-04-11_20-11-22.mp4'), require('./image/Location/HewchenkaLvivWebp/1.webp'), require('./image/Location/HewchenkaLvivWebp/2.webp'), require('./image/Location/HewchenkaLvivWebp/3.webp'),  require('./image/Location/HewchenkaLvivWebp/7.webp'), require('./image/Location/HewchenkaLvivWebp/8.webp'), require('./image/Location/HewchenkaLvivWebp/IMG_0208.webp'),],
         'imgNum': 21,
@@ -2143,6 +2147,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 6,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Stryi/video_2023-04-11_20-19-37.mp4'), require('./image/Location/Stryi/video_2023-04-11_20-19-34.mp4'), require('./image/Location/Stryi/video_2023-04-11_20-19-30.mp4'), require('./image/Location/Stryi/1.jpg'), require('./image/Location/Stryi/2.jpg'), require('./image/Location/Stryi/4.jpg'), require('./image/Location/Stryi/5.jpg'),],
         // 'src2': [require('./image/Location/StryiWebp/video_2023-04-11_20-19-37.mp4'), require('./image/Location/StryiWebp/video_2023-04-11_20-19-34.mp4'), require('./image/Location/StryiWebp/video_2023-04-11_20-19-30.mp4'), require('./image/Location/StryiWebp/1.webp'), require('./image/Location/StryiWebp/2.webp'), require('./image/Location/StryiWebp/4.webp'), require('./image/Location/StryiWebp/5.webp'),],
         'imgNum': 22,
@@ -2175,6 +2181,8 @@ export const listWash = [
         'desc2': 'Для обслуговування великогабаритних автомобілей (до 10 тонн) передбачено два відкритих пости, а для ' +
           'зручності відвідувачів передбачено пилосос потужністю 3 кВт. Так само, мийка сильно загрязнених авто і дисків можлива за допомоги програми №1',
         'colPost': 6,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Rudniki/15.jpg'), require('./image/Location/Rudniki/5.JPG'), require('./image/Location/Rudniki/6.jpg'), require('./image/Location/Rudniki/7.jpg'),  ],
         // 'src2': [require('./image/Location/RudnikiWebp/15.webp'), require('./image/Location/RudnikiWebp/5.webp'), require('./image/Location/RudnikiWebp/6.webp'), require('./image/Location/RudnikiWebp/7.webp'), ],
         'imgNum': 23,
@@ -2256,6 +2264,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 6,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Lutsk/1.jpg'), require('./image/Location/Lutsk/2.jpg'), require('./image/Location/Lutsk/3-compressed.jpg'), require('./image/Location/Lutsk/4.JPG'), require('./image/Location/Lutsk/5.JPG'), require('./image/Location/Lutsk/6.jpg'), require('./image/Location/Lutsk/7.jpg'), require('./image/Location/Lutsk/8.JPG'),],
         // 'src2': [require('./image/Location/LutskWebp/1.webp'), require('./image/Location/LutskWebp/2.webp'), require('./image/Location/LutskWebp/3.webp'), require('./image/Location/LutskWebp/4.webp'), require('./image/Location/LutskWebp/5.webp'), require('./image/Location/LutskWebp/6.webp'), require('./image/Location/LutskWebp/7.webp'), require('./image/Location/LutskWebp/8.webp'),],
         'imgNum': 24,
@@ -2304,6 +2314,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 7,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/lubni/1.jpg'), ],
         // 'src2': [require('./image/Location/lubniWebp/1.webp'), ],
         'imgNum': 25,
@@ -2357,6 +2369,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 10,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/BH/video_2023-04-11_20-31-32.mp4'), require('./image/Location/BH/photo_2023-04-11_20-31-28.jpg'), require('./image/Location/BH/photo_2023-04-11_20-31-15.jpg'), require('./image/Location/BH/1.jpg'), require('./image/Location/BH/2.jpg'), require('./image/Location/BH/3.JPG'), require('./image/Location/BH/4.jpg'), require('./image/Location/BH/5.jpg'), require('./image/Location/BH/6.jpg'), require('./image/Location/BH/7-compressed.jpg'), require('./image/Location/BH/8-compressed.jpg'), require('./image/Location/BH/9-compressed.jpg'), require('./image/Location/BH/10-compressed.jpg'), require('./image/Location/BH/11.JPG'), require('./image/Location/BH/12-compressed.jpg'), require('./image/Location/BH/13.jpg'), require('./image/Location/BH/14.jpg'), require('./image/Location/BH/15-compressed.jpg'), require('./image/Location/BH/16-compressed.jpg'), require('./image/Location/BH/17.jpg'),],
         // 'src2': [require('./image/Location/BHWebp/video_2023-04-11_20-31-32.mp4'), require('./image/Location/BHWebp/photo_2023-04-11_20-31-28.jpg'), require('./image/Location/BHWebp/photo_2023-04-11_20-31-15.jpg'), require('./image/Location/BHWebp/1.webp'), require('./image/Location/BHWebp/2.webp'), require('./image/Location/BHWebp/3.webp'), require('./image/Location/BHWebp/4.webp'), require('./image/Location/BHWebp/5.webp'), require('./image/Location/BHWebp/6.webp'), require('./image/Location/BHWebp/7.webp'), require('./image/Location/BHWebp/8.webp'), require('./image/Location/BHWebp/9.webp'), require('./image/Location/BHWebp/10.webp'), require('./image/Location/BHWebp/11.webp'), require('./image/Location/BHWebp/12.webp'), require('./image/Location/BHWebp/13.webp'), require('./image/Location/BHWebp/14.webp'), require('./image/Location/BHWebp/15.webp'), require('./image/Location/BHWebp/16.webp'), require('./image/Location/BHWebp/17.webp'),],
         'imgNum': 26,
@@ -2409,6 +2423,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 10,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Khust/1.jpg'), require('./image/Location/Khust/1a.JPG'), require('./image/Location/Khust/1b.jpg'), require('./image/Location/Khust/1g.jpg'), require('./image/Location/Khust/1c.jpg'), require('./image/Location/Khust/2.jpg'), require('./image/Location/Khust/4.jpg'), require('./image/Location/Khust/5.jpg'), require('./image/Location/Khust/7.jpg'), require('./image/Location/Khust/8.jpg'), require('./image/Location/Khust/9.jpg'), require('./image/Location/Khust/11.jpg'), require('./image/Location/Khust/12.jpg'), require('./image/Location/Khust/13.JPG'), require('./image/Location/Khust/14.JPG'), require('./image/Location/Khust/15.JPG'), require('./image/Location/Khust/photo_2023-04-12_13-11-42.jpg'),  require('./image/Location/Khust/18.JPG'), require('./image/Location/Khust/19.jpg'),],
         // 'src2': [require('./image/Location/KhustWebp/1.webp'), require('./image/Location/KhustWebp/1a.webp'), require('./image/Location/KhustWebp/1b.webp'), require('./image/Location/KhustWebp/1g.webp'), require('./image/Location/KhustWebp/1c.webp'), require('./image/Location/KhustWebp/2.webp'), require('./image/Location/KhustWebp/4.webp'), require('./image/Location/KhustWebp/5.webp'), require('./image/Location/KhustWebp/7.webp'), require('./image/Location/KhustWebp/8.webp'), require('./image/Location/KhustWebp/9.webp'), require('./image/Location/KhustWebp/11.webp'), require('./image/Location/KhustWebp/12.webp'), require('./image/Location/KhustWebp/13.webp'), require('./image/Location/Khust/14.JPG'), require('./image/Location/KhustWebp/15.webp'), require('./image/Location/KhustWebp/photo_2023-04-12_13-11-42.jpg'), require('./image/Location/KhustWebp/18.webp'), require('./image/Location/KhustWebp/19.webp'),],
         'imgNum': 27,
