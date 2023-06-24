@@ -44,20 +44,22 @@
     grid-column-end: 5;
     display: grid;
     padding-top: 16vh;   /* test */
-    height: 76vh;      /* test */
+    height: 90vh;      /* test */
 }  /* test */
 
 .titleH1{
     color: white;
-    max-width: 751px;
-    margin-bottom: 65px;
+    width: 751px;
+    height: 200px;
+    /*margin-bottom: 65px;*/
     font: normal normal 300 105px/121px Gilroy Light, sans-serif;
 }
 
 .titleH4{
     color: white;
     max-width: 615px;
-    margin-bottom: 70px;
+    height: 100px;
+    /*margin-bottom: 70px;*/
     font: normal normal 400 35px/47px Gilroy Light, sans-serif;
 }
 
@@ -121,8 +123,150 @@
     grid-column-end: 6;
     transition: --cum 3s;
     counter-set: cum var(--cum);
-    margin-top: 32vh; /* 52vh */
+    /*margin-top: 15vh; !* 52vh *!*/
     background-color: #283338;
+}
+
+.container21{
+    background-color: #283338;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-template-columns:  466px 466px 150px;
+    display: grid;
+    transition: --num 3s;
+    counter-set: num var(--num);
+}
+
+.percentDiv2_2{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: grid;
+    grid-auto-rows: auto;
+    margin-top: -200px;
+    position: relative;
+    background-color: #283338;
+}
+
+.percentDiv2{
+    font: 800 40px system-ui;
+    margin-top: 150px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    position: relative;
+}
+
+.percentDiv{
+    font: 800 40px system-ui;
+    background-color: #283338;
+}
+
+.percentP{
+    color: white;
+    width: 218px;
+    font: normal normal 300 50px/48px Gilroy Light, sans-serif;
+    margin-bottom: 90px;
+}
+
+.percent{
+    color: #08ff08;
+    font: normal normal 900 160px/37px Gilroy bold, sans-serif;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px #08ff08;
+}
+
+.percent2{
+    color: #08ff08;
+    font: normal normal 900 160px/37px Gilroy bold, sans-serif;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px #B2B1B7;
+}
+
+.section_counter{}
+
+.percentPAnim{
+    width: 400px;
+    font: normal normal 900 160px/37px Gilroy bold, sans-serif;
+    color: transparent;
+    -webkit-text-stroke-width: 0.15rem;
+    -moz-text-stroke-width: 0.15rem;
+    -ms-text-stroke-width: 0.15rem;
+    -o-text-stroke-width: 0.15rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px #08ff08;
+    -moz-text-stroke-color: #42DF4C;
+    -ms-text-stroke-color: #42DF4C;
+    -o-text-stroke-color: #42DF4C;
+}
+
+.percentPAnim2{
+    font: normal normal 900 160px/37px Gilroy bold, sans-serif;
+    color: transparent;
+    -webkit-text-stroke-width: 0.15rem;
+    -moz-text-stroke-width: 0.15rem;
+    -ms-text-stroke-width: 0.15rem;
+    -o-text-stroke-width: 0.15rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px #B2B1B7;
+    -moz-text-stroke-color: white;
+    -ms-text-stroke-color: white;
+    -o-text-stroke-color: white;
+}
+
+.circleDiv{
+    margin-top: 50px;
+}
+
+.circleChart{
+    transform: rotate(90deg);
+}
+
+.container21:hover .circleChartInfo{
+    animation: circle-chart-appear 3s forwards;
+    opacity: 0;
+    transform: translateY(0.3em);
+}
+
+.container21:hover .circleChartCircle{
+    animation: circle-chart-fill 2s reverse;
+    transform: rotate(0deg);
+    transform-origin: center;
+}
+
+.circleChartInfo{
+    width: 200px;
+    position: relative;
+    top: -260px;
+    left: 115px;
+    color: #575758;
+    font-size: 50px;
+}
+
+.addPercentP{
+    width: 160px;
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+.divPerc{
+    margin-top: 30px;
+}
+
+.percentP2{
+    font-family: Gilroy Light, sans-serif;
+    color: #B2B1B7;
+    font-weight: 100;
+    font-size: 35px;
+}
+
+@keyframes circle-chart-fill {
+    to { stroke-dasharray: 0 100; }
+}
+
+@keyframes circle-chart-appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* container 2 end */
@@ -253,6 +397,11 @@
 
 .pBack{
     width: 200px;
+}
+
+.divBoxNum{
+    display: flex;
+    align-items: center;
 }
 
 .counter_item, .counter_item2{
@@ -775,17 +924,471 @@
 
 /* container 12 end */
 
+/* form */
 
+.orderBlock{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    z-index: 4;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-out;
+}
+
+.userdata2{
+    width: 335px;
+    background-color: #1D2025;
+    margin: 25% auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.ix{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titleUser{
+    width: 283px;
+    height: 92px;
+    text-align: left;
+    font-family: Gilroy Light, sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin: 0 0 0 15px;
+}
+
+.descSpan{
+    font-family: Gilroy Light, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0;
+    color: #B2B1B7;
+    margin: 0 0 0 15px;
+    text-align: left;
+}
+
+.inputUser{
+    margin: 10px 0 10px 10px;
+    padding: 5px;
+    width: 90%;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    border-bottom: 1px solid #A7A5A5;
+    background-color: #1D2025;
+    color: #A7A5A5;
+    outline: none;
+    font-family: Gilroy Medium, sans-serif;
+}
+
+.footerBut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    width: 283px;
+    height: 60px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    font: normal normal normal 16px/19px Gilroy Light, sans-serif;
+}
+
+/* form end */
+
+
+
+@media screen and (max-width: 1770px) {
+    .mainContainer, .container8, .container6,
+    .container10_2, .container11_2, .container4_5, .animDiv1, .container4_2{
+        grid-template-columns: 150px 405px 405px 405px 1fr;
+    }
+    .container21{
+        grid-template-columns: 405px 406px 1fr;
+    }
+    .h421 {
+        margin: 5px 0 85px -305px;
+    }
+    .h4{
+        width: 900px;
+    }
+    .percentPAnim2{
+        margin: 50px 0 0 0;
+    }
+    .p4_5, .p4_52, .p10_2, .p10{
+        font: normal normal normal 72px/90px Gilroy Light, sans-serif;
+    }
+    .p10_2{
+        max-width: 1270px;
+    }
+    .p10{
+        max-width: 923px;
+        left: 405px;
+    }
+    .pSmart{
+        font-size: 75px;
+    }
+    .p11{
+        font: normal normal normal 61px/78px Gilroy Light, sans-serif;
+    }
+    .title5P, .p6, .p16{
+        font: normal normal normal 44px/70px Gilroy Light, sans-serif;
+    }
+    .p6{
+        font: normal normal normal 47px/70px Gilroy Light, sans-serif;
+    }
+    .p6{
+        max-width: 915px;
+    }
+    .container7, .container9, .container5{
+        grid-template-columns: 133px 405px 405px 405px 1fr;
+    }
+    .divGreen10{
+        right: 20px;
+    }
+    .p102{
+        left: -15px;
+    }
+    .imageBlock{
+        margin-right: 37px;
+    }
+    .divImgSlider{
+        padding: 0 10px 0 110px;
+    }
+    @keyframes title1 {
+        from {
+            position: relative;
+            left: -400px;
+        }
+        to {
+            position: relative;
+            left: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 1510px) {
+    .mainContainer, .container8, .container6,
+    .container10_2, .container11_2, .container4_5, .animDiv1, .container4_2{
+        grid-template-columns: 100px 305px 305px 305px 1fr;
+    }
+    .container21{
+        grid-template-columns: 305px 306px 1fr;
+    }
+    .divImgSlider{
+        height: 566px;
+    }
+    .titleH1{
+        font: normal normal 300 83px/94px Gilroy Light, sans-serif;
+    }
+    .p16{
+        width: 790px;
+    }
+    .p6{
+        max-width: 915px;
+    }
+    .divSpan{
+        font-size: 33px;
+    }
+    .pYear{
+        font-size: 140px;
+    }
+    .divBoxNum{
+        width: 451px;
+    }
+    .pDos{
+        width: 141px;
+        font: normal normal 300 35px/40px Gilroy Light, sans-serif;
+    }
+    .container7, .container9, .container5{
+        grid-template-columns: 83px 305px 305px 305px 1fr;
+    }
+    .p4_5, .p4_52, .p10_2, .p10, .p11{
+        font: normal normal normal 62px/90px Gilroy Light, sans-serif;
+    }
+    .p11{
+        font: normal normal normal 58px/83px Gilroy Light, sans-serif;
+    }
+    .p5{
+        font: normal normal 300 24px/44px Gilroy Light, sans-serif;
+        bottom: -41px;
+    }
+    .percentDiv2_2{
+        margin-left: 100px;
+    }
+    .p4_52{
+        margin-left: -300px;
+    }
+    .p10_2{
+        max-width: 1270px;
+    }
+    .p10{
+        max-width: 730px;
+    }
+    .divGreen10{
+        right: 20px;
+    }
+    .p102{
+        left: -15px;
+    }
+    .pSmart{
+        font-size: 65px;
+    }
+    .sliderBox {
+        height: 566px;
+    }
+    .divInfo{
+        padding-top: 10px;
+    }
+    .pPrise{
+        margin-top: 10px;
+    }
+    .h4{
+        width: 770px;
+    }
+    .div99{
+        margin-top: 100px;
+    }
+    .percentDiv2{
+        margin-top: 0;
+    }
+    .imageBlock{
+        margin-right: 0;
+    }
+    @keyframes title1 {
+        from {
+            position: relative;
+            left: -300px;
+        }
+        to {
+            position: relative;
+            left: 0;
+        }
+    }
+}
 
 @media screen and (max-width: 1305px){
     .addClass{
         height: 500px;
+    }
+    .circleChartInfo {
+        width: 200px;
+        top: -195px;
+        left: 95px;
+        font-size: 35px;
+    }
+    .container1{
+        padding-top: 10vh;
+    }
+    .p16 {
+        width: 629px;
+    }
+    .div99{
+        margin-top: 100px;
+    }
+    .container4_2{
+        margin-left: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+    .mainContainer, .container8, .container6,
+    .container10_2, .container11_2, .container4_5, .animDiv1{
+        grid-template-columns: 100px 205px 205px 205px 1fr;
+    }
+    .container21{
+        grid-template-columns: 205px 205px 1fr;
+    }
+    .divImgSlider{
+        height: 566px;
+    }
+    .p4_5, .p4_52, .p10_2, .p10{
+        font: normal normal normal 45px/55px Gilroy Light, sans-serif;
+        left: 0;
+    }
+    .title5P, .p6, .p16{
+        width: 100%;
+        font: normal normal normal 36px/47px Gilroy Light, sans-serif;
+    }
+    .span10 {
+        width: 170px;
+        font: normal normal 300 15px/25px Gilroy Light, sans-serif;
+    }
+    .p102{
+        width: 335px;
+        left: 35px;
+        margin-right: 70px;
+        font: normal normal 300 17px/23px Gilroy Light, sans-serif;
+    }
+    .upButton{
+        margin-top: -90px;
+    }
+    .greenButDiv {
+        width: 360px;
+        height: 80px;
+    }
+    .greenBut {
+        width: 360px;
+        height: 80px;
+        padding-left: 50px;
+        font: normal normal 400 16px/47px Gilroy Light, sans-serif;
+        padding-top: 20px;
+    }
+    .spanArrow{
+        top: -15px;
+        width: 70px;
+        height: 70px;
+    }
+    .greenBut4 {
+        top: 105px;
+    }
+    .greenBut3 {
+        top: 30px;
+    }
+    .container4_5 {
+        min-height: 600px;
+        padding-left: 50px;
+        padding-top: 120px;
+    }
+    .h4, .h42 {
+        font: normal normal 300 70px/60px Gilroy Light, sans-serif;
+    }
+    .h4{
+        width: 620px;
+    }
+    .h42{
+        margin-left: 0;
+    }
+    .section_counter2 {
+        width: 70%;
+    }
+    .pDos2 {
+        font: normal normal 300 40px/90px Gilroy Light, sans-serif;
+    }
+    .p11 {
+        font: normal normal normal 45px/60px Gilroy Light, sans-serif;
+        left: 0;
+    }
+    .pYear {
+        font: normal normal 900 115px/42px Gilroy Bold, sans-serif;
+    }
+    .pDos {
+        font: normal normal 300 30px/30px Gilroy Light, sans-serif;
+    }
+    .container3 {
+        min-height: 300px;
+        margin-top: 60px;
+    }
+    .container11_4 {
+        margin-top: 120px;
+        max-width: 865px;
+    }
+    .container11_2 {
+        height: 1150px;
+    }
+    .footerSpan {
+        font: normal normal bold 35px/48px Gilroy bold, sans-serif;
     }
     .c11{
         margin-top: 50px;
     }
     .c12{
         margin-top:  80px;
+    }
+    .container11_6 {
+        margin-top: 265px;
+    }
+    .divSpan {
+        font: normal normal bold 22px/20px Gilroy Bold, sans-serif;
+        margin-bottom: 20px;
+    }
+    .spanB {
+        width: 56px;
+        height: 56px;
+        line-height: 56px;
+    }
+    .span8Z {
+        font: normal normal normal 20px/36px Gilroy Light, sans-serif;
+    }
+    .pH, .pH2 {
+        font-size: 55px;
+        width: 660px;
+        margin-left: 0;
+    }
+    .circleChart{
+        width: 300px;
+        height: 300px;
+    }
+    .percentPAnim2{
+        font-size: 130px;
+    }
+    .percentPAnim{
+        font-size: 130px;
+    }
+    .counter_item{
+        margin: 50px 0 -30px 0;
+    }
+    .counter_item2{
+        margin: 80px 0 20px 0;
+    }
+    .percent, .percent2{
+        font-size: 130px;
+    }
+    .percentP {
+        font: normal normal 300 40px/40px Gilroy Light, sans-serif;
+        margin-bottom: 60px;
+    }
+    .divPerc {
+        margin-top: -80px;
+    }
+    .percentP2 {
+        font-size: 30px;
+    }
+    .percentDiv2 {
+        margin-top: 0;
+    }
+    .titleH1 {
+        width: 600px;
+        height: 140px;
+        font: normal normal 300 75px/80px Gilroy Light, sans-serif;
+    }
+    .titleH4 {
+        margin-top: -90px;
+        font: normal normal 400 30px/35px Gilroy Light, sans-serif;
+    }
+    .pSmart{
+        font-size: 50px;
+    }
+    .pPrise {
+        font: normal normal 300 28px/44px Gilroy Light, sans-serif;
+        margin: 5px 0 55px 0;
+    }
+    .arrowImg {
+        width: 100px;
+        height: 100px;
+    }
+    .sliderBox {
+        height: 566px;
+    }
+    .pBig2{
+        font-size: 14px;
+    }
+    @keyframes title1 {
+        from {
+            position: relative;
+            left: -200px;
+        }
+        to {
+            position: relative;
+            left: 0px;
+        }
     }
 }
 

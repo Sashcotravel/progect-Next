@@ -3,7 +3,7 @@
 import {useLocale, useTranslations} from 'next-intl';
 import Link from 'next/link';
 import {useRouter} from "next/navigation";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {memo, useEffect, useMemo, useState} from "react";
 import imageS from "../../image/svg/Screenshot_1.webp";
 import Image from "next/image";
@@ -21,9 +21,12 @@ import { LazyLoadComponent } from "react-lazy-load-image-component";
 import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import { coordinates } from '../../users'
 import { defaultTheme } from '../../common/Theme'
+import {fetchUserZam} from "../../API/mail";
+import {addChecked, addMeneger} from "../../store/thanks-reduser";
+import { send } from "@emailjs/browser";
 
 
-const Video = memo(props => {
+const Video = () => {
     // const src = image4
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
     const onLoadedData = () => {setTimeout(() => {setIsVideoLoaded(true)}, 2000)};
@@ -43,22 +46,39 @@ const Video = memo(props => {
             {/*        style={{ opacity: isVideoLoaded ? 1 : 0, border: 'none', width: '100%', height: '100vh'}}></iframe>*/}
         </div>
     );
-});
+};
 
+let numPhone = 0
+let numEmail = 0
 
 export default function Home() {
 
     const t = useTranslations();
     const locale = useLocale();
     const router = useRouter()
-    const meneger = useSelector((state) => state.thanks.meneger)
-    const checked = useSelector((state) => state.thanks.checked)
+    const dispatch = useDispatch();
     const [aparat, setAparat] = useState(false)
+    const [userData, setUserData] = useState({
+        name: "", phone: "", email: "" });
+    const [formPass, setFormPass] = useState({
+        phone: false, email: false });
 
 
     const noScroll = () => {
         let con = document.getElementById("lightblue");
         con.style.visibility = "visible";
+    };
+
+    const hiddeItem = () => {
+        let con = document.getElementById("lightblue");
+        con.style.visibility = "hidden";
+    };
+
+    const blurClose = (e) => {
+        if(e.target.id === "lightblue"){
+            let con = document.getElementById("lightblue");
+            con.style.visibility = "hidden";
+        }
     };
 
     useEffect(() => {
@@ -84,7 +104,7 @@ export default function Home() {
                 if(!entry.isIntersecting) return
                 count(counters)},
             { root: null, threshold: 0.4 })
-        // CounterObserver.observe(section_counter)
+        CounterObserver.observe(section_counter)
         let CounterObserver2 = new IntersectionObserver((entries, observer) => {
                 let [entry] = entries
                 if(!entry.isIntersecting) return
@@ -117,6 +137,154 @@ export default function Home() {
         return <Map />
     }
 
+    const useSubmit = async () => {
+        if (formPass.email || formPass.phone) {
+            dispatch(addMeneger(false))
+            dispatch(addChecked(false))
+            let templateParams = {
+                name: userData.name,
+                email: userData.email,
+                phone: userData.phone,
+                namePage: 'ГОЛОВНА'
+            };
+            dispatch(fetchUserZam(templateParams));
+            send('service_qcggpom', 'template_ugaoz0u', templateParams, 'e8GXwhbbyk4tXovwB');
+            send('service_qcggpom', 'template_dxf8e6l', templateParams, 'e8GXwhbbyk4tXovwB');
+            router.push("/thanks");
+        }
+    };
+
+    const onBlur = (e) => {
+        numEmail = 1
+        let phone = document.getElementById("phone");
+        let email = document.getElementById('email')
+
+
+        setUserData((actual) => {
+            return { ...actual, [e.target.title]: e.target.value };})
+
+        const re = /^\S+@\S+\.\S+$/
+        if(!re.test(e.target.value)){
+            if(formPass.phone === false){
+                email.style.border = '2px solid red'
+                email.style.backgroundCo1or = 'transparent'
+                if(numPhone > 0){
+                    phone.style.border = '2px solid red'
+                    phone.style.backgroundColor = 'transparent'
+                }
+                setFormPass((actual) => { return { ...actual, email: false } })
+                setFormPass((actual) => {return { ...actual, phone: false };});
+            }
+            else {
+                phone.style.border = "none";
+                phone.style.borderBottom = "2px solid grey";
+                phone.style.backgroundColor = "transparent";
+                email.style.border = 'none'
+                email.style.borderBottom = '2px solid grey'
+                email.style.backgroundColor = 'transparent'
+            }
+        }
+        else {
+            email.style.border = 'none'
+            email.style.borderBottom = '2px solid grey'
+            email.style.backgroundColor = 'transparent'
+            phone.style.border = "none";
+            setFormPass((actual) => {return { ...actual, email: true }});
+            phone.style.borderBottom = "2px solid grey";
+            phone.style.backgroundColor = "transparent";
+        }
+    }
+
+    const onBlur2 = (e) => {
+        numPhone = 1
+        if (locale === 'ua'){
+            if (e.target.value.length > 14) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})
+            }
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})
+            }
+        }
+        else if (locale === 'en'){
+            if (e.target.value.length > 17) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})
+            }
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})
+            }
+        }
+        else if (locale === 'ru'){
+            if (e.target.value.length > 14) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})
+            }
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})
+            }
+        }
+
+        let phone = document.getElementById("phone");
+        let email = document.getElementById('email')
+        let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{11,11}$/);
+        regex = locale === 'en' ? new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,14}$/)
+            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{11,11}$/)
+        if (regex.test(e.target.value.toString()) === true) {
+            phone.style.border = "none";
+            phone.style.borderBottom = "2px solid grey";
+            phone.style.backgroundColor = "transparent";
+            setFormPass((actual) => {return { ...actual, phone: true }});
+            email.style.border = 'none'
+            email.style.borderBottom = '2px solid grey'
+            email.style.backgroundColor = 'transparent'
+        }
+        else {
+            if (formPass.email === false) {
+                phone.style.border = "2px solid red";
+                phone.style.backgroundCo1or = "transparent";
+                if(numEmail > 0){
+                    email.style.border = '2px solid red'
+                    email.style.backgroundColor = 'transparent'
+                }
+                setFormPass((actual) => {return { ...actual, phone: false };});
+                setFormPass((actual) => { return { ...actual, email: false } })
+            }
+            else {
+                email.style.border = 'none'
+                email.style.borderBottom = '2px solid grey'
+                email.style.backgroundColor = 'transparent'
+                phone.style.border = "none";
+                phone.style.borderBottom = "2px solid grey";
+                phone.style.backgroundColor = "transparent";
+            }
+        }
+    };
+
+    const phoneClick = (e) => {
+        if(locale === 'ua'){
+            if(userData.phone === ''){
+                setUserData((actual) => {return { ...actual, phone: '+380' }})
+            }
+        }
+        if(locale === 'en'){
+            if(userData.phone === ''){
+                setUserData((actual) => {return { ...actual, phone: '+1' }})
+            }
+        }
+        if(locale === 'ru'){
+            if(userData.phone === ''){
+                setUserData((actual) => {return { ...actual, phone: '+380' }})
+            }
+        }
+    }
+
 
   return (
     <div style={{ backgroundColor: "#283338" }}>
@@ -130,7 +298,7 @@ export default function Home() {
             <div id='container1' className={`${m.container1}`}>
                 <h1 className={m.titleH1}>{t("main.searchWhat")}</h1>
                 <p className={m.titleH4}>{t("main.build100")}</p>
-                <div className={m.greenButDiv} onClick={noScroll} onTouchEnd={noScroll}>
+                <div className={m.greenButDiv+' '+m.upButton} onClick={noScroll} onTouchEnd={noScroll}>
                     <button className={m.greenBut} style={{ cursor: "pointer" }}>
                         <span>{t("main.zam")}</span>
                         <span className={m.spanArrow}>
@@ -141,7 +309,52 @@ export default function Home() {
             </div> {/* container 1 */}
 
             <div className={m.div99}> {/* container 2 */}
+                <div className={m.container21}>
 
+                    <div className={m.percentDiv2}>
+                        <div className={m.percentDiv}>
+                            <p className={m.percentP}>{t("main.prod1")}</p>
+                            <section id="section_counter" className={m.section_counter}>
+                                <div className={m.counter_item}>
+                                    <span id="pes1" className={m.percentPAnim} data-target={75}>0</span>
+                                    <span className={m.percent}>%</span>
+                                </div>
+                            </section>
+
+                            <div>
+                                <section className={m.circleDiv}>
+                                    <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="400" height="400"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                         style={{ overflowClipMargin: "border-box", padding: "20px" }}>
+                                        <circle className={m.circleChartBackground} stroke="black" strokeWidth="4" fill="none"
+                                                cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                                        <circle className={m.circleChartCircle} stroke="#42df4c" strokeWidth="4"
+                                                strokeDasharray="75,100"
+                                                strokeLinecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                                    </svg>
+                                </section>
+                                <p className={m.circleChartInfo}>EBITDA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={m.percentDiv2_2}>
+                        <p className={m.percentP + " " + m.addPercentP}>{t("main.prod2")}</p>
+                        <div className={m.divPerc}>
+                            <section className={m.section_counter}>
+                                <div className={m.counter_item2}>
+                                    <span id="pes1" className={m.percentPAnim2} data-target={25}>0</span>
+                                    <span className={m.percent2}>%</span>
+                                </div>
+                            </section>
+                            <p className={m.percentP2}>{t("main.energe")}</p>
+                            <p className={m.percentP2}>{t("main.salary")}</p>
+                            <p className={m.percentP2}>{t("main.water")}</p>
+                            <p className={m.percentP2}>{t("main.foam")}</p>
+                            <p className={m.percentP2}>{t("main.wax")}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className={m.container2}>
@@ -202,7 +415,7 @@ export default function Home() {
                         <p className={m.pYear} id="pes3" data-target={12}>0</p>
                         <p className={m.pDos}>{t("main.yearsOfExperience")}</p>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center" }}>
+                    <div className={m.divBoxNum}>
                         <p className={m.pYear} id="pes3" data-target={250}>0</p>
                         <p className={m.pDos+' '+m.pBack}>{t("main.boxes")} <br /> {t("main.turnkey")}</p>
                     </div>
@@ -456,7 +669,7 @@ export default function Home() {
 
                     <div className={m.container11_6}>
                         <p className={m.p11_2}>{t("main.leasing")}</p>
-                        <div className={m.greenButDiv}>
+                        <div className={m.greenButDiv} onClick={noScroll} onTouchEnd={noScroll}>
                             <button className={m.greenBut} style={{ cursor: "pointer" }}>
                                 <span>{t("main.zam")}</span><span className={m.spanArrow}>
                                 <Image src={image5} className={m.imgClass} alt={'arrow'} loading="lazy" /></span>
@@ -466,6 +679,29 @@ export default function Home() {
                 </div>
             </LazyLoadComponent>
 
+        </div>
+
+        <div id="lightblue" onClick={blurClose} className={m.orderBlock} style={{ left: "0" }}>
+            <div className={m.userdata2}>
+                <div className={m.ix}>
+                <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}
+                      onClick={hiddeItem}>&#10006;</span>
+                </div>
+                <p className={m.titleUser}>{t("getAnOffer")}</p>
+                <br />
+                <p className={m.descSpan}>{t("descCon")}</p>
+                <br />
+                <input className={m.inputUser} type="name" title="name" placeholder={`${t("enterName")}`}
+                       value={userData.name} onChange={(e) => {setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value };});}} />
+                <input className={m.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onClick={phoneClick}
+                       placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={onBlur2} />
+                <input className={m.inputUser} type="email" title="email" id="email"
+                       placeholder={`${t("enterEmail")}`} value={userData.email} onChange={onBlur} />
+                <br />
+                <button className={m.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42df4c' }}
+                        onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>{t("send")}</button>
+            </div>
         </div>
 
     </div>
