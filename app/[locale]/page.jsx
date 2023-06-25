@@ -122,7 +122,7 @@ export default function Home() {
         rotateControl: false, fullscreenControl: false, disableDoubleClickZoom: true, styles: defaultTheme
     }
 
-    const Map = memo(() => {
+    const Map = () => {
         const center = useMemo(() => ({ lat: 48.385, lng: 29.183 }), [])
         return <GoogleMap zoom={7} center={center} mapContainerClassName={m.map_container}
                           options={defaultOption}>
@@ -130,7 +130,7 @@ export default function Home() {
                 let center = item.center;
                 return <MarkerF position={center} icon={image6} key={index} onClick={() => router.push(item.url) } title={item.title} />})}
         </GoogleMap>
-    })
+    }
 
     const Home = () => {
         if(!isLoaded) return <div>Завантаження...</div>
