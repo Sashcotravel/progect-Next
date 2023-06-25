@@ -50,7 +50,8 @@
 .titleH1{
     color: white;
     width: 751px;
-    height: 200px;
+    /*height: 200px;*/
+    height: 290px;
     /*margin-bottom: 65px;*/
     font: normal normal 300 105px/121px Gilroy Light, sans-serif;
 }
