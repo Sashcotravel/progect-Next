@@ -1013,6 +1013,9 @@
     .container10_2, .container11_2, .container4_5, .animDiv1, .container4_2{
         grid-template-columns: 150px 405px 405px 405px 1fr;
     }
+    .container1{
+        padding-top: 5vh;
+    }
     .container21{
         grid-template-columns: 405px 406px 1fr;
     }
@@ -1089,6 +1092,8 @@
         height: 566px;
     }
     .titleH1{
+        width: 726px;
+        height: 245px;
         font: normal normal 300 83px/94px Gilroy Light, sans-serif;
     }
     .p16{
@@ -1361,7 +1366,7 @@
     }
     .titleH1 {
         width: 600px;
-        height: 140px;
+        height: 185px;
         font: normal normal 300 75px/80px Gilroy Light, sans-serif;
     }
     .titleH4 {
