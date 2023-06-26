@@ -269,29 +269,8 @@ export default function Contacts() {
 
 
     return (<>
-        {/*<head>*/}
-        {/*    <title>{t("contactTit")}</title>*/}
-        {/*    <meta name="description" content={t("contacDesc")} />*/}
-        {/*    <meta property="og:title" content={t("contactTit")} />*/}
-        {/*    <meta property="og:description" content={t("contacDesc")} />*/}
-        {/*    <link rel="canonical" href={locale === 'en' ? "https://samwash.ua/en/contacts" : locale === 'ru' ? "https://samwash.ua/ru/contacts" : "https://samwash.ua/contacts"} />*/}
-        {/*</head>*/}
 
         <main className={s.divBlock}>
-
-            {/*<HelmetProvider>*/}
-            {/*    <Helmet>*/}
-            {/*        <meta charSet="utf-8" />*/}
-            {/*        <title>{t("contactTit")}</title>*/}
-            {/*        <meta name="description" content={t("contacDesc")} />*/}
-            {/*        <meta property="og:title" content={t("contactTit")} />*/}
-            {/*        <meta property="og:image" content="../uploads/img/svg/logo144.png" />*/}
-            {/*        <link rel="apple-touch-icon" href="../uploads/img/svg/logo144.png" />*/}
-            {/*        <meta property="og:description" content={t("contacDesc")} />*/}
-            {/*        <meta property="og:url" content={lang === 'en' ? "https://samwash.ua/en/contacts" : lang === 'ru' ? "https://samwash.ua/ru/contacts" : "https://samwash.ua/contacts"} />*/}
-            {/*        <link rel="canonical" href={lang === 'en' ? "https://samwash.ua/en/contacts" : lang === 'ru' ? "https://samwash.ua/ru/contacts" : "https://samwash.ua/contacts"} />*/}
-            {/*    </Helmet>*/}
-            {/*</HelmetProvider>*/}
 
             <Image src={background} className={s.imageThanks} alt="lable" />
             <div className={s.divMain}>
