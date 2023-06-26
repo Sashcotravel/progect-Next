@@ -162,7 +162,8 @@ export default function ListWash2() {
 
     if(Number(id)){
         colPost = Number(id);
-    } else {
+    }
+    else {
         obl = oblFalse(id, locale);
     }
 
@@ -182,7 +183,7 @@ export default function ListWash2() {
     return (
         <main className={s.divBlock}>
 
-            <Image src={require('../../../logo144.png')} alt='aa' />
+            {/*<Image src={require('../../../logo144.png')} alt='aa' />*/}
 
             <Image src={background} loading='lazy' className={s.imageThanks} alt="lable"/>
 

@@ -66,3 +66,15 @@ export const postColIn = (colPost, className, t) => {
         return <span className={`${className}`}>{t("on")} {colPost} {t("postCol")}</span>;
     }
 };
+
+export const postColInId = (colPost, t) => {
+    if (colPost === 0) {
+        return colPost;
+    } else if (colPost === 1) {
+        return `${t("on")} ${colPost} ${t("postCol1")}`
+    } else if (colPost === 2 || colPost === 3 || colPost === 4) {
+        return `${t("on")} ${colPost} ${t("postCol2")}`
+    } else {
+        return `${t("on")} ${colPost} ${t("postCol")}`
+    }
+};
