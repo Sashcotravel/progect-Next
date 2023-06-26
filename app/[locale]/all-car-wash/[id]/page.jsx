@@ -182,6 +182,8 @@ export default function ListWash2() {
     return (
         <main className={s.divBlock}>
 
+            <Image src={require('../../../logo144.png')} alt='aa' />
+
             <Image src={background} loading='lazy' className={s.imageThanks} alt="lable"/>
 
             <div className={s.breadcrumbs}>
