@@ -403,58 +403,58 @@
 }
 
 @media screen and (max-width: 800px) {
-    .main{
+    .main {
         padding: 50px 50px 0 50px;
     }
-        #mainCarousel{
-            width: 100%;
-        }
-        .titleMoreInfo{
-            font-size: 40px;
-            margin-bottom: 40px;
-        }
-        .breadcrumbs{
-            margin: 0 0 40px 0;
-        }
-        .descMoreInfo{
-            font-size: 21px;
-        }
-        .spanTitle{
-            font: normal normal normal 18px/16px Gilroy Light, sans-serif;
-            width: 120px;
-            height: 35px;
-            margin-right: 10px;
-        }
-        .divTitle{
-            justify-content: normal;
-        }
-        .divTitle {
-            display: flex;
-            overflow-y: hidden;
-            padding-left: 57px;
-            padding-right: 20px;
-            justify-content: center;
-        }
-        .boxOne{
-            width: 335px;
-            margin: auto;
-            margin-bottom: 100px;
-        }
-        .blogFooter{
-            margin-top: -35px;
-        }
-        .articleTime{
-            width: 135px;
-        }
-        .articleTimeMore{
-            font-size: 11px;
-            margin: -25px 0 40px;
-        }
-        .blogH1{
-            height: 90px;
-            font: normal normal 300 36px/98px Gilroy Light, sans-serif;
-        }
+    #mainCarousel {
+        width: 100%;
     }
+    .titleMoreInfo {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+    .breadcrumbs {
+        margin: 0 0 40px 0;
+    }
+    .descMoreInfo {
+        font-size: 21px;
+    }
+    .spanTitle {
+        font: normal normal normal 18px/16px Gilroy Light, sans-serif;
+        width: 120px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    .divTitle {
+        justify-content: normal;
+    }
+    .divTitle {
+        display: flex;
+        overflow-y: hidden;
+        padding-left: 57px;
+        padding-right: 20px;
+        justify-content: center;
+    }
+    .boxOne {
+        width: 335px;
+        margin: auto;
+        margin-bottom: 100px;
+    }
+    .blogFooter {
+        margin-top: -35px;
+    }
+    .articleTime {
+        width: 135px;
+    }
+    .articleTimeMore {
+        font-size: 11px;
+        margin: -25px 0 40px;
+    }
+    .blogH1 {
+        height: 90px;
+        font: normal normal 300 36px/98px Gilroy Light, sans-serif;
+    }
+}
 
 @media screen and (max-width: 600px) {
     .main{
