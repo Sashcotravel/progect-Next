@@ -2098,7 +2098,8 @@
     }
     .container1 {
         display: block;
-        padding-left: 20px
+        padding-left: 20px;
+        padding-top: 15vh;
     }
     .titleH1 {
         font-size: 48px;
@@ -2488,6 +2489,9 @@
         height: 800px;
         padding-top: 80px;
         padding-left: 20px;
+        position: relative;
+        z-index: 2;
+        color: black;
     }
     .container11 {
         margin-top: 0;
