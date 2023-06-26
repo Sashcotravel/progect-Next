@@ -3,7 +3,6 @@
 import React, {useState} from "react";
 import {useLocale, useTranslations} from "next-intl";
 import {useParams} from "next/navigation";
-import {useSelector} from "react-redux";
 import {listWash} from "../../../../../../users";
 
 export default function Head(){
