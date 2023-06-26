@@ -2163,7 +2163,7 @@
     .percentDiv2_2 {
         display: block;
         margin-top: -130px;
-        left: 35px;
+        left: 45px;
         width: 280px
     }
     .percentPAnim2 {
@@ -2321,6 +2321,9 @@
         min-height: 420px;
         padding-left: 20px;
         padding-top: 70px;
+        position: relative;
+        z-index: 2;
+        color: black;
     }
     .p4_5 {
         font-size: 30px;
