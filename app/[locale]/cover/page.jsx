@@ -136,6 +136,8 @@ export default function Nacritya() {
     return (
         <main className={s.main}>
 
+            <Image src={require('../../marchello4.jpg')} alt='aa' />
+
             <Image src={background} loading='lazy' className={s.imageThanks} alt="lable" />
 
             <div id="lightblue" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>
