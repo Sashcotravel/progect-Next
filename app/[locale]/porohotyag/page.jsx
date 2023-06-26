@@ -225,8 +225,6 @@ export default function Porohotag() {
     return (<React.Fragment>
         <main className={s.main}>
 
-            <Image src={require('../../poroh5.jpg')} alt='aa' />
-
             <Image src={background} loading='lazy' className={s.imageThanks} alt="lable" />
 
             <div id="lightblue" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>
