@@ -295,7 +295,7 @@ export default function Home() {
 
         <div className={m.mainContainer}>
 
-            <Image src={require('../../image/svg/logo144.png')} alt='aa' />
+            {/*<Image src={require('../../image/svg/logo144.png')} alt='aa' />*/}
 
             <div id='container1' className={`${m.container1}`}>
                 <h1 className={m.titleH1}>{t("main.searchWhat")}</h1>
