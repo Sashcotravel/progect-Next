@@ -150,7 +150,59 @@ export default function Porohotag() {
 
         let phone = document.getElementById("phone");
         let regex = locale === 'en' ? new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,14}$/)
-            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,12}$/)
+            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{11,11}$/)
+        if (regex.test(e.target.value.toString()) === true) {
+            phone.style.border = "none";
+            phone.style.borderBottom = "2px solid grey";
+            phone.style.backgroundColor = "transparent";
+            setFormPass((actual) => {return { ...actual, phone: true }});
+        }
+        else {
+            phone.style.border = "2px solid red";
+            phone.style.backgroundCo1or = "transparent";
+            setFormPass((actual) => {return { ...actual, phone: false };});
+            setFormPass((actual) => { return { ...actual, email: false } })
+        }
+    };
+
+    const onBlur3 = (e) => {
+        if (locale === 'ua'){
+            if (e.target.value.length > 14) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})
+            }
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})
+            }
+        }
+        else if (locale === 'en'){
+            if (e.target.value.length > 16) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})
+            }
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})
+            }
+        }
+        else if (locale === 'ru'){
+            if (e.target.value.length > 14) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})
+            }
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})
+            }
+        }
+
+        let phone = document.getElementById("phone1");
+        let regex = locale === 'en' ? new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,14}$/)
+            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{11,11}$/)
         if (regex.test(e.target.value.toString()) === true) {
             phone.style.border = "none";
             phone.style.borderBottom = "2px solid grey";
@@ -209,8 +261,8 @@ export default function Porohotag() {
                     <input className={s.inputUser} type="name" title="name"
                            placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {
                         setUserData((actual) => {return { ...actual, [e.target.title]: e.target.value }})}} />
-                    <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onClick={phoneClick}
-                           placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={onBlur2} />
+                    <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone1" onClick={phoneClick}
+                           placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={onBlur3} />
                     <br />
                     <button className={s.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42df4c' }}
                             onClick={useSubmit} disabled={!formPass.phone} id='2'>{t("send")}</button>

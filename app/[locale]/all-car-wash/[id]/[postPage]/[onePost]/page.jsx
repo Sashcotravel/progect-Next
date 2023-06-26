@@ -180,7 +180,7 @@ export default function OnePost() {
         let email = document.getElementById('email')
         let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,13}$/);
         regex = locale === 'en' ? new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,14}$/)
-            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,12}$/)
+            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{11,11}$/)
         if (regex.test(e.target.value.toString()) === true) {
             phone.style.border = "none";
             phone.style.borderBottom = "2px solid grey";

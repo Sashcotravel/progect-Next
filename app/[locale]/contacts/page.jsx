@@ -124,7 +124,73 @@ export default function Contacts() {
         let email = document.getElementById('email')
         let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,13}$/);
         regex = locale === 'en' ? new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,14}$/)
-            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,12}$/)
+            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{11,11}$/)
+        if (regex.test(e.target.value.toString()) === true) {
+            phone.style.border = "none";
+            phone.style.borderBottom = "2px solid grey";
+            phone.style.backgroundColor = "transparent";
+            setFormPass((actual) => {return { ...actual, phone: true }});
+            email.style.border = 'none'
+            email.style.borderBottom = '2px solid grey'
+            email.style.backgroundColor = 'transparent'
+        }
+        else {
+            if (formPass.email === false) {
+                phone.style.border = "2px solid red";
+                phone.style.backgroundCo1or = "transparent";
+                if(numEmail > 0){
+                    email.style.border = '2px solid red'
+                    email.style.backgroundColor = 'transparent'
+                }
+                setFormPass((actual) => {return { ...actual, phone: false };});
+                setFormPass((actual) => { return { ...actual, email: false } })
+            }
+            else {
+                email.style.border = 'none'
+                email.style.borderBottom = '2px solid grey'
+                email.style.backgroundColor = 'transparent'
+                phone.style.border = "none";
+                phone.style.borderBottom = "2px solid grey";
+                phone.style.backgroundColor = "transparent";
+            }
+        }
+    };
+
+    const onBlur3 = (e) => {
+        numPhone = 1
+        if (locale === 'ua'){
+            if (e.target.value.length > 14) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})}
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})}
+        }
+        else if (locale === 'en'){
+            if (e.target.value.length > 16) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})}
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})}
+        }
+        else if (locale === 'ru'){
+            if (e.target.value.length > 14) {}
+            else if (Number(e.target.value)) {
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: e.target.value }})}
+            else if(e.target.value.length === 1){
+                setUserData((actual) => {
+                    return { ...actual, [e.target.title]: '+' }})}
+        }
+
+        let phone = document.getElementById("phone1");
+        let email = document.getElementById('email1')
+        let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,13}$/);
+        regex = locale === 'en' ? new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,14}$/)
+            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{11,11}$/)
         if (regex.test(e.target.value.toString()) === true) {
             phone.style.border = "none";
             phone.style.borderBottom = "2px solid grey";
@@ -328,9 +394,9 @@ export default function Contacts() {
                                         return { ...actual, [e.target.title]: e.target.value };
                                     });
                                 }} />
-                                <input className={s.inputUser+' '+s.input1} type="text" title="phone" id="phone" value={userData.phone}
-                                       placeholder={`${t("enterYourPhoneNumber")}`} onChange={onBlur2} onClick={phoneClick} />
-                                <input className={s.inputUser+' '+s.input1} type="email" title="email" id="email" value={userData.email}
+                                <input className={s.inputUser+' '+s.input1} type="text" title="phone" id="phone1" value={userData.phone}
+                                       placeholder={`${t("enterYourPhoneNumber")}`} onChange={onBlur3} onClick={phoneClick} />
+                                <input className={s.inputUser+' '+s.input1} type="email" title="email" id="email1" value={userData.email}
                                        placeholder={`${t("enterEmail")}`} onChange={onBlur} />
                                 <textarea className={s.textArea} title="post"
                                           placeholder={`${t("mail")}`} onChange={(e) => {

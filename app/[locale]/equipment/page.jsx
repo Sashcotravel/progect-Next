@@ -114,7 +114,7 @@ export default function Nacritya() {
 
         let phone = document.getElementById("phone");
         let regex = locale === 'en' ? new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,14}$/)
-            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,12}$/)
+            : new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{11,11}$/)
         if (regex.test(e.target.value.toString()) === true) {
             phone.style.border = "none";
             phone.style.borderBottom = "2px solid grey";
