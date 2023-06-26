@@ -238,6 +238,8 @@ export default function OnePost() {
     return(
         <main>
 
+            <Image src={require('../../../../../asset2.jpg')} alt='aa' />
+
             <div className={postOne?.city === "Хуст" ? "divIm1" : postOne?.city === "Тернопіль" ? "divIm3" : ""}></div>
             <div className={postOne?.city === "Хуст" ? "divIm2" : postOne?.city === "Тернопіль" ? "divIm2" : ""}></div>
 
