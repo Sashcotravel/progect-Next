@@ -9,7 +9,6 @@ import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {addBlog, setArticle} from "../../../store/blog-reduser";
 import s from "./blog.module.css"
-import "./Blog.css"
 import background from "../../../image/svg/swlogo.svg";
 
 
@@ -152,7 +151,7 @@ export default async function Blog() {
     return (
         <main className={s.main}>
 
-            <Image src={background} loading='lazy' height={99+'%'} width={84+'%'} className='imageThanks' alt="lable"/>
+            <Image src={background} loading='lazy' className={s.imageThanks} alt="lable"/>
 
             <div>
 

@@ -418,7 +418,6 @@
     }
     .logo {
         width: 87px;
-        left: 60px;
     }
     .napis {
         margin-left: 85px;
@@ -441,6 +440,9 @@
     }
     .displayNoneComp{
         display: none;
+    }
+    .logo {
+        left: 60px;
     }
     .menu__item {
         border: none;
@@ -483,6 +485,9 @@
     }
     .menu__item {
         border-top: 1px solid white;
+    }
+    .logo{
+        left: 0;
     }
 }
 

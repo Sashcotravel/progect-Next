@@ -1,3 +1,5 @@
+@import url('../../../fonts/stylesheet.css');
+
 .main{
     text-align: start;
     padding: 20px 120px 100px;
@@ -9,8 +11,6 @@
     font-family: Gilroy Medium, sans-serif;
     z-index: 2;
     margin: 40px 0 60px 0;
-    grid-column-start: 2;
-    grid-column-end: 5;
 }
 
 .breads{
@@ -108,7 +108,7 @@
     color: white;
 }
 
-/* start */
+ /* start */
 
 .blockArticle{
     width: auto;
@@ -281,8 +281,7 @@
 
 .post {
     padding: 8px;
-    border-color: bisque;
-    border: 1px;
+    border: 1px solid bisque;
 }
 
 .pagination {
