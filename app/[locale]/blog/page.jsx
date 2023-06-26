@@ -132,13 +132,13 @@ export default async function Blog() {
 
     useEffect(() => {
         main();
-        (async function () {
-            let item = await
-                axios.get(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=6`, {
-                    next: {revalidate: 60}
-                }).then(item => dispatch(addBlog(item.data.data.data)))
-            setArticleAll(item?.data?.data.data)
-        })()
+        // (async function () {
+        //     let item = await
+        //         axios.get(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=6`, {
+        //             next: {revalidate: 60}
+        //         }).then(item => dispatch(addBlog(item.data.data.data)))
+        //     setArticleAll(item?.data?.data.data)
+        // })()
     }, [])
 
     let activeStyle = {
@@ -152,8 +152,6 @@ export default async function Blog() {
         <main className={s.main}>
 
             <Image src={background} loading='lazy' className={s.imageThanks} alt="lable"/>
-
-            {/*{isLoaders && <div className={s.loader}>Loading...</div> }*/}
 
             <div>
 
