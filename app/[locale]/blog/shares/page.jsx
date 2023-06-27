@@ -6,7 +6,7 @@ import Image from "next/image";
 import background from "../../../../image/svg/swlogo.svg";
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useSearchParams} from "next/navigation";
 import {addBlog, setArticle} from "../../../../store/blog-reduser";
 
@@ -21,20 +21,26 @@ export default async function Shares() {
     const dispatch = useDispatch();
     const searchParams = useSearchParams()
     let paginatedData = []
+    let allBlog = useSelector((state) => state.blog.articleAll)
     const pageUrl = searchParams.get('page') || 1
 
     async function getData() {
-        const response = await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=1000`);
-        const data2 = await response.json();
-        dispatch(addBlog(data2.data.data))
-        let data = []
-        for (let i= 0; i < data2.data.data.length; i++){
-            if(data2.data.data[i].type === 'article'){
-                data.push(data2.data.data[i])
+        if (allBlog.length === 0) {
+            const response = await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=1000`);
+            const data2 = await response.json();
+            dispatch(addBlog(data2.data.data))
+            let data = []
+            for (let i = 0; i < data2.data.data.length; i++) {
+                if (data2.data.data[i].type === 'article') {
+                    data.push(data2.data.data[i])
+                }
             }
+            setArticleAll(data)
+            return data
+        } else {
+            setArticleAll(allBlog)
+            return allBlog
         }
-        setArticleAll(data)
-        return data
     }
 
     async function main() {

@@ -13,7 +13,6 @@ import background from "../../../image/svg/swlogo.svg";
 import whatsapp from "../../../image/logo/webp/whatsapp.webp";
 import telegram from "../../../image/logo/webp/telegram.webp";
 import viber from "../../../image/logo/webp/viber.webp";
-import { nanoid } from 'nanoid'
 
 let numPhone = 0
 let numEmail = 0

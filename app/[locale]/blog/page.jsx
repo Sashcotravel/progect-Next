@@ -51,13 +51,18 @@ export default async function Blog() {
     }, [screen])
 
     async function getData() {
-        const response = await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=1000`, {
-            next: {revalidate: 60}
-        });
-        const data = await response.json();
-        dispatch(addBlog(data.data.data))
-        setArticleAll(data.data.data.data)
-        return data.data.data;
+        if (allBlog.length === 0) {
+            const response = await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=1000`, {
+                next: {revalidate: 60}
+            });
+            const data = await response.json();
+            dispatch(addBlog(data.data.data))
+            setArticleAll(data.data.data)
+            return data.data.data;
+        } else {
+            setArticleAll(allBlog)
+            return allBlog
+        }
     }
 
     async function main() {
