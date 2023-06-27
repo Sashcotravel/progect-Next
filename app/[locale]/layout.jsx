@@ -1,7 +1,7 @@
 'use client'
 
 import './globals.css'
-import {NextIntlClientProvider} from 'next-intl';
+import {NextIntlClientProvider, useTranslations} from 'next-intl';
 import {TheFooter} from "../component/footer";
 import {TheHeader} from "../component/header";
 import {Provider} from "react-redux";
@@ -15,6 +15,7 @@ import Head from "./head";
 // }
 
 export function generateStaticParams() {
+
   return [{locale: 'en'}, {locale: 'ua'}, {locale: 'ru'}];
 }
 

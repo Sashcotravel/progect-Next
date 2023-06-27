@@ -23,12 +23,20 @@ export default async function MoreInfoBlog(props) {
     let pageImg2 = -1
 
 
-    useEffect(() => {
-        (async function () {
-            let data =
-                await axios.get(`https://cb.samwash.ua/api/v1/blog/${locale === "en" ? "en" : locale === "ru" ? "ru" : "ua"}/${id}`);
-            setArticleOne(data.data.data);
+    // async function getData() {
+    //     await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === "en" ? "en" : locale === "ru" ? "ru" : "ua"}/${id}`, {
+    //         next: {revalidate: 60}
+    //     }) .then((response) => {return response.json()})
+    //         .then((data) => setArticleOne(data.data) )
+    // }
 
+    useEffect(  () => {
+        (async function () {
+                await fetch(`https://cb.samwash.ua/api/v1/blog/${locale === "en" ? "en" : locale === "ru" ? "ru" : "ua"}/${id}`, {
+                    next: {revalidate: 60}
+                }) .then((response) => {return response.json()})
+                    .then((data) => setArticleOne(data.data) )
+            // getData()
         })();
     }, [locale, id]);
 
@@ -70,7 +78,7 @@ export default async function MoreInfoBlog(props) {
 
                     <p className={s.articleTimeMore}>{article?.length !== 0 && article?.start_date_time.replace(/-/g, ".").slice(0, 10)}</p>
 
-                    <div style={{zIndex: '2', position: 'relative'}}>
+                    {article.images.length !== 0 && <div style={{zIndex: '2', position: 'relative'}}>
                         <ImageGallery lazyLoad={true}
                                       thumbnailPosition={'left'}
                                       useBrowserFullscreen={true}
@@ -80,7 +88,7 @@ export default async function MoreInfoBlog(props) {
                                       disableThumbnailScroll={true}
                                       alt={'photo'}
                         />
-                    </div>
+                    </div>}
 
                     <p className={s.descMoreInfo}
                        dangerouslySetInnerHTML={{__html: article?.content[0]?.description}}></p>

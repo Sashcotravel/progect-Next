@@ -1,9 +1,9 @@
 'use client'
 
-import {useLocale, useTranslations} from 'next-intl';
+import {useTranslations} from 'next-intl';
 import Link from 'next-intl/link';
-import React, {useEffect, useState} from "react";
-import {useParams, useRouter} from "next/navigation";
+import React, {useEffect} from "react";
+import {useRouter} from "next/navigation";
 import background from "../../../image/svg/swlogo.svg";
 import s from "./ListWash.module.css";
 import Image from "next/image";
@@ -18,10 +18,10 @@ import {clickObl, oblTrue} from "./additionalFunctions";
 
 
 
-export default function ListWash() {
+export default function ListWash({ params }) {
 
     const t = useTranslations();
-    const locale = useLocale();
+    const locale = params.locale
     const router = useRouter()
     const dispatch = useDispatch()
 
@@ -135,7 +135,7 @@ export default function ListWash() {
         }
     };
 
-
+    console.log(params)
 
     return (
         <main className={s.divBlock}>

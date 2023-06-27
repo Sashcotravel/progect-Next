@@ -15,6 +15,7 @@
     padding: 20px 120px 100px;
     z-index: 1;
     position: relative;
+    background-color: #252f33;
 }
 
 .breadcrumbs{

@@ -114,7 +114,7 @@ export default async function MoreInfoBlog() {
 
                 <p className={s.articleTimeMore}>{article?.length !== 0 && article?.start_date_time.replace(/-/g, ".").slice(0, 10)}</p>
 
-                <div style={{zIndex: '2', position: 'relative'}}>
+                {article?.images.length !== 0 && <div style={{zIndex: '2', position: 'relative'}}>
                     <ImageGallery lazyLoad={true}
                                   thumbnailPosition={'left'}
                                   useBrowserFullscreen={true}
@@ -124,7 +124,7 @@ export default async function MoreInfoBlog() {
                                   disableThumbnailScroll={true}
                                   alt={'photo'}
                     />
-                </div>
+                </div>}
 
                 <p className={s.descMoreInfo} dangerouslySetInnerHTML={{__html: article?.content[0].description}}></p>
 
