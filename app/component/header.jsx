@@ -157,7 +157,7 @@ const TheHeader = () => {
                             <Link className="menu__item2" href="/cover">{t("cover2")}</Link>
                             <Link className="menu__item2" href="/obladnannya">{t("calculator")}</Link>
                             <Link className="menu__item2" href="/porohotyag">{t("porohotyag")}</Link>
-                            <Link className="menu__item2" href="/blog">{t("blog")}</Link>
+                            <Link className="menu__item2" href="/blog?page=1">{t("blog")}</Link>
                             <Link className="menu__item2" href="/contacts">{t("contacts")}</Link>
                         </div>
                     </div>
@@ -239,7 +239,7 @@ const TheHeader = () => {
                                           href={"/porohotyag"}>{t("porohotyag")}</Link></li>
                                 <li><Link onClick={threeClick}
                                           style={windows2.blog ? activeStyle : undefined} className="menu__item"
-                                          href="/blog">{t("blog")}</Link></li>
+                                          href="/blog?page=1">{t("blog")}</Link></li>
                                 <li><Link onClick={threeClick}
                                           style={windows2.cont ? activeStyle2 : undefined}
                                           className="menu__item border" href={"/contacts"}>{t("contacts")}</Link></li>

@@ -189,8 +189,9 @@
 .imageThanks{
     position: absolute;
     opacity: 0.01;
-    z-index: -1;
+    z-index: 0;
     width: 84%;
+    height: 99%;
 }
 
 .boxOne{

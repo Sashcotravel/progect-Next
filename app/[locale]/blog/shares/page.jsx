@@ -7,7 +7,7 @@ import background from "../../../../image/svg/swlogo.svg";
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
-import {useSearchParams} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {addBlog, setArticle} from "../../../../store/blog-reduser";
 
 
@@ -19,6 +19,8 @@ export default async function Shares() {
     const [color, setColor] = useState(false)
     const [articleAll, setArticleAll] = useState([])
     const dispatch = useDispatch();
+    const router = useRouter()
+    const pathname = usePathname()
     const searchParams = useSearchParams()
     let paginatedData = []
     let allBlog = useSelector((state) => state.blog.articleAll)
@@ -38,8 +40,14 @@ export default async function Shares() {
             setArticleAll(data)
             return data
         } else {
+            let data = []
+            for (let i = 0; i < allBlog.length; i++) {
+                if (allBlog[i].type === 'article') {
+                    data.push(allBlog[i])
+                }
+            }
             setArticleAll(allBlog)
-            return allBlog
+            return data
         }
     }
 
@@ -65,8 +73,7 @@ export default async function Shares() {
             const paginationEl = document.getElementById('pagination');
             const pagesCount = Math.ceil(arrData.length / rowPerPage);
             if(pagesCount < Number(pageUrl)){
-                // setSearchParams({ page: 1 })
-                searchParams.set(1)
+                router.push(pathname + '?page=' + 1)
                 currentPage = 1
             }
             const ulEl = document.createElement("ul");
@@ -95,7 +102,7 @@ export default async function Shares() {
 
                 let currentItemLi = document.getElementById('pagination__item__active');
 
-                // setSearchParams({ page })
+                router.push(pathname + '?page=' + page)
 
                 currentItemLi.classList.remove(s['pagination__item__active']);
                 currentItemLi.id = ''
@@ -155,11 +162,11 @@ export default async function Shares() {
                 <div style={{zIndex: '3', position: 'relative'}}>
                     <div className={`${s.divTitle} ${color === 'mob' ? s.styleUpManu : color === 'comp' ? s.styleUpManu2 : s.startPosition}`}>
                         <div><Link className={s.spanTitle}
-                                   href={"/blog"}>{t("blogs.all")}</Link></div>
+                                   href={"/blog?page=1"}>{t("blogs.all")}</Link></div>
                         <div><Link  className={s.spanTitle} style={activeStyle}
-                                   href={"/blog/shares"}>{t("blogs.shares")}</Link></div>
+                                   href={"/blog/shares?page=1"}>{t("blogs.shares")}</Link></div>
                         <div><Link  className={s.spanTitle}
-                                    href={"/blog/news"}>{t("blogs.news")}</Link></div>
+                                    href={"/blog/news?page=1"}>{t("blogs.news")}</Link></div>
                     </div>
                 </div>
 
