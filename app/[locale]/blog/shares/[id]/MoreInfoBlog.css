@@ -58,3 +58,17 @@
         width: 85%;
     }
 }
+
+.image-gallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:not(:root):fullscreen::backdrop {
+    background-color: #17072487;
+}
+
+.image-gallery-content.fullscreen {
+     background: transparent;
+}

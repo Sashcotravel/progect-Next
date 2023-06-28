@@ -56,3 +56,8 @@
         width: 85%;
     }
 }
+
+.image-gallery{
+    display: flex;
+    align-items: center;
+}

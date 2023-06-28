@@ -307,6 +307,12 @@ export default function Contacts() {
                                 <a href="https://maps.app.goo.gl/Wy7g6KUUGf4VWwme6?g_st=it" target='_blank'>
                                     <p className={s.p_1City}>{t("addressCity")}</p>
                                 </a>
+                                <div style={{display: 'flex', flexDirection: 'column'}}>
+                                    <p><Link  className={s.p_1City+' '+s.um} href={'/contract-conditions'}
+                                    >{t("contract-conditions.contract-conditions")}</Link></p>
+                                    <p className={s.p_1CitUm}><Link className={s.p_1City+' '+s.um} href={'/privacy-policy'}
+                                    >{t("privacy-policy.privacy-policy")}</Link></p>
+                                </div>
                             </div>
                         </div>
 
@@ -359,6 +365,12 @@ export default function Contacts() {
                                 <a href="https://maps.app.goo.gl/Wy7g6KUUGf4VWwme6?g_st=it" target='_blank'>
                                     <p className={s.p_1City}>{t("addressCity")}</p>
                                 </a>
+                                <div style={{display: 'flex', flexDirection: 'column'}}>
+                                    <p><Link  className={s.p_1City+' '+s.um} href={'/contract-conditions'}
+                                    >{t("contract-conditions.contract-conditions")}</Link></p>
+                                    <p className={s.p_1CitUm}><Link className={s.p_1City+' '+s.um} href={'/privacy-policy'}
+                                    >{t("privacy-policy.privacy-policy")}</Link></p>
+                                </div>
                             </div>
                         </div>
 

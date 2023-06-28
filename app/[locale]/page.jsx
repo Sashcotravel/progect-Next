@@ -449,7 +449,7 @@ export default function Home() {
                             </div>
                             <figure>
                                 <div className={`${m.divImgSlider} ${m.addClass}`}>
-                                    <Image src={SMART} className={m.imgClass2} alt="SMART" />
+                                    <Image loading='eager' src={require("../../image/svg/SMART.webp")} className={m.imgClass2} alt="SMART" />
                                 </div>
                             </figure>
                         </div>
@@ -461,7 +461,7 @@ export default function Home() {
                             </div>
                             <figure>
                                 <div className={m.divImgSlider}>
-                                    <Image src={PIXEL} className={m.imgClass2} alt='PIXEL' /></div>
+                                    <Image loading='eager' src={PIXEL} className={m.imgClass2} alt='PIXEL' /></div>
                             </figure>
                         </div>
 

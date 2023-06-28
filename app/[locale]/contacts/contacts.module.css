@@ -192,6 +192,10 @@
     margin: 60px auto 0;
 }
 
+.um{
+    font: normal normal 300 15px/25px Gilroy Light, sans-serif;
+}
+
 
 
 @media screen and (max-width: 1600px) {
@@ -223,7 +227,7 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .p_1City{
+    .p_1CitUm{
         margin-bottom: 100px;
     }
     .thanksTitle2{
@@ -304,13 +308,13 @@
 }
 
 @media screen and (max-width: 900px) {
+    .p_1CitUm{
+        margin-bottom: 0;
+    }
     .fontCont {
         margin: 20px 0;
         color: white;
         font: normal normal 300 22px/48px Gilroy Light, sans-serif;
-    }
-    .p_1City {
-        margin-bottom: 0;
     }
     .divBlock {
         margin-top: -50px;

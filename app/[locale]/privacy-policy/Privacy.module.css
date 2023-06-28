@@ -1,0 +1,109 @@
+.divBlock{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px 120px 100px;
+    z-index: 1;
+    position: relative;
+    background-color: #252f33;
+    font-family: Gilroy Light, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    color: #ced1d1;
+    text-align: left;
+}
+
+.breadcrumbs{
+    font-size: 14px;
+    font-family: Gilroy Medium, sans-serif;
+    z-index: 2;
+    margin: 40px 0 60px 0;
+}
+
+.breads{
+    cursor: pointer;
+    color: rgb(125, 125, 128);
+}
+
+.breads2{
+    color: white;
+}
+
+.titleH2{
+    font-family: Gilroy Light, sans-serif;
+    font-size: 72px;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-align: left;
+    width: 550px;
+    height: 177px;
+}
+
+.punkt{
+    font-family: Gilroy Light, sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-align: left;
+    margin: 50px 0 20px;
+}
+
+.divP{
+    display: flex;
+    justify-content: space-between;
+}
+
+.p{
+    width: 46%;
+    margin: 10px 0;
+}
+
+.p1{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.p2{
+    margin: 10px 0;
+}
+
+.link{
+    color: red;
+}
+
+.link:hover{
+    color: green;
+}
+
+
+@media screen and (max-width: 900px) {
+    .divBlock {
+        margin-top: -50px;
+        padding: 35px 20px 100px;
+        font-size: 20px;
+    }
+    .breadcrumbs{
+        margin: 30px 0 40px;
+    }
+    .divBoxTitASel{
+        margin-bottom: -50px;
+        height: auto;
+        align-items: flex-start;
+    }
+    .titleH2 {
+        height: 90px;
+        font-size: 36px;
+        width: 335px;
+        margin: -10px 0 10px;
+    }
+    .punkt{
+        font-size: 35px;
+    }
+    .divP{
+        flex-direction: column;
+    }
+    .p{
+        width: 100%;
+    }
+}

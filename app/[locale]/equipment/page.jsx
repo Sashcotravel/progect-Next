@@ -321,22 +321,31 @@ export default function Nacritya() {
 
                 <p className={s.p2}>{t(`equipPage.panelTit`)}</p>
 
-                <div className={s.divImage + " " + s.videoBox+' '+s.pRight}>
-                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fterminal2.abb27b25.webp&w=1920&q=75'}>
+                <div className={s.divImage + " " + s.videoBox + ' ' + s.pRight}>
+                    <a data-fancybox="gallery"
+                       href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fterminal2.abb27b25.webp&w=1920&q=75'}>
                         <picture>
-                            {!screen && <source srcSet={require("../../../image/svg/terminal2Min.webp")} type="image/jpeg" />}
-                            {screen && <source srcSet={require("../../../image/svg/terminal2.webp")} type="image/jpeg" />}
-                            <source srcSet={require("../../../image/svg/terminal2.webp")} />
-                            <Image className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne  + " " + s.width525 + " " + s.height370}
-                                 src={require("../../../image/svg/terminal2.webp")} alt="photo" loading='lazy' />
+                            {!screen &&
+                                <source srcSet={require("../../../image/svg/terminal2Min.webp")} type="image/jpeg"/>}
+                            {screen &&
+                                <source srcSet={require("../../../image/svg/terminal2.webp")} type="image/jpeg"/>}
+                            <source srcSet={require("../../../image/svg/terminal2.webp")}/>
+                            <Image
+                                className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
+                                src={require("../../../image/svg/terminal2.webp")} alt="photo" loading='lazy'/>
                         </picture>
                     </a>
-                    <a data-fancybox="gallery" href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fterminal4.75c69d17.webp&w=828&q=75'}>
+                    <video className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
+                           src={'https://samwash.ua/static/media/pinaNis.3dfefda1afacfc03f3b3.mp4'}
+                           title="photo" preload="auto" autoPlay playsInline muted loop controls={true}/>
+                    <a data-fancybox="gallery"
+                       href={'https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fterminal4.75c69d17.webp&w=828&q=75'}>
                         <picture>
-                            <source srcSet={require("../../../image/svg/terminal4.webp")} type="image/jpeg" />
-                            <source srcSet={require("../../../image/svg/terminal4.webp")} />
-                            <Image className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
-                                 src={require("../../../image/svg/terminal4.webp")} alt="photo" loading='lazy' />
+                            <source srcSet={require("../../../image/svg/terminal4.webp")} type="image/jpeg"/>
+                            <source srcSet={require("../../../image/svg/terminal4.webp")}/>
+                            <Image
+                                className={s.imageInBox + " " + s.imageTerminal + " " + s.procOne + " " + s.width525 + " " + s.height370}
+                                src={require("../../../image/svg/terminal4.webp")} alt="photo" loading='lazy'/>
                         </picture>
                     </a>
                 </div>
