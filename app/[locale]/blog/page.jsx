@@ -65,78 +65,78 @@ export default async function Blog() {
         }
     }
 
-    async function main() {
-        const postsData = await getData();
-        let currentPage = Number(pageUrl)
-        let rows = 6;
-
-        function displayList(arrData, rowPerPage, page) {
-            const postsEl = document.getElementById('posts');
-            postsEl.innerHTML = "";
-            page--;
-
-            const start = rowPerPage * page;
-            const end = start + rowPerPage;
-            paginatedData = arrData.slice(start, end);
-            if (paginatedData.length === 0) {
-                paginatedData = arrData.slice(0, 6);
-            }
-            setArticleAll(paginatedData)
-        }
-
-        function displayPagination(arrData, rowPerPage) {
-            const paginationEl = document.getElementById('pagination');
-            const pagesCount = Math.ceil(arrData.length / rowPerPage);
-            if (pagesCount < Number(pageUrl)) {
-                // setSearchParams({ page: 1 })
-                currentPage = 1
-            }
-            const ulEl = document.createElement("ul");
-            ulEl.classList.add(s['pagination__list']);
-
-            for (let i = 0; i < pagesCount; i++) {
-                const liEl = displayPaginationBtn(i + 1);
-                ulEl.appendChild(liEl)
-            }
-            paginationEl.appendChild(ulEl)
-        }
-
-        function displayPaginationBtn(page) {
-            const liEl = document.createElement("li");
-            liEl.classList.add(s['pagination__item'])
-            liEl.innerText = page
-
-            if (currentPage === page) {
-                liEl.classList.add(s['pagination__item__active']);
-                liEl.id = 'pagination__item__active'
-            }
-
-            liEl.addEventListener('click', () => {
-                window.scrollTo(0, 0);
-                currentPage = page
-                displayList(postsData, rows, currentPage)
-
-                let currentItemLi = document.getElementById('pagination__item__active');
-
-                // setSearchParams({ page })
-                searchParams.get({'page': '1'})
-
-                currentItemLi.classList.remove(s['pagination__item__active']);
-                currentItemLi.id = ''
-
-                liEl.classList.add(s['pagination__item__active']);
-                liEl.id = 'pagination__item__active'
-            })
-
-            return liEl;
-        }
-
-        displayList(postsData, rows, currentPage);
-        displayPagination(postsData, rows);
-    }
+    // async function main() {
+    //     const postsData = await getData();
+    //     let currentPage = Number(pageUrl)
+    //     let rows = 6;
+    //
+    //     function displayList(arrData, rowPerPage, page) {
+    //         const postsEl = document.getElementById('posts');
+    //         postsEl.innerHTML = "";
+    //         page--;
+    //
+    //         const start = rowPerPage * page;
+    //         const end = start + rowPerPage;
+    //         paginatedData = arrData.slice(start, end);
+    //         if (paginatedData.length === 0) {
+    //             paginatedData = arrData.slice(0, 6);
+    //         }
+    //         setArticleAll(paginatedData)
+    //     }
+    //
+    //     function displayPagination(arrData, rowPerPage) {
+    //         const paginationEl = document.getElementById('pagination');
+    //         const pagesCount = Math.ceil(arrData.length / rowPerPage);
+    //         if (pagesCount < Number(pageUrl)) {
+    //             // setSearchParams({ page: 1 })
+    //             currentPage = 1
+    //         }
+    //         const ulEl = document.createElement("ul");
+    //         ulEl.classList.add(s['pagination__list']);
+    //
+    //         for (let i = 0; i < pagesCount; i++) {
+    //             const liEl = displayPaginationBtn(i + 1);
+    //             ulEl.appendChild(liEl)
+    //         }
+    //         paginationEl.appendChild(ulEl)
+    //     }
+    //
+    //     function displayPaginationBtn(page) {
+    //         const liEl = document.createElement("li");
+    //         liEl.classList.add(s['pagination__item'])
+    //         liEl.innerText = page
+    //
+    //         if (currentPage === page) {
+    //             liEl.classList.add(s['pagination__item__active']);
+    //             liEl.id = 'pagination__item__active'
+    //         }
+    //
+    //         liEl.addEventListener('click', () => {
+    //             window.scrollTo(0, 0);
+    //             currentPage = page
+    //             displayList(postsData, rows, currentPage)
+    //
+    //             let currentItemLi = document.getElementById('pagination__item__active');
+    //
+    //             // setSearchParams({ page })
+    //             searchParams.get({'page': '1'})
+    //
+    //             currentItemLi.classList.remove(s['pagination__item__active']);
+    //             currentItemLi.id = ''
+    //
+    //             liEl.classList.add(s['pagination__item__active']);
+    //             liEl.id = 'pagination__item__active'
+    //         })
+    //
+    //         return liEl;
+    //     }
+    //
+    //     displayList(postsData, rows, currentPage);
+    //     displayPagination(postsData, rows);
+    // }
 
     useEffect(() => {
-        main();
+        // main();
         // (async function () {
         //     let item = await
         //         axios.get(`https://cb.samwash.ua/api/v1/blog/${locale === 'en' ? 'en' : locale === 'ru' ? 'ru' : 'ua'}?perPage=6`, {
