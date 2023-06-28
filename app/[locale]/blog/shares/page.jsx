@@ -52,6 +52,7 @@ export default async function Shares() {
     }
 
     async function main() {
+        if(articleAll.length !== 0) return
         const postsData = await getData();
         let currentPage = Number(pageUrl)
         let rows = 6;

@@ -180,7 +180,8 @@
 
 .readMore:hover{
     cursor: pointer;
-    color: cornflowerblue;
+    font-weight: 700;
+    color: #e1e1e1;
 }
 
 /* end Article */

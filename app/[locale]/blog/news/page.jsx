@@ -51,6 +51,7 @@ export default async function News() {
     }
 
     async function main() {
+        if(articleAll.length !== 0) return
         const postsData = await getData();
         let currentPage = Number(pageUrl)
         let rows = 6;
