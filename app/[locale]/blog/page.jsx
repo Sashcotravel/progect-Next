@@ -157,7 +157,7 @@ export default async function Blog() {
     return (
         <main className={s.main}>
 
-            <Image className={s.imageThanks} src={background} loading='lazy' alt="lable"/>
+            {/*<Image className={s.imageThanks} src={background} loading='lazy' alt="lable"/>*/}
 
             <div>
 
