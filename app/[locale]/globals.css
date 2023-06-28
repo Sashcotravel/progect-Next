@@ -6,7 +6,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  background: transparent linear-gradient(70deg, #1D2025 20%, #29373A 116%) -180% -198%
+  background-color: #252f33;
 }
 
 @media (prefers-color-scheme: dark) {
