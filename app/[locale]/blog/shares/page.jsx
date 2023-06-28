@@ -149,7 +149,7 @@ export default async function Shares() {
     return (
         <main className={s.main}>
 
-            {/*<Image src={background} loading='lazy' className={s.imageThanks} alt="lable"/>*/}
+            <Image src={background} loading='lazy' className={s.imageThanks} alt="lable"/>
 
             <div>
                 <div className={s.breadcrumbs}>
