@@ -347,8 +347,8 @@
     justify-content: center;
     padding: 10px 12px;
     font-size: 1.45em;
-    color: transparent;
-    background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9) no-repeat;
+    /*background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9) no-repeat;*/
+    color: #7303c0;
     background-size: 300%;
     background-position: 100%;
     background-clip: text;
@@ -365,7 +365,7 @@
     height: 100%;
     position: absolute;
     display: block;
-    background-color: red;
+    background-color: #252f33;
     /*background: linear-gradient(to right,#008cdd 33.3%, transparent 33.3% , transparent 66.6%, #008cdd 66.6%) no-repeat;*/
     background-size: 300%;
     background-position: 100%;
