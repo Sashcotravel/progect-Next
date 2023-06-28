@@ -14,6 +14,7 @@ export default function Head(){
             <meta property="og:image" content="https://progect-next-nine.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo144.5d64867a.png&w=256&q=75"/>
              <meta property="og:url" content={locale === 'en' ? "https://samwash.ua/en/blog" : locale === 'ru' ? "https://samwash.ua/ru/blog" : "https://samwash.ua/blog"} />
              <link rel="canonical" href={locale === 'en' ? "https://samwash.ua/en/blog" : locale === 'ru' ? "https://samwash.ua/ru/blog" : "https://samwash.ua/blog"} />
+            <link rel="stylesheet" href="/blog.module.css" media="screen" />
             {/*<script type="application/ld+json">*/}
             {/*      { `"@context": "https://schema.org",*/}
             {/*      "@type": ["VideoObject", "LearningResource"],*/}

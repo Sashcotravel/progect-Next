@@ -912,6 +912,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 3,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Rahiv/0.jpg'), require('./image/Location/Rahiv/1.JPG'), require('./image/Location/Rahiv/2.JPG'), require('./image/Location/Rahiv/3.JPG'), require('./image/Location/Rahiv/5.JPG'), require('./image/Location/Rahiv/4.JPG'),],
         // 'src2': [require('./image/Location/RahivWebp/0.webp'), require('./image/Location/RahivWebp/1.webp'), require('./image/Location/RahivWebp/2.webp'), require('./image/Location/RahivWebp/3.webp'), require('./image/Location/RahivWebp/5.webp'), require('./image/Location/RahivWebp/4.webp'),],
         'imgNum': 5,
@@ -1363,6 +1365,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 4,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Dobroson/1.jpg'),],
         // 'src2': [require('./image/Location/DobrosonWebp/1.webp'),],
         'imgNum': 8,
@@ -1408,6 +1412,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 4,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Nrozdil/1.jpg')],
         // 'src2': [require('./image/Location/NrozdilWebp/1.webp')],
         'imgNum': 9,
@@ -1455,6 +1461,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 4,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Davidiv/1.jpg'), require('./image/Location/Davidiv/2.jpg'), require('./image/Location/Davidiv/3.jpg'), require('./image/Location/Davidiv/4.jpeg'),],
         // 'src2': [require('./image/Location/DavidivWebp/1.webp'), require('./image/Location/DavidivWebp/2.webp'), require('./image/Location/DavidivWebp/3.webp'), require('./image/Location/DavidivWebp/4.webp'),],
         'imgNum': 10,
@@ -1503,6 +1511,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 4,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Lyuboml/1.jpg'), require('./image/Location/Lyuboml/2.jpg'), require('./image/Location/Lyuboml/3.jpg'), require('./image/Location/Lyuboml/4-compressed.jpg'), require('./image/Location/Lyuboml/5-compressed.jpg'), require('./image/Location/Lyuboml/6-compressed.jpg'), require('./image/Location/Lyuboml/7-compressed.jpg'), require('./image/Location/Lyuboml/8-compressed.jpg'), require('./image/Location/Lyuboml/9.JPG'), require('./image/Location/Lyuboml/10.JPG'), require('./image/Location/Lyuboml/11.JPG'), require('./image/Location/Lyuboml/12.JPG'), require('./image/Location/Lyuboml/13.JPG'),],
         // 'src2': [require('./image/Location/LyubomlWebp/1.webp'), require('./image/Location/LyubomlWebp/2.webp'), require('./image/Location/LyubomlWebp/3.webp'), require('./image/Location/LyubomlWebp/4.webp'), require('./image/Location/LyubomlWebp/5.webp'), require('./image/Location/LyubomlWebp/6.webp'), require('./image/Location/LyubomlWebp/7.webp'), require('./image/Location/LyubomlWebp/8.webp'), require('./image/Location/LyubomlWebp/9.webp'), require('./image/Location/LyubomlWebp/10.webp'), require('./image/Location/LyubomlWebp/11.webp'), require('./image/Location/LyubomlWebp/12.webp'), require('./image/Location/LyubomlWebp/13.webp'),],
         'imgNum': 11,
@@ -1553,6 +1563,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 5,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Popasna/_viber_2019-12-26_11-34-44.jpg'), require('./image/Location/Popasna/bridge.jpg'), require('./image/Location/Popasna/images.jpg'), require('./image/Location/Popasna/sam2.jpg'), require('./image/Location/Popasna/sam4.jpg'), require('./image/Location/Popasna/IMG_8627.JPG'), require('./image/Location/Popasna/IMG_8656.JPG'), require('./image/Location/Popasna/vis_2.jpg'),],
         // 'src2': [require('./image/Location/PopasnaWebp/_viber_2019-12-26_11-34-44.webp'), require('./image/Location/PopasnaWebp/bridge.webp'), require('./image/Location/PopasnaWebp/images.webp'), require('./image/Location/PopasnaWebp/sam2.webp'), require('./image/Location/PopasnaWebp/sam4.webp'), require('./image/Location/PopasnaWebp/IMG_8627.webp'), require('./image/Location/PopasnaWebp/IMG_8656.webp'), require('./image/Location/PopasnaWebp/vis_2.webp'),],
         'imgNum': 12,
@@ -1651,6 +1663,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 5,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Vinnitsa/1.jpeg'), require('./image/Location/Vinnitsa/2.JPG'), require('./image/Location/Vinnitsa/3.JPG'), require('./image/Location/Vinnitsa/4.jpg'),],
         // 'src2': [require('./image/Location/VinnitsaWebp/1.webp'), require('./image/Location/VinnitsaWebp/2.webp'), require('./image/Location/VinnitsaWebp/3.webp'), require('./image/Location/VinnitsaWebp/4.webp'),],
         'imgNum': 29,
@@ -1701,6 +1715,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 5,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Horodok/1.jpeg')],
         // 'src2': [require('./image/Location/HorodokWebp/1.webp')],
         'imgNum': 15,
@@ -1751,6 +1767,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 6,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Ternopil/1.jpg'), require('./image/Location/Ternopil/2.jpg'), require('./image/Location/Ternopil/photo_2023-05-05_10-04-51.jpg'), require('./image/Location/Ternopil/3.jpg'),require('./image/Location/Ternopil/4.jpg'), require('./image/Location/Ternopil/5.jpg'), require('./image/Location/Ternopil/6.mp4'),],
         // 'src2': [require('./image/Location/TernopilWebp/1.webp'), require('./image/Location/TernopilWebp/2.webp'), require('./image/Location/TernopilWebp/ternWebp.webp'), require('./image/Location/TernopilWebp/3.webp'),require('./image/Location/TernopilWebp/4.webp'), require('./image/Location/TernopilWebp/5.webp'), require('./image/Location/TernopilWebp/6.mp4'),],
         'imgNum': 14,
@@ -1844,6 +1862,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 6,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Uzhhorod/1.jpg'), require('./image/Location/Uzhhorod/2.jpg'), require('./image/Location/Uzhhorod/3.jpg'), require('./image/Location/Uzhhorod/4.jpg'), require('./image/Location/Uzhhorod/5.jpg'), require('./image/Location/Uzhhorod/6.jpg'), require('./image/Location/Uzhhorod/7.jpg'), require('./image/Location/Uzhhorod/8.jpg'), require('./image/Location/Uzhhorod/9.jpg'), require('./image/Location/Uzhhorod/10.jpg'), require('./image/Location/Uzhhorod/11.jpg'),],
         // 'src2': [require('./image/Location/UzhhorodWebp/1.webp'), require('./image/Location/UzhhorodWebp/2.webp'), require('./image/Location/UzhhorodWebp/3.webp'), require('./image/Location/UzhhorodWebp/4.webp'), require('./image/Location/UzhhorodWebp/5.webp'), require('./image/Location/UzhhorodWebp/6.webp'), require('./image/Location/UzhhorodWebp/7.webp'), require('./image/Location/UzhhorodWebp/8.webp'), require('./image/Location/UzhhorodWebp/9.webp'), require('./image/Location/UzhhorodWebp/10.webp'), require('./image/Location/UzhhorodWebp/11.webp'),],
         'imgNum': 17,
@@ -1947,6 +1967,8 @@ export const listWash = [
           "смываем и наносим нано воск для защиты вашего лакокрасочного покрытия. Финально выбираем программу ополаскивания " +
           "осмотической водой и придаем блеск автомобилю.",
         'colPost': 6,
+        'src': [require('./image/svg/asset2.jpg')],
+        'src2': [require('./image/svg/asset2.webp')],
         // 'src': [require('./image/Location/Beregove/0.jpg'), require('./image/Location/Beregove/1.jpg'), require('./image/Location/Beregove/2.jpg'), require('./image/Location/Beregove/3.jpg'), require('./image/Location/Beregove/4.jpg'), require('./image/Location/Beregove/5.jpg'), require('./image/Location/Beregove/6.jpg'),],
         // 'src2': [require('./image/Location/BeregoveWebp/0.webp'), require('./image/Location/BeregoveWebp/1.webp'), require('./image/Location/BeregoveWebp/2.webp'), require('./image/Location/BeregoveWebp/3.webp'), require('./image/Location/BeregoveWebp/4.webp'), require('./image/Location/BeregoveWebp/5.webp'), require('./image/Location/BeregoveWebp/6.webp'),],
         'imgNum': 18_1,
