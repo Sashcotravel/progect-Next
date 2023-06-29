@@ -46,6 +46,7 @@ export default function Head(){
             {/*<Script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }} />*/}
             <Script async id='2' src="https://www.googletagmanager.com/gtag/js?id=AW-11190466139"></Script>
             <link rel="dns-prefetch" href="https://www.googletagmanager.com/gtag/js?id=G-MMYDFHJ1EK" />
+            <meta name="robots" content="noindex" />
         </React.Fragment>
     )
 }
