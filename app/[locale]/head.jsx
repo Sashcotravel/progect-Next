@@ -9,6 +9,20 @@ const schema = {
     "logo": "https://samwash.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo144.5d64867a.png&w=256&q=75"
 }
 
+const schema2 = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "${https://samwash.ua/}",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://query.samwash.ua/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+    }
+}
+
 export default function Head(){
     const t = useTranslations();
     const locale = useLocale();
@@ -29,6 +43,7 @@ export default function Head(){
             <link rel="alternate" hrefLang="uk-UA" href="https://samwash.ua/" />
             <link rel="alternate" hrefLang="x-default" href="https://samwash.ua/" />
             <Script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            <Script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }} />
             <Script async id='2' src="https://www.googletagmanager.com/gtag/js?id=AW-11190466139"></Script>
             <link rel="dns-prefetch" href="https://www.googletagmanager.com/gtag/js?id=G-MMYDFHJ1EK" />
         </React.Fragment>
