@@ -139,7 +139,7 @@ export default async function News() {
                 }
             }
         }
-        // window.addEventListener('scroll', changeColor)
+        window.addEventListener('scroll', changeColor)
     }, [screen])
 
     let activeStyle = { backgroundColor: "#DF4242", color: "#FFFFFF", border: "none" };

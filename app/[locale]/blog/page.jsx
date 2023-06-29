@@ -49,7 +49,7 @@ export default async function Blog() {
                 }
             }
         }
-        // window.addEventListener('scroll', changeColor)
+        window.addEventListener('scroll', changeColor)
     }, [screen])
 
     async function getData() {
