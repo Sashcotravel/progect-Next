@@ -1,6 +1,7 @@
 'use client'
 
 import s from "./Blog.module.css"
+import './Blog.css'
 import Image from "next/image";
 import Link from "next/link";
 import {useLocale, useTranslations} from "next-intl";
@@ -156,15 +157,22 @@ export default async function Blog() {
 
 
     return (
-        <main className={s.main}>
+        <main className='main'>
+        {/*<main className={s.main}>*/}
 
-            <Image className={s.imageThanks} src={background} loading='lazy' alt="lable"/>
+            {/*<Image className={s.imageThanks} src={background} loading='lazy' alt="lable"/>*/}
+            <Image className='imageThanks' src={background} loading='lazy' alt="lable"/>
 
             <div>
 
-                <div className={s.breadcrumbs}>
-                    <Link className={s.breads} href="/">{t(`home`)}</Link>
-                    <span className={s.breads2}> / {t(`blog`)}</span>
+                {/*<div className={s.breadcrumbs}>*/}
+                {/*    <Link className={s.breads} href="/">{t(`home`)}</Link>*/}
+                {/*    <span className={s.breads2}> / {t(`blog`)}</span>*/}
+                {/*</div>*/}
+
+                <div className='breadcrumbs'>
+                    <Link className='breads' href="/">{t(`home`)}</Link>
+                    <span className='breads2'> / {t(`blog`)}</span>
                 </div>
 
                 <h1 className={s.blogH1}>{t("blog")}</h1>
