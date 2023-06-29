@@ -12,7 +12,7 @@ const schema = {
 const schema2 = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": "${https://samwash.ua/}",
+    "url": "https://samwash.ua/",
     "potentialAction": {
         "@type": "SearchAction",
         "target": {
