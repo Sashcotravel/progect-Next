@@ -33,13 +33,12 @@ const Video = () => {
     onLoadedData()
     return (
         <div>
-            <Image src={imageS} className={m.video_thumb} alt="thumb"
-                 // style={{opacity: isVideoLoaded ? 0 : 1}}
-                />
+            <Image src={imageS} className={m.video_thumb} alt="thumb" style={{opacity: isVideoLoaded ? 0 : 1}}/>
 
-            {/*<video preload='auto' autoPlay playsInline muted loop src={src} data-loaded='lazy'*/}
-            {/*       onLoadedData={onLoadedData} style={{opacity: isVideoLoaded ? 1 : 0, height: '120vh', width: 'auto'}}*/}
-            {/*       poster={src}/>*/}
+            <video preload='auto' autoPlay playsInline muted loop  data-loaded='lazy'
+                   src={'https://samwash.ua/static/media/output(compress-video-online.com).fb4cb6da3514f87a173a.mp4'}
+                   onLoadedData={onLoadedData} style={{opacity: isVideoLoaded ? 1 : 0, height: '120vh', width: 'auto'}}
+                   poster={'https://samwash.ua/static/media/output(compress-video-online.com).fb4cb6da3514f87a173a.mp4'}/>
 
             {/*<iframe title="YouTube video player" allowFullScreen onLoadedData={onLoadedData}*/}
             {/*        src="https://www.youtube.com/embed/aBA0fi0gua4?autoplay=1&mute=1&showinfo=0&iv_load_policy=3&playlist=aBA0fi0gua4"*/}
