@@ -12,6 +12,10 @@ import {addBlog, setArticle} from "../../../store/blog-reduser";
 import background from "../../../image/svg/swlogo.svg";
 
 
+export const metadata ={
+    title: 'Blog mazefaka'
+}
+
 export default async function Blog() {
 
     const t = useTranslations();

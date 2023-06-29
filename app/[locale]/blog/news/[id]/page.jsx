@@ -40,6 +40,8 @@ export default async function MoreInfoBlog() {
                     const newImage = {
                         original: `https://cb.samwash.ua/storage/image/${article.id}/${article?.images[pageImg].path}`,
                         thumbnail: `https://cb.samwash.ua/storage/image/${article.id}/${article?.images[pageImg2].path}`,
+                        title: 'photo',
+                        alt: 'photo'
                     };
                     setImages((prev) => {
                         return [...prev, newImage]

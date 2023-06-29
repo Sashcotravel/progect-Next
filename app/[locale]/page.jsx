@@ -39,10 +39,6 @@ const Video = () => {
                    src={'https://samwash.ua/static/media/output(compress-video-online.com).fb4cb6da3514f87a173a.mp4'}
                    onLoadedData={onLoadedData} style={{opacity: isVideoLoaded ? 1 : 0, height: '120vh', width: 'auto'}}
                    poster={'https://samwash.ua/static/media/output(compress-video-online.com).fb4cb6da3514f87a173a.mp4'}/>
-
-            {/*<iframe title="YouTube video player" allowFullScreen onLoadedData={onLoadedData}*/}
-            {/*        src="https://www.youtube.com/embed/aBA0fi0gua4?autoplay=1&mute=1&showinfo=0&iv_load_policy=3&playlist=aBA0fi0gua4"*/}
-            {/*        style={{ opacity: isVideoLoaded ? 1 : 0, border: 'none', width: '100%', height: '100vh'}}></iframe>*/}
         </div>
     );
 };
