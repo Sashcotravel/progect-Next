@@ -28,7 +28,7 @@ export default function Head(){
             <link rel="alternate" hrefLang="ru" href="https://samwash.ua/ru/" />
             <link rel="alternate" hrefLang="uk-UA" href="https://samwash.ua/" />
             <link rel="alternate" hrefLang="x-default" href="https://samwash.ua/" />
-            <Script type="application/ld+json" key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            <Script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         </React.Fragment>
     )
 }
