@@ -34,6 +34,8 @@ export default function Head(){
             <meta property="og:description" content={t("mainDesc")} />
             <link rel="origin" href='https://samwash.ua' />
             <meta property="og:type" content="website" />
+            <script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            <script type="application/ld+json" id='3' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }} />
             <link rel="apple-touch-icon" href='https://samwash.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo144.5d64867a.png&w=256&q=75' />
             <meta property="og:image" content='https://progect-next-sashcotravel.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo144.5d64867a.png&w=256&q=75' />
             <meta property="og:url" content={locale === 'en' ? "https://samwash.ua/en/" : locale === 'ru' ? "https://samwash.ua/ru/" : "https://samwash.ua/"} />
@@ -42,9 +44,7 @@ export default function Head(){
             <link rel="alternate" hrefLang="ru" href="https://samwash.ua/ru/" />
             <link rel="alternate" hrefLang="uk-UA" href="https://samwash.ua/" />
             <link rel="alternate" hrefLang="x-default" href="https://samwash.ua/" />
-            <script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-            {/*<Script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }} />*/}
-            <Script async id='2' src="https://www.googletagmanager.com/gtag/js?id=AW-11190466139"></Script>
+            <script async id='2' src="https://www.googletagmanager.com/gtag/js?id=AW-11190466139"></script>
             <link rel="dns-prefetch" href="https://www.googletagmanager.com/gtag/js?id=G-MMYDFHJ1EK" />
             <meta name="robots" content="noindex" />
         </React.Fragment>
