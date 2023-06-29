@@ -19,7 +19,7 @@ export default function Head(){
             <link rel="canonical" href={locale === 'en' ? "http://samwash.vercel.app/en/" : locale === 'ru' ? "http://samwash.vercel.app/ru/" : "http://samwash.vercel.app/"} />
             <link href="http://samwash.vercel.app/en/" rel="alternate" hrefLang="en-UA"/>
             <link href="http://samwash.vercel.app/ru/" rel="alternate" hrefLang="ru-UA"/>
-            <link href="http://samwash.vercel.app/" rel="alternate" hrefLang="uk-UA"/>
+            <link href="http://samwash.vercel.app/" rel="alternate" hrefLang="ua"/>
             <link href="http://samwash.vercel.app/" rel="alternate" hrefLang="x-default"/>
            {/* <script type="application/ld+json">*/}
            {/*     {`*/}
