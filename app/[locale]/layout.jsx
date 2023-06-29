@@ -40,6 +40,10 @@ export default async function RootLayout(props) {
     <NextIntlClientProvider locale={props?.params.locale} messages={messages}>
       <Provider store={store}>
       <body>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSRQJ7H" loading="lazy" title="facebook"
+                height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe>
+      </noscript>
       <Head />
       <TheHeader />
       <main>
