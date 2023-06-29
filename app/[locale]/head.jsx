@@ -21,7 +21,7 @@ export default function Head(){
             <link rel="alternate" hrefLang="ru" href="https://samwash.ua/ru/" />
             <link rel="alternate" hrefLang="uk-UA" href="https://samwash.ua/" />
             <link rel="alternate" hrefLang="x-default" href="https://samwash.ua/" />
-            <Script type="application/ld+json">
+            <Script type="application/ld+json" id="application/ld+json">
                 {`
                     "@context": "https://schema.org",
                     "@type": "Organization",
