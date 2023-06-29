@@ -1,7 +1,6 @@
 'use client'
 
-import s from "./blog.module.css"
-import "./blog.css"
+import s from "./Blog.module.css"
 import Image from "next/image";
 import Link from "next/link";
 import {useLocale, useTranslations} from "next-intl";
@@ -157,11 +156,9 @@ export default async function Blog() {
 
 
     return (
-        // <main className={s.main}>
-        <main className='main'>
+        <main className={s.main}>
 
-            {/*<Image className={s.imageThanks} src={background} loading='lazy' alt="lable"/>*/}
-            <Image className='imageThanks' src={background} loading='lazy' alt="lable"/>
+            <Image className={s.imageThanks} src={background} loading='lazy' alt="lable"/>
 
             <div>
 

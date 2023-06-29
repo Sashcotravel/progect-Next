@@ -1,7 +1,7 @@
 'use client'
 
 import {useLocale, useTranslations} from "next-intl";
-import s from "../blog.module.css";
+import s from "../Blog.module.css";
 import Image from "next/image";
 import background from "../../../../image/svg/swlogo.svg";
 import React, {useEffect, useState} from "react";

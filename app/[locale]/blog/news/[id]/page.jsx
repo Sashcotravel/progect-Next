@@ -4,7 +4,7 @@ import {useLocale, useTranslations} from "next-intl";
 import React, {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
 import axios from "axios";
-import s from '../../blog.module.css'
+import s from '../../Blog.module.css'
 import './MoreInfoBlog.css'
 import Link from "next/link";
 import ImageGallery from "react-image-gallery";
