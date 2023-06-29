@@ -1,5 +1,12 @@
 @import url('../../../fonts/stylesheet.css');
 
+.main{
+    text-align: start;
+    padding: 20px 120px 100px;
+    font-family: Gilroy Light, sans-serif;
+    background-color: #252f33;
+}
+
 .imageThanks{
     position: absolute;
     opacity: 0.01;
