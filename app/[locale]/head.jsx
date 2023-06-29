@@ -42,7 +42,7 @@ export default function Head(){
             <link rel="alternate" hrefLang="ru" href="https://samwash.ua/ru/" />
             <link rel="alternate" hrefLang="uk-UA" href="https://samwash.ua/" />
             <link rel="alternate" hrefLang="x-default" href="https://samwash.ua/" />
-            <Script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            <script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             {/*<Script type="application/ld+json" id='1' key="structured-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }} />*/}
             <Script async id='2' src="https://www.googletagmanager.com/gtag/js?id=AW-11190466139"></Script>
             <link rel="dns-prefetch" href="https://www.googletagmanager.com/gtag/js?id=G-MMYDFHJ1EK" />
